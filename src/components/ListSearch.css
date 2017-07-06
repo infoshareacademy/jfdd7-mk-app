@@ -1,2 +1,10 @@
+.Pine {
+    background-color: beige;
+    border: 1px solid red;
+}
 
-
+.Description {
+    background-color: khaki;
+    border: 1px solid red;
+    text-align: left;
+}
