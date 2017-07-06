@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import './App.css';
 import Main from './Main'
 import MapSearch from './MapSearch'
 import ListSearch from './ListSearch'
 import Details from './Details'
-
 
 class App extends Component {
   render() {
@@ -18,6 +17,7 @@ class App extends Component {
         <ListSearch/>
         <hr/>
         <Details/>
+
       </div>
     );
   }
