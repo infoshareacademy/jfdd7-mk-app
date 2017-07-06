@@ -1,15 +1,11 @@
 import React from 'react'
-import {Grid, Row} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import './ListSearch.css';
 
 const ListSearch  = () => (
-  <Grid>
-    <Row className='Pine'>
-    <div>
-      <p> Nazwa obiektu</p> <small> odległość [km] </small>
-      <small><b> Adres obiektu </b></small>
-    </div>
+    <Row>
+      <Col xs={3} className="Pine">To jest jakaś pinezka</Col>
+      <Col xs={9} className="Description">To jest jakiś opis</Col>
     </Row>
-  </Grid>
-    );
+)
 export default ListSearch
