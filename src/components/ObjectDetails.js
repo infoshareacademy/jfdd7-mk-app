@@ -3,9 +3,11 @@
  */
 import React from 'react'
 const ObjectDetails = () => (
-  <p>
-    Adres:
-    Kontakt:
-  </p>
+  <section>
+      <h5>Adres:</h5>
+      <h5>Telefon:</h5>
+      <h5>E-mail:</h5>
+      <h5>Witryna:</h5>
+  </section>
 )
 export default ObjectDetails
