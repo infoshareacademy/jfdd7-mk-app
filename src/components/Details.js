@@ -9,16 +9,21 @@ import {
 import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
+import Map from './Map'
 const Details = () => (
+  <div>
     <Row>
-        <Col xs={12} md={5} mdPush="{7}">
+        <Col xs={12} md={6} mdPush={6}>
             <ObjectName/>
             <ObjectDetails/>
         </Col>
-        <Col xs={12} md={7} mdPull="{5}">
+        <Col xs={12} md={6} mdPull={6}>
             <Foto/>
         </Col>
     </Row>
-
+    <div style={{width: 800, height: 800}}>
+      <Map/>
+    </div>
+  </div>
 )
 export default Details

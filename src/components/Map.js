@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import SearchField from "./SearchField";
+
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 

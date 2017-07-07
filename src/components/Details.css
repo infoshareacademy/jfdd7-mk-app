@@ -1,0 +1,8 @@
+.Details__description {
+    text-align: left;
+    margin: 20px;
+}
+.Details__map {
+    width: 600;
+    height: 600;
+}
