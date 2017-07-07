@@ -1,10 +1,35 @@
-.Pine {
-    background-color: beige;
-    border: 1px solid red;
+* {
+    font-family: Arial, cursive, sans-serif;
 }
 
-.Description {
-    background-color: khaki;
-    border: 1px solid red;
+.pine {
+    height: auto;
+}
+
+.description {
     text-align: left;
+    height: auto;
+    position: relative;
+}
+
+p .description {
+    position: absolute;
+    text-align: left;
+}
+
+h3 {
+    color: deeppink;
+}
+
+.description span {
+    color: grey;
+    font-size: 10px;
+}
+
+address {
+    display: block;
+}
+
+.street address {
+
 }
