@@ -1,25 +1,25 @@
 import React from 'react'
-import {Row, Col} from 'react-bootstrap'
-
+import {Row, Col } from 'react-bootstrap'
+import IconCategory from './IconCategory'
+import Description from './Description'
+import ContactObject from './ContactObject'
 import './ListSearch.css'
 
 const ListSearch = () => (
-  <Row>
-    <Col lg={2} className="pine">
-      <h2> TU JEST PINEZKA KATEGORII </h2>
+  <Row className="info">
+    <Col md={2} className="pin">
+      <div>
+      <IconCategory/>
+      </div>
     </Col>
-    <Col lg={3} className="main-description">
-      <section className="description">
-        <h3> Calypso Przymorze <span className="distance"> ~ odległość: 0,3 km </span></h3>
-          <span> ul. Obrońców Wybrzeża 1 <br/> 80-432 Gdańsk</span>
-        <div className="website">
-          <a href="https://www.calypso.com.pl/klub/calypso-gdansk-przymorze">www.calypso.com.pl/gdansk-przymorze</a>
-        </div>
-      </section>
+
+    <Col md={3} className="main-description">
+    <Description/>
     </Col>
-    <Col lg={7} className="contact">
-      <text>Kontakt:<a href="tel: 0048 555 55 55">+48 555 55 55</a></text>
+
+    <Col md={7} className="contact">
+      <ContactObject/>
     </Col>
   </Row>
-);
+)
 export default ListSearch
