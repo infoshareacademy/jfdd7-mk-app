@@ -1,35 +1,69 @@
 * {
-    font-family: Arial, cursive, sans-serif;
+    font-family: Monaco, sans-serif;
 }
 
 .pine {
     height: auto;
 }
 
+.pine h2 {
+    margin: 15px 0;
+}
+
+.main-description {
+    padding: 0;
+}
+
 .description {
+    display: block;
     text-align: left;
     height: auto;
+    width: auto;
     position: relative;
+    /*align-items: center;*/
+    padding: auto;
 }
 
-p .description {
-    position: absolute;
-    text-align: left;
-}
-
-h3 {
+.description h3 {
     color: deeppink;
+    margin: 20px 0;
 }
 
 .description span {
     color: grey;
-    font-size: 10px;
+    font-size: 11px;
+    padding: 0;
+    vertical-align: center;
 }
 
-address {
+span.distance {
+    padding-left: 20px;
+    vertical-align: center;
+}
+
+.website {
+    padding-top: 10px;
+}
+.website a {
+    color: darkblue;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.contact {
+    text-align: left;
+    font-size: 11px;
     display: block;
+    padding-top: 29px;
+    padding-right: 0;
+    padding-bottom:0;
+    padding-left: 15px;
+
 }
 
-.street address {
-
+.contact a {
+    color: darkblue;
+    font-size: 11px;
+    font-weight: bold;
 }
+
