@@ -4,8 +4,8 @@ import IconGym from '../imges/IconGym.png'
 import './ListSearch.css'
 
 const IconCategory = () => (
-  <div>
-  <Image src={IconGym} />
-  </div>
+<section>
+  <Image src={IconGym} responsive/>
+</section>
 )
 export default IconCategory

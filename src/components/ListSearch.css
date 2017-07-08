@@ -3,7 +3,7 @@
 }
 
 .info {
-    overflow-y: scroll;
+    margin-left: 10px;
 }
 
 .info:hover {
@@ -98,6 +98,13 @@ span.distance {
 Image {
     position: center;
     vertical-align: center;
+    display: inline-grid;
 }
 
+/*media queries for small desktops*/
+/*@media screen and (max-width: 767px) {*/
+    /*Image {*/
+        /*align-items: center;*/
+    /*}*/
+/*}*/
 

@@ -7,19 +7,20 @@ import './ListSearch.css'
 
 const ListSearch = () => (
   <Row className="info">
-    <Col md={2} className="pin">
+    <Col xs={12} lg={2} className="pin">
       <div>
       <IconCategory/>
       </div>
     </Col>
 
-    <Col md={3} className="main-description">
+    <Col xs={12} lg={3} className="main-description">
     <Description/>
     </Col>
 
-    <Col md={7} className="contact">
+    <Col xs={12} lg={7} className="contact">
       <ContactObject/>
     </Col>
   </Row>
+
 )
 export default ListSearch
