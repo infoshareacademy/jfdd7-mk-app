@@ -4,7 +4,7 @@ import SearchField from "./SearchField";
 import './Main.css'
 
 const Main  = () => (
-  <div className="div-mapa">
+  <div className="div-map">
     <SearchField/>
     <div className="center-block" style={{width: 800, height: 800}}>
     <Map/>
