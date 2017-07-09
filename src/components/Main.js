@@ -1,17 +1,15 @@
-/**
- * Created by dominikakosiedowska on 06.07.17.
- */
 import React from 'react'
 import Map from './Map'
 import SearchField from "./SearchField";
+import './Main.css'
 
 const Main  = () => (
-  <div>
-    Main
+  <div className="div-mapa">
     <SearchField/>
-    <div style={{width: 800, height: 800}}>
-          <Map/>
+    <div className="center-block" style={{width: 800, height: 800}}>
+    <Map/>
       </div>
   </div>
 )
 export default Main
+

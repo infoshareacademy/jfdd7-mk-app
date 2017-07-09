@@ -1,23 +1,44 @@
-/**
- * Created by dominikakosiedowska on 05.07.17.
- */
-
 import React from 'react'
 import {
-  FormControl
+  Form,
+  FormGroup,
+  ControlLabel,
+  Button,
+  FormControl,
+  Grid,
+  Col,
+  Row
 }
-from 'react-bootstrap'
-export default class SearchField extends React.Component {
-  render() {
-    return (
-      <form>
-        <FormControl
-          type="text"
-          placeholder="Enter text"
-        />
-          <FormControl.Feedback />
+  from 'react-bootstrap'
+import './Main.css'
 
-      </form>
-    );
-  }
-}
+const SearchField = () => (
+
+  <div className="search-field">
+    <Grid>
+      <Row>
+        <Form>
+          <Col md={7}>
+            <FormGroup controlId="formInlineEmail">
+              <ControlLabel>Wyszukaj obiekt</ControlLabel>
+              <FormControl type="email" placeholder="Rozwiń listę"/>
+            </FormGroup>
+          </Col>
+          <Col md={1}>
+            <Button type="submit">
+              Szukaj
+            </Button>
+
+
+            <br/>
+            <Button type="submit">
+              Filtruj
+            </Button>
+          </Col>
+        </Form>
+      </Row>
+    </Grid>
+  </div>
+);
+
+export default SearchField
