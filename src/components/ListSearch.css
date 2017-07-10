@@ -1,0 +1,110 @@
+* {
+    font-family: Monaco, sans-serif;
+}
+
+.info {
+    margin-left: 10px;
+}
+
+.info:hover {
+    background-color: whitesmoke;
+    border: 1px solid #b543a0;
+}
+
+.pin {
+    height: auto;
+    padding: 0;
+}
+
+.pin h2 {
+    margin: 15px 0;
+}
+
+.main-description {
+    padding: 0;
+}
+
+.description {
+    display: block;
+    text-align: left;
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: auto;
+}
+
+.description h3 {
+    color: #b543a0;
+    margin: 20px 0;
+}
+
+.description a {
+    color: #b543a0;
+}
+
+.description a:hover {
+    text-shadow: 0 0 1px grey;
+    text-decoration: none;
+}
+
+.description span {
+    color: grey;
+    font-size: 11px;
+    padding: 0;
+    vertical-align: center;
+}
+
+span.distance {
+    padding-left: 20px;
+    vertical-align: center;
+}
+
+.website {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.website a {
+    color: darkblue;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.website a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 1px grey;
+}
+
+.contact {
+    text-align: left;
+    font-size: 11px;
+    display: block;
+    padding-top: 29px;
+    padding-right: 0;
+    padding-bottom:0;
+    padding-left: 15px;
+}
+
+.contact a {
+    color: darkblue;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 1px grey;
+}
+
+Image {
+    position: center;
+    vertical-align: center;
+    display: inline-grid;
+}
+
+/*media queries for small desktops*/
+/*@media screen and (max-width: 767px) {*/
+    /*Image {*/
+        /*align-items: center;*/
+    /*}*/
+/*}*/
+
