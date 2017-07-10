@@ -7,6 +7,9 @@ import {Link} from 'react-router-dom'
 import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
+import MapDetails from './MapDetails'
+
+
 export default class Details extends React.Component {
 
   state = {
@@ -41,18 +44,23 @@ export default class Details extends React.Component {
     }
 
     return (
+        <div>
       <Row>
         <Col xs={12} md={5} mdPush={7}>
           <ObjectName name={place.name}/>
           <Link to={'/places/' + place.id}>
             {place.name}
           </Link>
-          <ObjectDetails address={place.adress} telephone={place.telephone} mail={place.mail} website={place.website}/>
+          <ObjectDetails address={place.address} telephone={place.telephone} mail={place.mail} website={place.website}/>
         </Col>
         <Col xs={12} md={7} mdPull={5}>
           <Foto/>
         </Col>
       </Row>
+        <div className="main-map-style">
+          <MapDetails name={place.name} latitude={parseFloat(place.latitude)} longitude={parseFloat(place.longitude)} />
+        </div>
+        </div>
     )
   }
 }
