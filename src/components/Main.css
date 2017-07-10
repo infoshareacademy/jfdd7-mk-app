@@ -1,13 +1,6 @@
-.div-map {
-    background-image: url("../imges/samo-tlo.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+/************Style mapy************/
+
+.main-map-style {
+    width: 800px;
+    height: 400px;
 }
-
-.search-field {
-
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-}
-
