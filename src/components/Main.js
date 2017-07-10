@@ -4,14 +4,17 @@
 import React from 'react'
 import Map from './Map'
 import SearchField from "./SearchField";
+import './Main.css'
 
-const Main  = () => (
+
+const Main = () => (
   <div>
-    Main
-    <SearchField/>
-    <div style={{width: 800, height: 800}}>
-          <Map/>
-      </div>
+    <div className="main-map-style">
+      <Map>
+        <SearchField/>
+      </Map>
+    </div>
+
   </div>
 )
 export default Main

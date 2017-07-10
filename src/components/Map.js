@@ -19,7 +19,7 @@ export default class Map extends Component {
         <AnyReactComponent
           lat={54.403351}
           lng={18.569951}
-          text={'Kreyser Avrora'}
+          text={<h45636>Tu jestes, i kiedys to bedzie ikonka , ale jeszcze nie teraz  ;P</h45636>}
         />
       </GoogleMapReact>
     );
