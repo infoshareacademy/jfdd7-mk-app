@@ -34,7 +34,7 @@ export default class ListSearch extends React.Component {
             null :
             this.state.places.map(
               place => (
-                <Link to={'/places/' + place.id}>
+                <Link to={'/details/' + place.id}>
                   <Row className="info">
                     <Col xs={12} lg={2} className="pin">
                       <div>
