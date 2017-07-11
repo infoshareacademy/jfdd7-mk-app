@@ -22,8 +22,8 @@ export default class App extends Component {
             <Route exact path="/main"component={Main}/>
             <Route path="/map-search" component={MapSearch}/>
             <Route path="/list-search" component={ListSearch}/>
-            <Route path="/details" component={Details}/>
-            <Route path="/places/:placeId" component={Details}/>
+            <Route path="/details/:placeId" component={Details}/>
+
 
           </div>,
         </div>

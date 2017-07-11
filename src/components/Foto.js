@@ -3,6 +3,6 @@ import {Image} from 'react-bootstrap'
 import CalypsoPrzymorze from '../imges/CalypsoPrzymorze.jpg'
 
 const Foto = () => (
-  <Image src={CalypsoPrzymorze} responsive/>
+  <Image responsive src={CalypsoPrzymorze}></Image>
 )
 export default Foto
