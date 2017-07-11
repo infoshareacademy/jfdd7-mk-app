@@ -1,14 +1,34 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
-import SearchField from "./SearchField";
+import marker from '../imges/marker.png'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default class Map extends Component {
+
+
+  state = {
+    places: [],
+  };
+
   static defaultProps = {
     center: {lat: 54.403351, lng: 18.569951},
     zoom: 15
   };
+
+  componentWillMount() {
+    fetch(
+      process.env.PUBLIC_URL + '/places.json'
+    ).then(
+      response => response.json()
+    ).then(
+      places => this.setState({
+        places: places
+      })
+    ).catch(
+      error => console.log(error.message)
+    )
+  }
+
 
   render() {
     return (
@@ -16,11 +36,14 @@ export default class Map extends Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-        <AnyReactComponent
-          lat={54.403351}
-          lng={18.569951}
-          text={<h45636>Tu jestes, i kiedys to bedzie ikonka , ale jeszcze nie teraz  ;P</h45636>}
-        />
+
+        {this.state.places.map(
+            place => (
+              <div style = {{width: 35, height: 35 }} lat={parseFloat(place.latitiude)} lng={parseFloat(place.longitude)}>
+                <img src={marker} alt={place.name}/>
+              </div>
+            ))}
+
       </GoogleMapReact>
     );
   }

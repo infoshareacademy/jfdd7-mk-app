@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ObjectName = () => (
-  <h2>Calypso Przymorze</h2>
+const ObjectName = ({ name }) => (
+  <h2>{name}</h2>
 )
 export default ObjectName
