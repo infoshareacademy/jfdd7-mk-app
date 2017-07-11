@@ -6,6 +6,7 @@ import Map from './Map'
 import SearchField from "./SearchField";
 import './Main.css'
 
+
 const Main  = () => (
   <div className="div-map">
     <SearchField/>
