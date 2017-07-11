@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
+import marker from '../imges/marker.png'
 
-const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 export default class Map extends Component {
 
@@ -31,22 +31,19 @@ export default class Map extends Component {
 
 
   render() {
-
-
     return (
       <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-        {
-          this.state.places.map(
+
+        {this.state.places.map(
             place => (
-              <AnyReactComponent
-                lat={parseFloat(place.latitiude)}
-                lng={parseFloat(place.longitude)}
-                text={<h4>{place['place-name']}</h4>}
-              />))
-        }
+              <div style = {{width: 35, height: 35 }} lat={parseFloat(place.latitiude)} lng={parseFloat(place.longitude)}>
+                <img src={marker} alt={place.name}/>
+              </div>
+            ))}
+
       </GoogleMapReact>
     );
   }
