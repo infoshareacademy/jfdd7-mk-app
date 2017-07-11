@@ -4,12 +4,10 @@ import {
   Row,
   Col,
   Grid,
-  Image
-} from'react-bootstrap'
+  } from'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
 import CarouselDetails from './CarouselDetails'
-import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'

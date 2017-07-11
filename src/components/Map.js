@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import marker from '../images/marker.png'
+import marker from '../images/marker.png'
 import {connect} from 'react-redux'
 import {fetchPlaces} from '../state/places'
 
@@ -14,7 +15,7 @@ export default connect(
 ) (
   class Map extends Component {
 
-static defaultProps = {
+  static defaultProps = {
     center: {lat: 54.403351, lng: 18.569951},
     zoom: 15
   };
