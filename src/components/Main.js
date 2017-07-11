@@ -9,9 +9,10 @@ import './Main.css'
 const Main  = () => (
   <div className="div-map">
     <SearchField/>
-    <div className="center-block" style={{width: 800, height: 800}}>
-    <Map/>
-      </div>
+
+    {/*<div className="center-block" style={{width: 800, height: 800}}>*/}
+    {/*<Map/>*/}
+      {/*</div>*/}
   </div>
 )
 export default Main
