@@ -33,8 +33,8 @@ export default class ListSearch extends React.Component {
             null :
             this.state.places.map(
               place => (
+                <Link to={'/places/' + place.id}>
                 <Row className="info">
-                  {place.name}
                   <Col xs={12} lg={2} className="pin">
                     <div>
                       <IconCategory/>
@@ -44,15 +44,13 @@ export default class ListSearch extends React.Component {
                   <Col xs={12} lg={3} className="main-description">
                     <Description address={place.address} telephone={place.telephone} website={place.website}
                                  name={place.name}/>
-                    <Link to={'/places/' + place.name}>
-                      {place.name}
-                    </Link>
                   </Col>
 
                   <Col xs={12} lg={7} className="contact">
                     <ContactObject telephone={place.telephone}/>
                   </Col>
                 </Row>
+                </Link>
               )
             )
         }

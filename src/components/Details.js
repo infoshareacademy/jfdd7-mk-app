@@ -11,11 +11,11 @@ import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 const Details = () => (
     <Row>
-        <Col xs={12} md={5} mdPush="{7}">
+        <Col xs={12} md={5} mdPush={7}>
             <ObjectName/>
             <ObjectDetails/>
         </Col>
-        <Col xs={12} md={7} mdPull="{5}">
+        <Col xs={12} md={7} mdPull={5}>
             <Foto/>
         </Col>
     </Row>
