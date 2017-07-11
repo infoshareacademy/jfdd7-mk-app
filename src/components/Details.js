@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import {
   Row,
   Col,
-  Grid
+  Grid,
+  Image
 } from'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
