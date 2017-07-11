@@ -5,6 +5,7 @@ const Pin = ({ name }) => <div>{name}</div>;
 
 const MapDetails = ({latitude, longitude, name}) => (
     <GoogleMapReact
+        apiKey={'AIzaSyBngayffPqu7R11fSu2NBzykLk1Fl3ZSF0'}
         defaultCenter={{lat: latitude, lng: longitude}}
         defaultZoom={15}
     >
