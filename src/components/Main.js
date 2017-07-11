@@ -6,15 +6,13 @@ import Map from './Map'
 import SearchField from "./SearchField";
 import './Main.css'
 
+const Main  = () => (
+  <div className="div-map">
+    <SearchField/>
 
-const Main = () => (
-  <div>
-    <div className="main-map-style">
-      <Map>
-        <SearchField/>
-      </Map>
-    </div>
-
+    {/*<div className="center-block" style={{width: 800, height: 800}}>*/}
+    {/*<Map/>*/}
+      {/*</div>*/}
   </div>
 )
 export default Main
