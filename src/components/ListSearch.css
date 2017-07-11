@@ -20,6 +20,10 @@
     margin: 15px 0;
 }
 
+.all-description {
+    margin-left: 10px;
+    margin-right: 50px;
+}
 .main-description {
     padding: 0;
 }
@@ -100,11 +104,3 @@ Image {
     vertical-align: center;
     display: inline-grid;
 }
-
-/*media queries for small desktops*/
-/*@media screen and (max-width: 767px) {*/
-    /*Image {*/
-        /*align-items: center;*/
-    /*}*/
-/*}*/
-
