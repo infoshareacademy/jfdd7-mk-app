@@ -13,6 +13,7 @@ import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'
+import './Details.css'
 
 
 export default connect (
@@ -48,9 +49,7 @@ class Details extends React.Component {
             <Grid>
             <Row>
                 <Col>
-                    <Row>
-                        <CarouselDetails/>
-                    </Row>
+                    <CarouselDetails/>
                 </Col>
             </Row>
             <Row>
