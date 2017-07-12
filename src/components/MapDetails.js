@@ -1,11 +1,12 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from 'google-map-react'
+import marker from '../images/marker.png'
 
-const Pin = ({ name }) => <div>{name}</div>;
+const Pin = ({ name, lat, lng, marker }) => <div><img src={marker}/>{name}</div>;
 
 const MapDetails = ({latitude, longitude, name}) => (
     <GoogleMapReact
-        apiKey={'AIzaSyBngayffPqu7R11fSu2NBzykLk1Fl3ZSF0'}
+        apiKey={'AIzaSyAJcR-ZM6KPN20sN1ECp89Jgi0hqJvQBho'}
         defaultCenter={{lat: latitude, lng: longitude}}
         defaultZoom={15}
     >
@@ -13,6 +14,8 @@ const MapDetails = ({latitude, longitude, name}) => (
            lat={latitude}
            lng={longitude}
            name={name}
+           marker={marker}
+
         />
     </GoogleMapReact>
 )

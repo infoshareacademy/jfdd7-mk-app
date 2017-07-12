@@ -1,6 +1,6 @@
 import React from 'react'
 import {Image} from 'react-bootstrap'
-import IconGym from '../imges/IconGym.png'
+import IconGym from '../images/IconGym.png'
 import './ListSearch.css'
 
 const IconCategory = () => (

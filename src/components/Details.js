@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {
   Row,
-  Col
+  Col,
+  Grid
 } from'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
@@ -42,26 +43,34 @@ class Details extends React.Component {
       )
     }
 
-    return (
-        <div>
-      <Row>
-        <Col xs={12} md={5} mdPush={7}>
-          <ObjectName name={place.name}/>
-          <Link to={'/places/' + place.id}>
-            {place.name}
-          </Link>
-          <ObjectDetails address={place.address} telephone={place.telephone} mail={place.mail} website={place.website}/>
-        </Col>
-        <Col xs={12} md={7} mdPull={5}>
-          <Foto/>
-        </Col>
-      </Row>
-        <div className="main-map-style">
-          <MapDetails name={place.name} latitude={parseFloat(place.latitude)} longitude={parseFloat(place.longitude)} />
-        </div>
-        </div>
-    )
-  }
+        return (
+            <Grid>
+            <Row>
+                <Col>
+                    <ObjectName name={place.name}/>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={6}>
+                    <ObjectDetails address={place.address} telephone={place.telephone} mail={place.mail}
+                                   website={place.website}/>
+                </Col>
+                <Col md={6}>
+                    <Row>
+                        <Foto/>
+                    </Row>
+                    <Row>
+                        <div style={{width:400, height: 400}}>
+                            <MapDetails name={place.name} latitude={parseFloat(place.latitude)} longitude={parseFloat(place.longitude)}/>
+                        </div>
+                    </Row>
+                </Col>
+
+            </Row>
+
+            </Grid>
+        )
+    }
 }
 )
 
