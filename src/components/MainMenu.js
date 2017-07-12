@@ -10,6 +10,7 @@ import {
   NavItem
 } from 'react-bootstrap'
 
+
 const MainMenu = (props) => (
   <Navbar>
     <Navbar.Header>
