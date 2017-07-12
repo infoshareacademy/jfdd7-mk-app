@@ -12,7 +12,6 @@ const Main = () => (
       <Map>
       </Map>
     </div>
-
   </div>
 )
 export default Main

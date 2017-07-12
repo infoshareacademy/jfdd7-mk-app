@@ -1,37 +1,36 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {
   Row,
   Col
 } from'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { fetchPlaces } from '../state/places'
 import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'
 
 
-export default class Details extends React.Component {
-
-  state = {
-    places: []
-  }
-
+export default connect (
+  state => ({
+    places: state.places
+  }),
+  dispatch => ({
+    fetchPlaces: () => dispatch(fetchPlaces())
+  })
+)
+(
+class Details extends React.Component {
   componentWillMount() {
-    fetch(
-      process.env.PUBLIC_URL + '/data/places.json'
-    ).then(
-      response => response.json()
-    ).then(
-      places => this.setState({
-        places
-      })
-    )
+    this.props.fetchPlaces()
   }
 
 
   render() {
+    const { data } = this.props.places
     const placeId = parseInt(this.props.match.params.placeId, 10)
-    const place = this.state.places.find(
+    const place = data === null ? undefined :data.find(
       place => place.id === placeId
     )
 
@@ -64,7 +63,7 @@ export default class Details extends React.Component {
     )
   }
 }
-
+)
 
 
 
