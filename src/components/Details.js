@@ -7,6 +7,7 @@ import {
 } from'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
+import CarouselDetails from './CarouselDetails'
 import Foto from './Foto'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
@@ -47,6 +48,13 @@ class Details extends React.Component {
             <Grid>
             <Row>
                 <Col>
+                    <Row>
+                        <CarouselDetails/>
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <ObjectName name={place.name}/>
                 </Col>
             </Row>
@@ -56,11 +64,9 @@ class Details extends React.Component {
                                    website={place.website}/>
                 </Col>
                 <Col md={6}>
+
                     <Row>
-                        <Foto/>
-                    </Row>
-                    <Row>
-                        <div style={{width:400, height: 400}}>
+                        <div style={{width:'100%', height: 250}}>
                             <MapDetails name={place.name} latitude={parseFloat(place.latitude)} longitude={parseFloat(place.longitude)}/>
                         </div>
                     </Row>
