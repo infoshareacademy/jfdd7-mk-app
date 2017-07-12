@@ -42,7 +42,6 @@ export default class SearchField extends React.Component {
                 </FormGroup>
               </Col>
 
-
               <Col md={1}>
                 <Button type="submit">
                   Szukaj
