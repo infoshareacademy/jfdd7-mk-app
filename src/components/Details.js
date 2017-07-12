@@ -21,8 +21,7 @@ export default connect (
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces())
   })
-)
-(
+)(
 class Details extends React.Component {
   componentWillMount() {
     this.props.fetchPlaces()
