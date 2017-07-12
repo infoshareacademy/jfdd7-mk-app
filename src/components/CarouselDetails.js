@@ -12,7 +12,7 @@ const CarouselDetails = () => (
     slidesToScroll={1}
     focusOnSelect={true}
     speed={1000}
-    autoplay={true}
+    autoplay={false}
     adaptiveHeight={false}
     swipe={true}
     draggable={false}

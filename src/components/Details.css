@@ -4,17 +4,17 @@
 .slick-next, .slick-prev,
 .slick-next:hover, .slick-prev:hover,
 .slick-next:focus, .slick-prev:focus {
-    background-color: rgba(65, 65, 65, 0.78);
-    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
     width: 40px;
-    border-radius: 10px;
+    border-radius: 3px;
     z-index: 10;
 }
 .slick-next {
-    right: 20px;
+    right: 4px;
 }
 .slick-prev {
-    left: 20px;
+    left: 4px;
 }
 .photo img {
     max-width: 98%;
