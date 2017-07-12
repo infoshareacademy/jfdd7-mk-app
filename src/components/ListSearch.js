@@ -37,18 +37,18 @@ export default connect(
                 place => (
                   <Link to={'/details/' + place.id}>
                     <Row className="info">
-                      <Col xs={2} lg={2} className="pin">
+                      <Col xs={2} md={2} className="pin">
                         <div>
                           <IconCategory/>
                         </div>
                       </Col>
 
-                      <Col xs={4} lg={3} className="main-description">
+                      <Col xs={4} md={3}  className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
                                      name={place.name}/>
                       </Col>
 
-                      <Col xs={6} lg={7} className="contact">
+                      <Col xs={6} md={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
                       </Col>
                     </Row>
