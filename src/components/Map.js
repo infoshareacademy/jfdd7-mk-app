@@ -7,7 +7,7 @@ export default class Map extends Component {
 
 
   state = {
-    places: [],
+    places: null
   };
 
   static defaultProps = {
@@ -17,7 +17,7 @@ export default class Map extends Component {
 
   componentWillMount() {
     fetch(
-      process.env.PUBLIC_URL + '/places.json'
+      process.env.PUBLIC_URL + 'data/places.json'
     ).then(
       response => response.json()
     ).then(
@@ -37,12 +37,19 @@ export default class Map extends Component {
         defaultZoom={this.props.zoom}
       >
 
-        {this.state.places.map(
-            place => (
-              <div style = {{width: 35, height: 35 }} lat={parseFloat(place.latitiude)} lng={parseFloat(place.longitude)}>
-                <img src={marker} alt={place.name}/>
-              </div>
-            ))}
+        {this.state.places !== null && this.state.places.map(
+          place => (
+            <div
+              style={{width: 35, height: 35}}
+              lat={parseFloat(place.latitude)}
+              lng={parseFloat(place.longitude)}
+            >
+              <img
+                src={marker}
+                alt={place.name}
+              />
+            </div>
+          ))}
 
       </GoogleMapReact>
     );
