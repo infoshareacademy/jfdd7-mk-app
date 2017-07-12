@@ -1,50 +1,52 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import marker from '../imges/marker.png'
+import {connect} from 'react-redux'
+import {fetchPlaces} from '../state/places'
 
+export default connect(
+  state => ({
+    places: state.places
+  }),
+  dispatch => ({
+    fetchPlaces: () => dispatch(fetchPlaces())
+  })
+) (
+  class Map extends Component {
 
-export default class Map extends Component {
-
-
-  state = {
-    places: [],
-  };
-
-  static defaultProps = {
+static defaultProps = {
     center: {lat: 54.403351, lng: 18.569951},
     zoom: 15
   };
 
   componentWillMount() {
-    fetch(
-      process.env.PUBLIC_URL + '/places.json'
-    ).then(
-      response => response.json()
-    ).then(
-      places => this.setState({
-        places: places
-      })
-    ).catch(
-      error => console.log(error.message)
-    )
+    this.props.fetchPlaces()
   }
 
 
   render() {
+    const {data} = this.props.places
     return (
       <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
 
-        {this.state.places.map(
-            place => (
-              <div style = {{width: 35, height: 35 }} lat={parseFloat(place.latitiude)} lng={parseFloat(place.longitude)}>
-                <img src={marker} alt={place.name}/>
-              </div>
-            ))}
+        {data !== null && data.map(
+          place => (
+            <div
+              style={{width: 35, height: 35}}
+              lat={parseFloat(place.latitude)}
+              lng={parseFloat(place.longitude)}
+            >
+              <img
+                src={marker}
+                alt={place.name}
+              />
+            </div>
+          ))}
 
       </GoogleMapReact>
     );
   }
-}
+})

@@ -3,16 +3,15 @@
  */
 import React from 'react'
 import Map from './Map'
-import SearchField from "./SearchField";
 import './Main.css'
 
-const Main  = () => (
-  <div className="div-map">
-    <SearchField/>
 
-    <div className="center-block" style={{width: 800, height: 800}}>
-    <Map/>
-      </div>
+const Main = () => (
+  <div>
+    <div className="main-map-style">
+      <Map>
+      </Map>
+    </div>
   </div>
 )
 export default Main
