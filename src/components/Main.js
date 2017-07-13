@@ -25,6 +25,10 @@ export default connect(
 
     render() {
       const {data, fetching, error} = this.props.places
+      const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+      const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
+
+
       return (
         <div>
           <h1>Places</h1>
@@ -39,10 +43,10 @@ export default connect(
             </tr>
             </thead>
             <tbody>
-
+            {
               //this.props.students.data !== null && this.props.students.data.map(
-              {data !== null && data.filter(
-                place => this.props.searchPhrase === '' ? false : place.name.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
+              data !== null && data.filter(
+                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)
               ).map(
                 place => (
                   <tr key={place.id}>
