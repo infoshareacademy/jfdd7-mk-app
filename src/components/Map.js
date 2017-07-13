@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
-import marker from '../imges/marker.png'
+import marker from '../images/marker.png'
 import {connect} from 'react-redux'
 import {fetchPlaces} from '../state/places'
 
