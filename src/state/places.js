@@ -1,3 +1,4 @@
+// export default (prefix, url) => {
 // action types
 const FETCH__BEGIN = 'places/FETCH__BEGIN'
 const FETCH__SUCCESS = 'places/FETCH__SUCCESS'
@@ -19,7 +20,7 @@ const fetchFail = error => ({
 })
 
 // Fetching data from server (using redux-thunk)
-export const fetchPlaces = () => dispatch => {
+export const fetchPlace = () => dispatch => {
   dispatch(fetchBegin())
   return fetch(
     process.env.PUBLIC_URL + '/data/places.json'
@@ -64,3 +65,7 @@ export default (state = initialState, action = {}) => {
       return state
   }
 }
+// return {
+//   fetchData,
+//   reducer
+// }
