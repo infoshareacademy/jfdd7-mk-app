@@ -1,0 +1,22 @@
+.slick-prev:before, .slick-next:before {
+    color: #b543a0;
+}
+.slick-next, .slick-prev,
+.slick-next:hover, .slick-prev:hover,
+.slick-next:focus, .slick-prev:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 40px;
+    border-radius: 3px;
+    z-index: 10;
+}
+.slick-next {
+    right: 4px;
+}
+.slick-prev {
+    left: 4px;
+}
+.photo img {
+    max-width: 98%;
+    margin: 0 auto;
+}
