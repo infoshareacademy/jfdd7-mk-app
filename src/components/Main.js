@@ -37,16 +37,20 @@ export default connect(
           </div>
           { error === null ? null : <p>{error.message}</p> }
           { fetching === false ? null : <p>Fetching data...</p>}
-          <Table bordered striped hover responsive>
+          <Table
+            className="auto-complete"
+            bordered
+            striped
+            hover
+            responsive>
             <thead>
             <tr>
             </tr>
             </thead>
             <tbody>
             {
-              //this.props.students.data !== null && this.props.students.data.map(
               data !== null && data.filter(
-                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)
+                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
               ).map(
                 place => (
                   <tr key={place.id}>
