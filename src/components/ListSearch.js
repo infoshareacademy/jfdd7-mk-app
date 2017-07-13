@@ -45,7 +45,7 @@ export default connect(
 
                       <Col xs={4} lg={3} className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
-                                     name={place.name}/>
+                                     name={place.name} latitude={place.latitude} longitude={place.longitude}/>
                       </Col>
 
                       <Col xs={6} lg={7} className="contact">
