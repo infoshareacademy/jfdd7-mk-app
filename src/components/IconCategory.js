@@ -1,11 +1,11 @@
 import React from 'react'
 import {Image} from 'react-bootstrap'
-import GymIconCategory from '../imges/GymIconCategory.png'
+import IconGym from '../images/IconGym.png'
 import './ListSearch.css'
 
 const IconCategory = () => (
 <div>
-  <Image responsive src={GymIconCategory} />
+  <Image responsive src={IconGym} />
 </div>
 )
 export default IconCategory

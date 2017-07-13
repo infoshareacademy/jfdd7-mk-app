@@ -1,6 +1,6 @@
 import React from 'react'
 import {Image} from 'react-bootstrap'
-import CalypsoPrzymorze from '../imges/CalypsoPrzymorze.jpg'
+import CalypsoPrzymorze from '../images/CalypsoPrzymorze.jpg'
 
 const Foto = () => (
   <Image responsive src={CalypsoPrzymorze}></Image>
