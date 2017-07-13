@@ -39,9 +39,9 @@ export default connect(
             </tr>
             </thead>
             <tbody>
-            {
+
               //this.props.students.data !== null && this.props.students.data.map(
-              data !== null && data.filter(
+              {data !== null && data.filter(
                 place => this.props.searchPhrase === '' ? false : place.name.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
               ).map(
                 place => (
@@ -59,8 +59,11 @@ export default connect(
           </Table>
           <div style={{ height: "200px"}}>
             <div className="center-block"
-                 style={{width: "80%", height: "80%"}}>
+                 style={{width: "80%", height: "80%"}}
+            >
+
               <Map/>
+
             </div>
           </div>
         </div>
