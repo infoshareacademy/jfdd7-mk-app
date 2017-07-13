@@ -20,3 +20,57 @@
     max-width: 98%;
     margin: 0 auto;
 }
+section.Object__Details {
+    padding-left: 40px;
+}
+li.icon {
+    padding-left: 25px;
+    margin-top: 10px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    list-style: none;
+}
+li.fitness {
+    background-image: url("../images/fitness.png");
+}
+li.zajecia-dla-dzieci {
+    background-image: url("../images/zajecia-dla-dzieci.png");
+}
+li.solarium {
+    background-image: url("../images/solarium.png");
+}
+li.sztuki-walki {
+    background-image: url("../images/sztuki-walki.png");
+}
+li.masaż-wodny {
+    background-image: url("../images/masaz-wodny.png");
+}
+li.jacuzzi {
+    background-image: url("../images/jacuzzi.png");
+}
+li.zumba {
+    background-image: url("../images/zumba.png");
+}
+li.basen {
+    background-image: url("../images/basen.png");
+}
+li.kręgle {
+    background-image: url("../images/kregle.png");
+}
+li.ścianka-wspinaczkowa {
+    background-image: url("../images/scianka-wspinaczkowa.png");
+}
+li.taniec-towarzyski {
+    background-image: url("../images/taniec-towarzyski.png");
+}
+li.sauna {
+    background-image: url("../images/sauna.png");
+}
+li.siłownia {
+    background-image: url("../images/silownia.png");
+}
+li.crossfit {
+    background-image: url("../images/crossfit.png");
+}
