@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react'
 import marker from '../images/marker.png'
 
-const Pin = ({ name, lat, lng, marker }) => <div><img src={marker}/>{name}</div>;
+const Pin = ({ name, lat, lng, marker }) => <div><img src={marker} alt=""/>{name}</div>;
 
 const MapDetails = ({latitude, longitude, name}) => (
     <GoogleMapReact

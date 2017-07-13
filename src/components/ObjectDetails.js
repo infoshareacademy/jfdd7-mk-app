@@ -1,6 +1,3 @@
-/**
- * Created by dominikakosiedowska on 06.07.17.
- */
 import React from 'react'
 
 const ObjectDetails = ({address, telephone, mail, website}) => (
