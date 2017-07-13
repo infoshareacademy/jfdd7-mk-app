@@ -25,7 +25,7 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
 
 const Description = ({address, website, name, latitude, longitude}) => (
   <section className="description">
-    <h3>{name} <span className="distance"> ~ odległość: {getDistanceFromLatLonInKm(latitude, longitude, 54.403351, 18.569951).toFixed(2)} </span></h3>
+    <h3>{name} <span className="distance"> ~ odległość: {getDistanceFromLatLonInKm(latitude, longitude, 54.403351, 18.569951).toFixed(2)} km </span></h3>
     <span>{address}</span>
     <div className="website">
       <a href={website}>{website}</a>
