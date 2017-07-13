@@ -7,8 +7,9 @@ import SearchField from "./SearchField";
 
 const Main = () => (
 <div>
-  <MainMenu/>
+
   <div className="mainpage">
+    <MainMenu/>
   <section className="mainsection">
 
     <SearchField/>

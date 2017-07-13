@@ -1,3 +1,7 @@
+.searching-main-div {
+
+}
+
 .button {
     margin: 10px;
 }
@@ -8,4 +12,14 @@
 
 .buttons-location{
     align-items: left;
+}
+
+.searching-pole {
+    margin-left: 0;
+    width: 530px;
+    padding: 0;
+}
+
+.form-control {
+    margin-top: 10px;
 }

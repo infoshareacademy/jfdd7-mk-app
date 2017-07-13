@@ -32,30 +32,27 @@ export default class SearchField extends React.Component {
 
   render() {
     return (
-      <div className="formdiv">
+      <div className="searching-main-div">
         <Grid>
           <Row>
-            <Form>
-              <Col md={5}  mdOffset={1}>
-                <FormGroup controlId="formInlineEmail">
-                  <ControlLabel>Wyszukaj obiekt</ControlLabel>
+            <Col sm={8}>
+                <FormGroup controlId="formInlineEmail" className="form-group">
+                  {/*<ControlLabel>Wyszukaj obiekt</ControlLabel>*/}
                   <FormControl type="email" placeholder="Rozwiń listę"  className="formshadow"/>
                 </FormGroup>
-              </Col>
-
-              <Col md={6} className="buttons-location">
+            </Col>
+            <Col sm={4}>
                 <Button type="submit"
                 bsStyle="info"
                 className="button">
-                  Szukaj
+                  <img alt="" src={process.env.PUBLIC_URL + '/images/zoom.png'} height="20"/>
                 </Button>
                 <Button type="submit"
                 bsStyle="info"
                 className="button">
                   Filtruj
                 </Button>
-              </Col>
-            </Form>
+            </Col>
           </Row>
         </Grid>
       </div>
