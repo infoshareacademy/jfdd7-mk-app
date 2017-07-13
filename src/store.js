@@ -2,12 +2,10 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 import places from './state/places'
-import fetchPlace from './state/fetchPlace'
 import searchField from './state/searchField'
 
 const reducer = combineReducers({
   places,
-  fetchPlace,
   searchField,
 })
 
