@@ -43,7 +43,7 @@ export default class SearchField extends React.Component {
                 </FormGroup>
               </Col>
 
-              <Col md={6}>
+              <Col md={6} className="buttons-location">
                 <Button type="submit"
                 bsStyle="info"
                 className="button">
