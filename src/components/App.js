@@ -17,7 +17,7 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-        <MainMenu/>
+        {/*<MainMenu/>*/}
           <div className="App">
             <Route exact path="/main"component={Main}/>
             <Route path="/map-search" component={MapSearch}/>

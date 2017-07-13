@@ -12,6 +12,7 @@ import {
 }
   from 'react-bootstrap'
 import './Main.css'
+import './SearchField.css'
 
 export default class SearchField extends React.Component {
 
@@ -31,31 +32,32 @@ export default class SearchField extends React.Component {
 
   render() {
     return (
-      <div className="search-field container-fluid table-bordered">
+      <div className="formdiv">
         <Grid>
           <Row>
             <Form>
-              <Col md={7} mdOffset={2}>
+              <Col md={5}  mdOffset={1}>
                 <FormGroup controlId="formInlineEmail">
                   <ControlLabel>Wyszukaj obiekt</ControlLabel>
-                  <FormControl type="email" placeholder="Rozwiń listę"/>
+                  <FormControl type="email" placeholder="Rozwiń listę"  className="formshadow"/>
                 </FormGroup>
               </Col>
 
-              <Col md={1}>
-                <Button type="submit">
+              <Col md={6}>
+                <Button type="submit"
+                bsStyle="info"
+                className="button">
                   Szukaj
                 </Button>
-                <br/>
-                <Button type="submit">
+                <Button type="submit"
+                bsStyle="info"
+                className="button">
                   Filtruj
                 </Button>
               </Col>
             </Form>
           </Row>
         </Grid>
-
-
       </div>
     )
   }
