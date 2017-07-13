@@ -9,6 +9,7 @@ const SearchField = props => (
     value={props.searchPhrase}
     onChange={props.update}
     style={{marginBottom: 20}}
+
   />
 )
 

@@ -2,11 +2,11 @@ import React from 'react'
 import Map from './Map'
 import './Main.css'
 import SearchField from './SearchField'
-import { Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import {Table} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-import { fetchPlaces } from '../state/places'
+import {fetchPlaces} from '../state/places'
 
 export default connect(
   state => ({
@@ -15,7 +15,7 @@ export default connect(
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
-   })
+  })
 )(
   class Main extends React.Component {
 
@@ -24,19 +24,18 @@ export default connect(
     }
 
     render() {
-      const { data, fetching, error } = this.props.places
+      const {data, fetching, error} = this.props.places
       return (
         <div>
           <h1>Places</h1>
-
-          <SearchField/>
-
+          <div className="center-block" style={{width: "70%"}}>
+            <SearchField />
+          </div>
           { error === null ? null : <p>{error.message}</p> }
           { fetching === false ? null : <p>Fetching data...</p>}
           <Table bordered striped hover responsive>
             <thead>
             <tr>
-              <th>Name</th>
             </tr>
             </thead>
             <tbody>
@@ -58,6 +57,12 @@ export default connect(
             }
             </tbody>
           </Table>
+          <div style={{ height: "200px"}}>
+            <div className="center-block"
+                 style={{width: "80%", height: "80%"}}>
+              <Map/>
+            </div>
+          </div>
         </div>
       )
     }
