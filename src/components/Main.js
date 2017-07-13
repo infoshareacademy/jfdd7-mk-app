@@ -2,15 +2,17 @@ import React from 'react'
 import MainMenu from './MainMenu'
 // import Map from './Map'
 import './Main.css'
-import SearchField from "./SearchField";
+import SearchField from './SearchField'
 
 
 const Main = () => (
 <div>
 
-  <div className="mainpage">
+  <div className="mainsection">
+
     <MainMenu/>
-  <section className="mainsection">
+
+  <section className="mainpage">
 
     <SearchField/>
 
