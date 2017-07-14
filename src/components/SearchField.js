@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
-  Form,
   FormGroup,
-  ControlLabel,
   Button,
   FormControl,
   Grid,
@@ -17,7 +15,7 @@ import './SearchField.css'
 import { updateSearchPhrase } from '../state/searchField'
 
 const SearchField = props => (
-  <div className="searching-main-div">
+
     <Grid>
       <Row>
         <Col sm={7}>
@@ -46,7 +44,7 @@ const SearchField = props => (
         </Col>
       </Row>
     </Grid>
-  </div>
+
 )
 
 export default connect(

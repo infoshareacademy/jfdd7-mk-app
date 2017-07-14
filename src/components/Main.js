@@ -30,7 +30,7 @@ export default connect(
 
       return (
         <div className="mainsection">
-          <div className="mainpage center-block" style={{width: "70%"}}>
+          <div className="mainpage center-block">
             <SearchField />
             { error === null ? null : <p>{error.message}</p> }
             { fetching === false ? null : <p>Fetching data...</p>}
@@ -65,7 +65,6 @@ export default connect(
             </Table>
             </div>
           </div>
-
         </div>
       )
     }
