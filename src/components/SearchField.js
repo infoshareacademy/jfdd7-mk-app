@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 import {
   Form,
   FormGroup,
@@ -9,56 +9,51 @@ import {
   Grid,
   Col,
   Row
-}
-  from 'react-bootstrap'
+} from 'react-bootstrap'
+
 import './Main.css'
 import './SearchField.css'
 
-export default class SearchField extends React.Component {
+import { updateSearchPhrase } from '../state/searchField'
 
-  componentWillMount() {
-    fetch(
-      'http://localhost:3000/public/places.json'
-    ).then(
-      response => response.json()
-    ).then(
-      data => this.setState({
-        places: data
-      })
-    ).catch(
-      error => console.log(error.message)
-    )
-  }
+const SearchField = props => (
+  <div className="searching-main-div">
+    <Grid>
+      <Row>
+        <Col sm={7}>
+          <FormGroup controlId="formInlineEmail">
+            {/*<ControlLabel>Wyszukaj obiekt</ControlLabel>*/}
+            <FormControl
+              value={props.searchPhrase}
+              onChange={props.update}
+            />
+          </FormGroup>
+        </Col>
+        <Col sm={5}>
+          <Button type="submit"
+                  bsStyle="info"
+                  bsSize="large"
+                  className="button">
+            {/*<img alt="" src={process.env.PUBLIC_URL + '/images/zoom.png'}/>*/}
+            Wyszukaj
+          </Button>
+          <Button type="submit"
+                  bsStyle="info"
+                  bsSize="large"
+                  className="button">
+            Filtruj
+          </Button>
+        </Col>
+      </Row>
+    </Grid>
+  </div>
+)
 
-  render() {
-    return (
-      <div className="searching-main-div">
-        <Grid>
-          <Row>
-            <Col sm={7}>
-                <FormGroup controlId="formInlineEmail">
-                  {/*<ControlLabel>Wyszukaj obiekt</ControlLabel>*/}
-                  <FormControl type="email" placeholder="Rozwiń listę"/>
-                </FormGroup>
-            </Col>
-            <Col sm={5}>
-                <Button type="submit"
-                bsStyle="info"
-                        bsSize="large"
-                className="button">
-                  {/*<img alt="" src={process.env.PUBLIC_URL + '/images/zoom.png'}/>*/}
-                  Wyszukaj
-                </Button>
-                <Button type="submit"
-                bsStyle="info"
-                        bsSize="large"
-                className="button">
-                  Filtruj
-                </Button>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
-    )
-  }
-}
+export default connect(
+  state => ({
+    searchPhrase: state.searchField.searchPhrase
+  }),
+  dispatch => ({
+    update: event => dispatch(updateSearchPhrase(event.target.value))
+  })
+)(SearchField)

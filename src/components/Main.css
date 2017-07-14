@@ -10,3 +10,16 @@
 .mainsection {
 
 }
+
+.auto-complete {
+    background-color: #b543a0 ;
+    text-decoration: none;
+    color: #222222;
+
+    position: absolute;
+    z-index: 9999;
+}
+
+a {
+    color: #000;
+}
