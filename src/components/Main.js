@@ -65,9 +65,9 @@ export default connect(
             }
             </tbody>
           </Table>
-          <div style={{ height: "200px"}}>
+          <div style={{ height: "800px"}}>
             <div className="center-block"
-                 style={{width: "80%", height: "80%"}}
+                 style={{width: "80%", height: "100%"}}
             >
 
               <Map/>
