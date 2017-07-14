@@ -32,37 +32,40 @@ export default connect(
         <div className="mainsection">
           <div className="mainpage center-block" style={{width: "70%"}}>
             <SearchField />
-          </div>
-          { error === null ? null : <p>{error.message}</p> }
-          { fetching === false ? null : <p>Fetching data...</p>}
-          <Table
-            className="auto-complete"
-            bordered
-            striped
-            hover
-            responsive>
-            <thead>
-            <tr>
-            </tr>
-            </thead>
-            <tbody>
-            {
-              data !== null && data.filter(
-                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
-              ).map(
-                place => (
-                  <tr key={place.id}>
-                    <td>
-                      <Link to={'/places/' + place.id}>
-                        {place.name}
-                      </Link>
-                    </td>
-                  </tr>
+            { error === null ? null : <p>{error.message}</p> }
+            { fetching === false ? null : <p>Fetching data...</p>}
+            <div style={{position: 'relative'}}>
+            <Table
+              className="auto-complete"
+              bordered
+              striped
+              hover
+              responsive>
+              <thead>
+              <tr>
+              </tr>
+              </thead>
+              <tbody>
+              {
+                data !== null && data.filter(
+                  place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
+                ).map(
+                  place => (
+                    <tr key={place.id}>
+                      <td>
+                        <Link to={'/places/' + place.id}>
+                          {place.name}
+                        </Link>
+                      </td>
+                    </tr>
+                  )
                 )
-              )
-            }
-            </tbody>
-          </Table>
+              }
+              </tbody>
+            </Table>
+            </div>
+          </div>
+
         </div>
       )
     }

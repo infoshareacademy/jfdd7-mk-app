@@ -17,14 +17,12 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-        {/*<MainMenu/>*/}
+        <MainMenu/>
           <div className="App">
-            <Route exact path="/main"component={Main}/>
+            <Route exact path="/main" component={Main}/>
             <Route path="/map-search" component={MapSearch}/>
             <Route path="/list-search" component={ListSearch}/>
             <Route path="/details/:placeId" component={Details}/>
-
-
           </div>,
         </div>
       </Router>
