@@ -1,62 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { FormControl } from 'react-bootstrap'
 
-import {
-  Form,
-  FormGroup,
-  ControlLabel,
-  Button,
-  FormControl,
-  Grid,
-  Col,
-  Row
-}
-  from 'react-bootstrap'
-import './Main.css'
+import { updateSearchPhrase } from '../state/searchField'
 
-export default class SearchField extends React.Component {
+const SearchField = props => (
+  <FormControl
+    value={props.searchPhrase}
+    onChange={props.update}
+    style={{marginBottom: 20}}
 
-  componentWillMount() {
-    fetch(
-      'http://localhost:3000/public/places.json'
-    ).then(
-      response => response.json()
-    ).then(
-      data => this.setState({
-        places: data
-      })
-    ).catch(
-      error => console.log(error.message)
-    )
-  }
+  />
+)
 
-  render() {
-    return (
-      <div className="search-field container-fluid table-bordered">
-        <Grid>
-          <Row>
-            <Form>
-              <Col md={7} mdOffset={2}>
-                <FormGroup controlId="formInlineEmail">
-                  <ControlLabel>Wyszukaj obiekt</ControlLabel>
-                  <FormControl type="email" placeholder="Rozwiń listę"/>
-                </FormGroup>
-              </Col>
-
-              <Col md={1}>
-                <Button type="submit">
-                  Szukaj
-                </Button>
-                <br/>
-                <Button type="submit">
-                  Filtruj
-                </Button>
-              </Col>
-            </Form>
-          </Row>
-        </Grid>
-
-
-      </div>
-    )
-  }
-}
+export default connect(
+  state => ({
+    searchPhrase: state.searchField.searchPhrase
+  }),
+  dispatch => ({
+    update: event => dispatch(updateSearchPhrase(event.target.value))
+  })
+)(SearchField)
