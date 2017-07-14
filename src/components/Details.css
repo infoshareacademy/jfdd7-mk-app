@@ -23,6 +23,14 @@
 section.Object__Details {
     padding-left: 40px;
 }
+.list-activities {
+    column-count: 2;
+}
+.activities-details, .contact-details {
+    padding: 20px 40px;
+    border: 1px solid lightgrey;
+    margin: 10px;
+}
 li.icon {
     padding-left: 25px;
     margin-top: 10px;

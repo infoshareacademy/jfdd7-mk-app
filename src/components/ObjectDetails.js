@@ -2,11 +2,12 @@ import React from 'react'
 
 
 const ObjectDetails = ({address, telephone, mail, website}) => (
-    <section>
-        <h5>Adres: {address}</h5>
-        <h5>Telefon: <a href={"tel:" + telephone}>{telephone}</a></h5>
-        <h5>E-mail: <a href={"mailto:" + mail}>{mail}</a></h5>
-        <h5>Witryna: <a href={website}>{website}</a></h5>
+    <section className="contact-details">
+      <h4>Kontakt</h4>
+        <p>Adres: {address}</p>
+        <p>Telefon: <a href={"tel:" + telephone}>{telephone}</a></p>
+        <p>E-mail: <a href={"mailto:" + mail}>{mail}</a></p>
+        <p>Witryna: <a href={website}>{website}</a></p>
     </section>
 )
 

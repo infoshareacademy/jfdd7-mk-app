@@ -9,8 +9,9 @@ const Activity = ({name})=> {
 
 
 const ActivitiesDetails = ({activities}) => (
-  <section>
-    <ul>
+  <section className="activities-details" >
+      <h4>Oferta</h4>
+    <ul className="list-activities">
       {activities.map(name => <Activity name={name}/>)}
     </ul>
   </section>
