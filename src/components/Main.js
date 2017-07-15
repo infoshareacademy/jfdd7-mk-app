@@ -42,7 +42,7 @@ export default connect(
             hover
             responsive>
 
-            <tbody>
+            <tbody className="overflow">
             {
               data !== null && data.filter(
                 place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
