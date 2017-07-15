@@ -31,6 +31,7 @@ export default connect(
       return (
         <div className="mainsection">
           <div className="mainpage center-block">
+            <p> Z nami odnajdziesz swoje miejsce do treningów </p>
             <SearchField />
             { error === null ? null : <p>{error.message}</p> }
             { fetching === false ? null : <p>Fetching data...</p>}

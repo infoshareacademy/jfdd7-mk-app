@@ -1,7 +1,5 @@
 .mainpage .center-block {
     width: 100%;
-
-
 }
 .mainpage {
     position: absolute;
@@ -22,4 +20,16 @@
 
 a {
     color: #000;
+}
+
+p {
+    font-family: 'Monaco', sans-serif;
+    color: black;
+    font-size: 22px;
+    text-shadow: 1px 2px darkgrey;
+    font-weight: bold;
+    padding-top: 220px;
+    padding-bottom: 15px;
+    padding-left: 106px;
+
 }
