@@ -1,11 +1,9 @@
 import React from 'react'
-import Map from './Map'
 import './Main.css'
 import SearchField from './SearchField'
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-
 import {fetchPlaces} from '../state/places'
 
 export default connect(
@@ -30,48 +28,45 @@ export default connect(
 
 
       return (
-        <div>
-          <h1>Places</h1>
-          <div className="center-block" style={{width: "70%"}}>
+        <div className="mainsection">
+          <div className="mainpage center-block">
+
+            <p> Z nami odnajdziesz swoje miejsce do treningów </p>
+            <small className="main-small-first"> Zacznij swoją przemianę już dziś!</small><br/>
+            <small className="main-small-second"> Wystarczy kliknąć: </small>
+
             <SearchField />
-          </div>
-          { error === null ? null : <p>{error.message}</p> }
-          { fetching === false ? null : <p>Fetching data...</p>}
-          <Table
-            className="auto-complete"
-            bordered
-            striped
-            hover
-            responsive>
-            <thead>
-            <tr>
-            </tr>
-            </thead>
-            <tbody>
-            {
-              data !== null && data.filter(
-                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
-              ).map(
-                place => (
-                  <tr key={place.id}>
-                    <td>
-                      <Link to={'/places/' + place.id}>
-                        {place.name}
-                      </Link>
-                    </td>
-                  </tr>
+            { error === null ? null : <p>{error.message}</p> }
+            { fetching === false ? null : <p>Fetching data...</p>}
+            <div style={{position: 'relative'}}>
+            <Table
+              className="auto-complete"
+              bordered
+              striped
+              hover
+              responsive>
+              <thead>
+              <tr>
+              </tr>
+              </thead>
+              <tbody>
+              {
+                data !== null && data.filter(
+                  place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
+                ).map(
+                  place => (
+                    <tr key={place.id}>
+                      <td>
+                        <Link to={'/places/' + place.id}>
+                          {place.name}
+                        </Link>
+                      </td>
+                    </tr>
+                  )
                 )
-              )
-            }
-            </tbody>
-          </Table>
-          <div style={{ height: "800px"}}>
-            <div className="center-block"
-                 style={{width: "80%", height: "100%"}}
-            >
-
-              <Map/>
-
+              }
+              </tbody>
+            </Table>
             </div>
           </div>
         </div>

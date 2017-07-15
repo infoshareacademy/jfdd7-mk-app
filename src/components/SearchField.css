@@ -1,0 +1,25 @@
+.searching-main-div {
+    padding-top: 340px;
+    padding-left: 70px;
+}
+
+.button {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.form-control {
+    box-shadow: 5px 5px 5px black;
+    margin-top: 10px;
+    margin-left: 0;
+    width: 600px;
+    height: 40px;
+}
+
+.form-group {
+    width: 400px;
+    padding: 0;
+}
+

@@ -1,19 +1,68 @@
-/************Style mapy************/
-
-.main-map-style {
-    width: 100;
-    height: 800px;
+.mainpage .center-block {
+    width: 100%;
 }
-
+.mainpage {
+    position: absolute;
+    background-image: url("../images/tlostrony2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
 .auto-complete {
-    background-color: #b543a0 ;
+    /*background-color: #b543a0 ;*/
     text-decoration: none;
     color: #222222;
-
     position: absolute;
     z-index: 9999;
 }
 
 a {
     color: #000;
+}
+
+p {
+    font-family: 'Monaco', sans-serif;
+    color: black;
+    font-size: 22px;
+    text-shadow: 1px 2px grey;
+    font-weight: bold;
+    padding-top: 220px;
+    /*padding-bottom: 15px;*/
+    padding-left: 106px;
+}
+
+.main-small-first{
+    padding-left: 106px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+    font-size: 16px;
+}
+
+.main-small-second {
+    padding-left: 106px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 991px) {
+    p {
+        font-size: 16px;
+        padding-left: 20px;
+        padding-top: 30px;
+    }
+
+    .main-small-first {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+
+    .main-small-second {
+        font-size: 10px;
+        padding-left: 20px;
+    }
 }

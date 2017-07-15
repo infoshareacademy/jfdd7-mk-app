@@ -10,6 +10,7 @@ import {
   NavItem
 } from 'react-bootstrap'
 
+
 const MainMenu = (props) => (
   <Navbar>
     <Navbar.Header>
@@ -32,6 +33,8 @@ const MainMenu = (props) => (
       </LinkContainer>
     </Nav>
   </Navbar>
+
+
 )
 
 export default MainMenu
