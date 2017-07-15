@@ -4,7 +4,6 @@ import SearchField from './SearchField'
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-
 import {fetchPlaces} from '../state/places'
 
 export default connect(
