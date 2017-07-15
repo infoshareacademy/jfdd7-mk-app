@@ -18,7 +18,7 @@ const SearchField = props => (
 
     <Grid>
       <Row>
-        <Col sm={7}>
+        <Col xs={6} sm={6}>
           <FormGroup controlId="formInlineEmail">
             {/*<ControlLabel>Wyszukaj obiekt</ControlLabel>*/}
             <FormControl
@@ -27,7 +27,7 @@ const SearchField = props => (
             />
           </FormGroup>
         </Col>
-        <Col sm={5}>
+        <Col xs={6} sm={6}>
           <Button type="submit"
                   bsStyle="info"
                   bsSize="large"

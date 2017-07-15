@@ -3,23 +3,26 @@
     padding-left: 70px;
 }
 
-.button {
+.btn-info {
     margin-top: 10px;
-    margin-right: 10px;
     margin-left: 10px;
     box-shadow: 5px 5px 5px black;
+    background-image: linear-gradient( to bottom, #bd5dac 100%, #bd5dac 0%);
+    border: 1px solid black;
+    display: inline-block;
 }
 
 .form-control {
+    border: 1px solid black;
     box-shadow: 5px 5px 5px black;
     margin-top: 10px;
-    margin-left: 0;
-    width: 600px;
-    height: 40px;
+    margin-left: auto;
+    /*width: 450px;*/
+    height: 45px;
 }
 
 .form-group {
-    width: 400px;
+    width: 100%;
     padding: 0;
 }
 
