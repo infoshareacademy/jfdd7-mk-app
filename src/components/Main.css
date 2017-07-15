@@ -26,10 +26,43 @@ p {
     font-family: 'Monaco', sans-serif;
     color: black;
     font-size: 22px;
-    text-shadow: 1px 2px darkgrey;
+    text-shadow: 1px 2px grey;
     font-weight: bold;
     padding-top: 220px;
-    padding-bottom: 15px;
+    /*padding-bottom: 15px;*/
     padding-left: 106px;
+}
 
+.main-small-first{
+    padding-left: 106px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+    font-size: 16px;
+}
+
+.main-small-second {
+    padding-left: 106px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 991px) {
+    p {
+        font-size: 16px;
+        padding-left: 20px;
+        padding-top: 30px;
+    }
+
+    .main-small-first {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+
+    .main-small-second {
+        font-size: 10px;
+        padding-left: 20px;
+    }
 }

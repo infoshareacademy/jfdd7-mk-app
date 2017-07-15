@@ -31,7 +31,11 @@ export default connect(
       return (
         <div className="mainsection">
           <div className="mainpage center-block">
+
             <p> Z nami odnajdziesz swoje miejsce do treningów </p>
+            <small className="main-small-first"> Zacznij swoją przemianę już dziś!</small><br/>
+            <small className="main-small-second"> Wystarczy kliknąć: </small>
+
             <SearchField />
             { error === null ? null : <p>{error.message}</p> }
             { fetching === false ? null : <p>Fetching data...</p>}
