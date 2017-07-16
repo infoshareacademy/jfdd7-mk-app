@@ -5,7 +5,6 @@ import {
     Col,
     Grid,
 } from'react-bootstrap'
-import {Link} from 'react-router-dom'
 import {fetchPlaces} from '../state/places'
 import CarouselDetails from './CarouselDetails'
 import ObjectName from './ObjectName'
@@ -44,7 +43,6 @@ export default connect(
                     </div>
                 )
             }
-            var activities = Array.prototype.concat.apply([], Array.from(data).map(place => place.functions)).filter((value, index, self) => self.indexOf(value) === index);
 
             return (
                 <Grid>
