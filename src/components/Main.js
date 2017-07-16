@@ -30,6 +30,11 @@ export default connect(
 
       return (
         <div className="mainpage">
+
+          <p> Z nami znajdziesz swoje miejsce do treningów </p>
+          <small className="small-first"> Nie zwlekaj i zacznij swą przemianę już dziś! </small><br/>
+          <small className="small-second"> Skorzystaj z naszej wyszukiwarki...</small>
+
           <div className="search-field">
             <SearchField/>
           </div>
