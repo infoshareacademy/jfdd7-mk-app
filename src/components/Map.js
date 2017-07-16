@@ -28,6 +28,7 @@ static defaultProps = {
     const {data} = this.props.places
     return (
       <GoogleMapReact
+        apiKey={'AIzaSyAJcR-ZM6KPN20sN1ECp89Jgi0hqJvQBho'}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
