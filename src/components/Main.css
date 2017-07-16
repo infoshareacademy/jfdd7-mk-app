@@ -10,12 +10,12 @@
     margin-right: auto;
 }
 
-a {
+.auto-complete a {
     color: white;
 }
 
 .mainpage {
-    background-image: url("../images/tlo.jpg");
+    background-image: url("../images/tlo2.jpg");
     width: 100%;
     height: 800px;
     background-repeat: no-repeat;
@@ -39,7 +39,8 @@ a {
 .headings {
     position: relative;
 }
-p {
+
+.headings p {
     position: absolute;
     font-size: 22px;
     font-family: Monaco, sans-serif;
