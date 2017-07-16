@@ -3,12 +3,14 @@
 }
 
 .info {
-    margin-left: 10px;
+    margin-left: 15%;
+    width: 55%;
 }
 
 .info:hover {
     background-color: whitesmoke;
     border: 1px solid #b543a0;
+    border-radius: 10px;
 }
 
 .pin {
@@ -58,7 +60,7 @@
     vertical-align: center;
 }
 
-span.distance {
+.distance span {
     padding-left: 20px;
     vertical-align: center;
 }
@@ -85,7 +87,7 @@ span.distance {
     padding-top: 29px;
     padding-right: 0;
     padding-bottom:0;
-    padding-left: 15px;
+    padding-left: 25%;
 }
 
 .contact a {
@@ -99,9 +101,10 @@ span.distance {
     text-shadow: 0 0 1px grey;
 }
 
-Image {
+.img-responsive{
     position: center;
     vertical-align: center;
-    display: inline-grid;
-
+    margin-left: 40%;
+    margin-top: 30%;
 }
+

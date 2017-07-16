@@ -7,6 +7,7 @@ import IconCategory from './IconCategory'
 import Description from './Description'
 import ContactObject from './ContactObject'
 import './ListSearch.css'
+import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
 
