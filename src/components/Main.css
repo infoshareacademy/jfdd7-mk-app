@@ -1,22 +1,21 @@
 .auto-complete {
     background-color: #b543a0;
     text-decoration: none;
-    color: #222;
+    color: white;
     height: 100px;
     width: 35.6%;
     position: absolute;
     z-index: 9999;
-    margin-left: 4.4%;
+    margin-left: 6.5%;
     margin-right: auto;
-
 }
 
 a {
-    color: #000;
+    color: white;
 }
 
 .mainpage {
-    background-image: url("../images/tlo.jpg");
+    background-image: url("../images/tlo2.jpg");
     width: 100%;
     height: 800px;
     background-repeat: no-repeat;
@@ -35,4 +34,40 @@ a {
 .overflow {
     height: 100px;
     overflow: auto;
+}
+
+.headings {
+    position: relative;
+}
+p {
+    position: absolute;
+    font-size: 22px;
+    font-family: Monaco, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-left: 84px;
+    margin-top: 260px;
+    text-shadow: 1px 2px darkgrey;
+}
+
+.small-first {
+    position: absolute;
+    font-size: 17px;
+    font-family: Monaco, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: 293px;
+    margin-left: 84px;
+    text-shadow: 2px 2px 1px darkgrey;
+}
+
+.small-second {
+    position: absolute;
+    font-size: 15px;
+    font-family: Monaco, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: 300px;
+    margin-left: 84px;
+    text-shadow: 2px 2px 1px darkgrey;
 }
