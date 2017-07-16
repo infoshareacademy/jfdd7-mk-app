@@ -8,6 +8,7 @@ import Description from './Description'
 import ContactObject from './ContactObject'
 import './ListSearch.css'
 import SearchField from './SearchField'
+import MenuFilter from './MenuFilter'
 
 export default connect(
   state => ({
@@ -25,8 +26,16 @@ export default connect(
       this.props.fetchPlaces()
     }
 
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.match.params.function !== this.props.match.params.function) {
+        this.props.fetchPlaces()
+      }
+    }
+
     render() {
+      const isFunctionSet = this.props.match.params.function !== undefined
       const {data} = this.props.places
+      const places = isFunctionSet && data !== null ? data.filter(place => place.functions.indexOf(this.props.match.params.function) !== -1) : data;
 
 
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
@@ -36,13 +45,14 @@ export default connect(
       // console.log(this.state)
       return (
         <div className="all-description">
+          <MenuFilter/>
           <div className="center-block" style={{width: "70%"}}>
             <SearchField />
           </div>
 
 
-          {data !== null && data.filter(
-            place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)
+          {places !== null && places.filter(
+            place => this.props.searchPhrase === '' ? isFunctionSet : checkString(place.name) || checkArray(place.functions)
           ).map(
             place => (
                   <Link to={'/details/' + place.id}>

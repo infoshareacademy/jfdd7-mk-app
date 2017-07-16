@@ -1,15 +1,14 @@
-/**
- * Created by dominikakosiedowska on 06.07.17.
- */
 import React from 'react'
 
+
 const ObjectDetails = ({address, telephone, mail, website}) => (
-  <section>
-    <h5>Adres: {address}</h5>
-    <h5>Telefon: {telephone}</h5>
-    <h5>E-mail: {mail}</h5>
-    <h5>Witryna: {website}</h5>
-  </section>
-  )
+    <section className="contact-details">
+      <h4>Kontakt</h4>
+        <p>Adres: {address}</p>
+        <p>Telefon: <a href={"tel:" + telephone}>{telephone}</a></p>
+        <p>E-mail: <a href={"mailto:" + mail}>{mail}</a></p>
+        <p>Witryna: <a href={website}>{website}</a></p>
+    </section>
+)
 
 export default ObjectDetails
