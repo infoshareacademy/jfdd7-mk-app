@@ -9,7 +9,7 @@
     margin-top:50px;
 }
 
-.map_container{
+.map-container{
     position: relative;
 }
 .map{
@@ -18,4 +18,14 @@
     padding-bottom: 22.25%;
     padding-top: 30px;
     position: relative;
+}
+.place-style {
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/marker.png");
+    background-size: cover;
+    background-epeat: no-repeat;
+    position: absolute;
+    top: -35px;
+    left: -35px;
 }

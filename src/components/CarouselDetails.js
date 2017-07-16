@@ -20,9 +20,9 @@ const CarouselDetails = () => (
     accessibility={false}
     arrows={true}
 >
-    <div className="photo"><img src={CalypsoPrzymorze}/></div>
-    <div className="photo"><img src={CalypsoPrzymorze}/></div>
-    <div className="photo"><img src={CalypsoPrzymorze}/></div>
+    <div className="photo"><img src={CalypsoPrzymorze} alt=""/></div>
+    <div className="photo"><img src={CalypsoPrzymorze} alt=""/></div>
+    <div className="photo"><img src={CalypsoPrzymorze} alt=""/></div>
 </Slider>
 )
 export default CarouselDetails

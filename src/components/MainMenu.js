@@ -27,9 +27,6 @@ const MainMenu = (props) => (
       <LinkContainer to="/list-search">
         <NavItem>ListSearch</NavItem>
       </LinkContainer>
-      <LinkContainer to="/details">
-        <NavItem>Details</NavItem>
-      </LinkContainer>
     </Nav>
   </Navbar>
 )
