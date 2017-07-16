@@ -42,7 +42,7 @@ section.Object__Details {
 .activities-details, .contact-details {
     padding: 20px 40px;
     border: 1px solid lightgrey;
-    margin-bottom: 10px;
+    margin: 0 10px 10px 0;
 }
 .activities-details p, .contact-details p {
     font-family: Releway, sans-serif;
