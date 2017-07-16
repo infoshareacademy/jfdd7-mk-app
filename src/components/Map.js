@@ -60,7 +60,7 @@ export default connect(
                 lat={parseFloat(place.latitude)}
                 lng={parseFloat(place.longitude)}
                 style={placeStyle}
-              >
+              ><div style={{position:'absolute', top:-13, color: 'black'}}>{place.name}</div>
               </Link>
             ))}
 
