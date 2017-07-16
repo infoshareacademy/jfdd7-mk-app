@@ -23,6 +23,7 @@ const SearchField = props => (
           <Button type="submit"
                   bsStyle="info"
                   bsSize="large"
+
           >
             Wyszukaj
           </Button>

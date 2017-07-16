@@ -16,4 +16,6 @@
 
 .btn-info:hover {
     background-image: linear-gradient(to bottom right, #b543a0 100%, black 100%);
+    background-repeat: repeat-y;
+    border-color: black;
 }
