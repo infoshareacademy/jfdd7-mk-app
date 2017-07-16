@@ -11,10 +11,11 @@ const MapDetails = ({latitude, longitude, name}) => (
         defaultZoom={15}
     >
         <Pin
-           lat={latitude}
-           lng={longitude}
-           name={name}
-           marker={marker}
+          className="place-style"
+          lat={latitude}
+          lng={longitude}
+          name={name}
+          marker={marker}
 
         />
     </GoogleMapReact>
