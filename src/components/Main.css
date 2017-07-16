@@ -1,7 +1,6 @@
 .auto-complete {
     background-color: #b543a0;
     text-decoration: none;
-    color: white;
     height: 100px;
     width: 35%;
     position: absolute;
@@ -15,7 +14,7 @@
     color: white;
 }
 
-.auto-complete a:hover {
+.auto-complete  a:hover {
     color:#222;
 }
 

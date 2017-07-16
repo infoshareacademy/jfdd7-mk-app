@@ -67,7 +67,7 @@ export default connect(
             </tbody>
           </Table>
         </div>
-        
+
       )
     }
   }
