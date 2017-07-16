@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import marker from '../images/marker.png'
 import {connect} from 'react-redux'
 import {fetchPlaces} from '../state/places'
+import {Link} from 'react-router-dom'
+
 
 export default connect(
   state => ({
@@ -37,7 +39,7 @@ export default connect(
         backgroundRepeat: 'no-repeat',
         position: 'absolute',
         top: -35,
-        left: -35/2
+        left: -35 / 2
 
       }
 
@@ -53,17 +55,13 @@ export default connect(
             place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)
           ).map(
             place => (
-              <div
-                style={placeStyle}
+              <Link
+                to={'/details/' + place.id}
                 lat={parseFloat(place.latitude)}
                 lng={parseFloat(place.longitude)}
-
+                style={placeStyle}
               >
-                {/*<img*/}
-                {/*src={marker}*/}
-                {/*alt={place.name}*/}
-                {/*/>*/}
-              </div>
+              </Link>
             ))}
 
         </GoogleMapReact>
