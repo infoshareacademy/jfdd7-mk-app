@@ -54,7 +54,7 @@ export default connect(
                     <Row>
                         <Col>
 
-                            <ObjectName name={place.name}/>
+                            <ObjectName className ="Object__Name" name={place.name}/>
 
                         </Col>
                     </Row>

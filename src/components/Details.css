@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Raleway');
+
 .slick-prev:before, .slick-next:before {
     color: #b543a0;
 }
@@ -20,17 +22,46 @@
     max-width: 98%;
     margin: 0 auto;
 }
+.slick-dots li.slick-active button:before {
+    color: #b543a0;
+}
+.Object__Name {
+    font-size: 3em;
+    font-family: "Francois One", sans-serif;
+    padding-left: 1em;
+    margin: 1em 0;
+}
 section.Object__Details {
     padding-left: 40px;
 }
 .list-activities {
     column-count: 2;
+    text-align: center;
+    padding-left: 0;
 }
 .activities-details, .contact-details {
     padding: 20px 40px;
     border: 1px solid lightgrey;
-    margin: 10px;
+    margin-bottom: 10px;
 }
+.activities-details p, .contact-details p {
+    font-family: Releway, sans-serif;
+}
+.activities-details h4, .contact-details h4 {
+    font-family: Francois One, sans-serif;
+    font-size: 1.8em;
+}
+
+.activities-details:hover, .contact-details:hover {
+    border: 1px solid #b543a0;
+}
+.contact-details a {
+    color: black;
+}
+.contact-details a:hover {
+    color: #b543a0;
+}
+
 li.icon {
     padding-left: 25px;
     margin-top: 10px;
@@ -40,6 +71,7 @@ li.icon {
     text-align: left;
     list-style: none;
 }
+
 li.fitness {
     background-image: url("../images/fitness.png");
 }
@@ -81,4 +113,12 @@ li.siłownia {
 }
 li.crossfit {
     background-image: url("../images/crossfit.png");
+}
+
+@media (max-width: 450px) {
+    .list-activities {
+        column-count: 1;
+    }
+
+
 }
