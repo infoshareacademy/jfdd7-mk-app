@@ -1,19 +1,38 @@
-/************Style mapy************/
-
-.main-map-style {
-    width: 100;
-    height: 800px;
-}
-
 .auto-complete {
-    background-color: #b543a0 ;
+    background-color: #b543a0;
     text-decoration: none;
-    color: #222222;
-
+    color: #222;
+    height: 100px;
+    width: 35.6%;
     position: absolute;
     z-index: 9999;
+    margin-left: 4.4%;
+    margin-right: auto;
+
 }
 
 a {
     color: #000;
+}
+
+.mainpage {
+    background-image: url("../images/tlo.jpg");
+    width: 100%;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: -20px;
+    margin-top: -10px;
+}
+
+.search-field {
+    padding-top: 340px;
+    padding-left: 70px;
+    width: 40%;
+}
+
+.overflow {
+    height: 100px;
+    overflow: auto;
 }

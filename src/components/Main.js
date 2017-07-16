@@ -1,5 +1,4 @@
 import React from 'react'
-import Map from './Map'
 import './Main.css'
 import SearchField from './SearchField'
 import {Table} from 'react-bootstrap'
@@ -30,24 +29,20 @@ export default connect(
 
 
       return (
-        <div>
-          <h1>Places</h1>
-          <div className="center-block" style={{width: "70%"}}>
-            <SearchField />
+        <div className="mainpage">
+          <div className="search-field">
+            <SearchField/>
           </div>
           { error === null ? null : <p>{error.message}</p> }
           { fetching === false ? null : <p>Fetching data...</p>}
           <Table
             className="auto-complete"
             bordered
-            striped
+
             hover
             responsive>
-            <thead>
-            <tr>
-            </tr>
-            </thead>
-            <tbody>
+
+            <tbody className="overflow">
             {
               data !== null && data.filter(
                 place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
@@ -55,7 +50,7 @@ export default connect(
                 place => (
                   <tr key={place.id}>
                     <td>
-                      <Link to={'/places/' + place.id}>
+                      <Link to={'/details/' + place.id}>
                         {place.name}
                       </Link>
                     </td>
@@ -65,17 +60,15 @@ export default connect(
             }
             </tbody>
           </Table>
-          <div style={{ height: "800px"}}>
-            <div className="center-block"
-                 style={{width: "80%", height: "100%"}}
-            >
-
-              <Map/>
-
-            </div>
-          </div>
         </div>
       )
     }
   }
 )
+
+
+
+
+
+
+

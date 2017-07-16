@@ -5,12 +5,12 @@ import { FormControl } from 'react-bootstrap'
 import { updateSearchPhrase } from '../state/searchField'
 
 const SearchField = props => (
-  <FormControl
-    value={props.searchPhrase}
-    onChange={props.update}
-    style={{marginBottom: 20}}
-
-  />
+  <div>
+    <FormControl
+      value={props.searchPhrase}
+      onChange={props.update}
+    />
+  </div>
 )
 
 export default connect(
