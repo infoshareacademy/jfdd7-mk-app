@@ -1,17 +1,21 @@
 .auto-complete {
     background-color: #b543a0;
     text-decoration: none;
-    color: white;
     height: 100px;
-    width: 35.6%;
+    width: 35%;
     position: absolute;
     z-index: 9999;
-    margin-left: 6.5%;
+    margin-left: 5.5%;
     margin-right: auto;
+    margin-top: -16px;
 }
 
 .auto-complete a {
     color: white;
+}
+
+.auto-complete  a:hover {
+    color:#222;
 }
 
 .mainpage {

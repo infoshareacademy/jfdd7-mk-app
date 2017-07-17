@@ -27,12 +27,14 @@ const SearchField = props => (
             Wyszukaj
           </Button>
         </LinkContainer>
+        <LinkContainer to="/map-search">
         <Button type="submit"
                 bsStyle="info"
                 bsSize="large"
         >
-          Filtruj
+          Mapa
         </Button>
+        </LinkContainer>
       </Col>
     </Row>
   </Grid>

@@ -29,6 +29,8 @@ export default connect(
 
 
       return (
+
+
         <div className="mainpage">
           <div className="headings">
           <p> Z nami znajdziesz swoje miejsce do treningów </p>
@@ -46,7 +48,6 @@ export default connect(
 
             hover
             responsive>
-
             <tbody className="overflow">
             {
               data !== null && data.filter(
@@ -66,6 +67,7 @@ export default connect(
             </tbody>
           </Table>
         </div>
+
       )
     }
   }
