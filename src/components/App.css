@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Raleway');
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -18,4 +19,36 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.Main__Menu {
+  font-family: "Francois One";
+  font-size: 2em;
+  color: black;
+}
+.navbar-default .navbar-brand {
+  color: black;
+}
+.nav {
+  font-family: Francois One;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.nav {
+
+}
+.navbar-default .navbar-nav > li > a {
+  background-color: white;
+  color: black;
+}
+.nav > li > a:focus, .nav > li > a:active {
+  outline-color: white;
+
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
+  background-image: none;
+  background-color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: white;
 }
