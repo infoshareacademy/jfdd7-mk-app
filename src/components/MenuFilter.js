@@ -33,7 +33,7 @@ export default connect(
                         <Nav>
                             {activities.map(
                             activity =>
-                            <LinkContainer to={"/list-search/" + activity}>
+                            <LinkContainer to={"/list-search/" + activity} key={activity}>
                                 <NavItem>{activity}</NavItem>
                             </LinkContainer>)}
                         </Nav>

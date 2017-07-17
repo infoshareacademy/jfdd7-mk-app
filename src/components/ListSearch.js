@@ -27,11 +27,6 @@ export default connect(
       this.props.fetchPlaces()
     }
 
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.match.params.function !== this.props.match.params.function) {
-        this.props.fetchPlaces()
-      }
-    }
 
     render() {
       const isFunctionSet = this.props.match.params.function !== undefined
@@ -46,7 +41,7 @@ export default connect(
       // console.log(this.state)
       return (
         <div className="all-description">
-          <MenuFilter/>
+          <MenuFilter function={this.props.match.params.function}/>
           <div className="center-block" style={{width: "70%"}}>
             <SearchField />
           </div>
@@ -56,7 +51,7 @@ export default connect(
             place => this.props.searchPhrase === '' ? isFunctionSet : checkString(place.name) || checkArray(place.functions)
           ).map(
             place => (
-                  <Link to={'/details/' + place.id}>
+                  <Link to={'/details/' + place.id} key={place.id}>
                     <Row className="info">
                       <Col xs={12} lg={2} className="pin">
                         <div>
