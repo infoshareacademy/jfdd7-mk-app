@@ -1,8 +1,10 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react'
 import marker from '../images/marker.png'
+import {placeStyle, nameDivStyle} from './placeStyle'
 
-const Pin = ({ name, lat, lng, marker }) => <div><img src={marker} alt=""/>{name}</div>;
+
+const Pin = ({ name, lat, lng, marker }) => <div style={placeStyle}><div style={nameDivStyle}>{name}</div></div>;
 
 const MapDetails = ({latitude, longitude, name}) => (
     <GoogleMapReact
@@ -11,12 +13,11 @@ const MapDetails = ({latitude, longitude, name}) => (
         defaultZoom={15}
     >
         <Pin
-          className="place-style"
+
           lat={latitude}
           lng={longitude}
           name={name}
           marker={marker}
-
         />
     </GoogleMapReact>
 )
