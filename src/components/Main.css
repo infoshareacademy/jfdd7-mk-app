@@ -38,6 +38,7 @@
 }
 
 .overflow {
+    margin-left: 70px;
     width: 300px;
     height: 300px;
     overflow-y: auto;
