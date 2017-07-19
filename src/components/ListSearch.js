@@ -53,18 +53,18 @@ export default connect(
             place => (
                   <Link to={'/details/' + place.id} key={place.id}>
                     <Row className="info">
-                      <Col xs={12} lg={2} className="pin">
+                      <Col xs={2} lg={2} className="pin">
                         <div>
                           <IconCategory/>
                         </div>
                       </Col>
 
-                      <Col xs={12} md={6} lg={7} className="main-description">
+                      <Col xs={7} lg={7} className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
                                      name={place.name} latitude={place.latitude} longitude={place.longitude}/>
                       </Col>
 
-                      <Col xs={12} lg={3} className="contact">
+                      <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
                       </Col>
                     </Row>

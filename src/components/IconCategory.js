@@ -5,7 +5,7 @@ import './ListSearch.css'
 
 const IconCategory = () => (
 <section>
-  <Image responsive src={GymIconNew}></Image>
+  <Image className="center-block" src={GymIconNew}></Image>
 </section>
 )
 export default IconCategory
