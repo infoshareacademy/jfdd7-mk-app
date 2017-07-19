@@ -59,12 +59,12 @@ export default connect(
                         </div>
                       </Col>
 
-                      <Col xs={12} lg={3} className="main-description">
+                      <Col xs={12} lg={6} className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
                                      name={place.name} latitude={place.latitude} longitude={place.longitude}/>
                       </Col>
 
-                      <Col xs={12} lg={7} className="contact">
+                      <Col xs={12} lg={4} className="contact">
                         <ContactObject telephone={place.telephone}/>
                       </Col>
                     </Row>

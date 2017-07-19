@@ -4,7 +4,7 @@
 
 .info {
     margin-left: 15%;
-    width: 55%;
+    width: 65%;
 }
 
 .info:hover {
@@ -43,6 +43,7 @@
     color: #b543a0;
     margin: 20px 0;
     width: 350px;
+    font-size: 16px;
 }
 
 .description a {
@@ -88,7 +89,7 @@
     padding-top: 29px;
     padding-right: 0;
     padding-bottom:0;
-    padding-left: 25%;
+    padding-left: 10%;
 }
 
 .contact a {
