@@ -10,9 +10,14 @@ const placeStyle = {
   position: 'absolute',
   top: -35,
   left: -35 / 2
+}
 
+const placeStyleHovered = {
+  ...placeStyle,
+  width: 45,
+  height: 45,
 }
 
 const nameDivStyle = {position:'absolute', top:35, color: 'black'}
 
-export {placeStyle, nameDivStyle}
+export {placeStyle, nameDivStyle, placeStyleHovered}
