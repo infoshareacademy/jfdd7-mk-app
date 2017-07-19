@@ -16,32 +16,35 @@ export default connect(
 )(
   class Map extends Component {
 
-    static defaultProps = {
-      center: {lat: 54.403351, lng: 18.569951},
-      zoom: 1
-    };
-
     componentWillMount() {
       this.props.fetchPlaces()
     }
+
 
 
     render() {
       const {data} = this.props.places
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
+      const dataToShow = data !== null ? data.filter(place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)) : []
+      const pointBetween = latOrLng => (Math.max.apply(null, dataToShow.map(place => parseFloat(place[latOrLng]))) + Math.min.apply(null, dataToShow.map(place => parseFloat(place[latOrLng])))) /2
 
+      const searchZoomLat = pointBetween("latitude")
+      const searchZoomLng = pointBetween("longitude")
+      console.log(searchZoomLng, searchZoomLat)
+      const defaultProps = {
+        center: this.props.searchPhrase.length < 1 ? {lat:54.403334, lng:18.569786} : {lat: searchZoomLat, lng: searchZoomLng},
+        zoom: 12
+      }
 
       return (
         <GoogleMapReact
           apiKey={'AIzaSyAJcR-ZM6KPN20sN1ECp89Jgi0hqJvQBho'}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          center={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
         >
 
-          {data !== null && data.filter(
-            place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions)
-          ).map(
+          {dataToShow.map(
             place => (
               <Link
                 to={'/details/' + place.id}
@@ -49,9 +52,9 @@ export default connect(
                 lng={parseFloat(place.longitude)}
                 style={placeStyle}
               >
-                <div style={{position:'absolute', top:-13, color: 'black'}}>
+                <div style={{position: 'absolute', top: 15, color: 'black'}}>
                   {place.name}
-                  </div>
+                </div>
               </Link>
             ))}
 

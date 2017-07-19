@@ -34,7 +34,7 @@ export const fetchPlaces = () => dispatch => {
 
 // initial state
 const initialState = {
-  data: null,
+  data: [],
   fetching: false,
   error: null
 }
