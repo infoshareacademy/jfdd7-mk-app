@@ -28,7 +28,7 @@ const Description = ({address, website, name, latitude, longitude}) => (
     <h3>{name} <span className="distance"> ~ odległość: {getDistanceFromLatLonInKm(latitude, longitude, 54.403351, 18.569951).toFixed(2)} km </span></h3>
     <span>{address}</span>
     <div className="website">
-      <a href={website}>{website}</a>
+      <a href={website} target="_blank">{website}</a>
     </div>
   </section>
 )
