@@ -31,6 +31,25 @@ export default connect(
 
 
     render() {
+      function deg2rad(deg) {
+        return deg * (Math.PI/180)}
+
+      function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+        var latitude = Number(lat1);
+        var longitude = Number(lon1);
+        var R = 6371; // Radius of the earth in km
+        var dLat = deg2rad(lat2-latitude);  // deg2rad below
+        var dLon = deg2rad(lon2-longitude);
+        var a =
+          Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+          Math.sin(dLon/2) * Math.sin(dLon/2)
+        ;
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c; // Distance in km
+        return d;
+      }
+
       const isFunctionSet = this.props.match.params.function !== undefined
       const {data} = this.props.places
 
@@ -63,7 +82,7 @@ export default connect(
           f => f(place) === true
         )
       )
-      
+
       return (
         <div className="all-description">
           <MenuFilter function={this.props.match.params.function}/>
@@ -74,27 +93,32 @@ export default connect(
           { filteredPlaces.filter(
             place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? isFunctionSet : checkString(place.name) || checkArray(place.functions)
           ).map(
+            place => ({
+              ...place,
+              distance: getDistanceFromLatLonInKm(place.latitude, place.longitude, 54.403351, 18.569951)
+            })
+          ).sort((a, b) => a.distance - b.distance).map(
             place => (
-                  <Link to={'/details/' + place.id} key={place.id}>
+                   <Link to={'/details/' + place.id} key={place.id}>
                     <Row className="info">
-                      <Col xs={12} lg={2} className="pin">
+                      <Col xs={2} lg={2} className="pin">
                         <div>
                           <IconCategory/>
                         </div>
                       </Col>
 
-                      <Col xs={12} lg={3} className="main-description">
+                      <Col xs={7} lg={7} className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
-                                     name={place.name} latitude={place.latitude} longitude={place.longitude}/>
+                                     name={place.name} distance={place.distance} />
                       </Col>
 
-                      <Col xs={12} lg={7} className="contact">
+                      <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
                       </Col>
                     </Row>
                   </Link>
                 )
-              )
+              ).sort()
           }
         </div>
       )
