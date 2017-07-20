@@ -3,10 +3,12 @@ import thunk from 'redux-thunk'
 
 import places from './state/places'
 import searchField from './state/searchField'
+import activitiesFilter from './state/activitiesFilter'
 
 const reducer = combineReducers({
   places,
   searchField,
+  activitiesFilter
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
