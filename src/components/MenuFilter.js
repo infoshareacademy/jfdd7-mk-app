@@ -5,14 +5,16 @@ import {
     Navbar,
     Nav
 } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
 import {fetchPlaces} from '../state/places'
+import {activateFilter} from '../state/activitiesFilter'
 export default connect(
     state => ({
-        places: state.places
+        places: state.places,
+        activeFilterNames: state.activitiesFilter.activeFilterNames
     }),
     dispatch => ({
-        fetchPlaces: () => dispatch(fetchPlaces())
+        fetchPlaces: () => dispatch(fetchPlaces()),
+        activateFilter: filterName => dispatch(activateFilter(filterName))
     })
 )(
     class MenuFilter extends React.Component {
@@ -21,24 +23,87 @@ export default connect(
         }
 
         render(){
-            const {data} = this.props.places
-            const allActivities = data === null ? [] : [].concat.apply([], data.map(place => place.functions))
-            const uniqueActivities = allActivities.filter((value, index, self) => self.indexOf(value) === index)
+            const { data, fetching, error } = this.props.places
+            const navItems = [
+              {
+                label: 'Fitness',
+                filterName: 'fitness'
+              },
+              {
+                label: 'Zajęcia dla dzieci',
+                filterName: 'zajecia_dla_dzieci'
+              },
+              {
+                label: 'Solarium',
+                filterName: 'solarium'
+              },
+              {
+                label: 'Sztuki walki',
+                filterName: 'sztuki_walki'
+              },
+              {
+                label: 'Masaż wody',
+                filterName: 'masaz_wodny'
+              },
+              {
+                label: 'Jacuzzi',
+                filterName: 'jacuzzi'
+              },
+              {
+                label: 'Basen',
+                filterName: 'basen'
+              },
+              {
+                label: 'Zumba',
+                filterName: 'zumba'
+              },
+              {
+                label: 'Kręgle',
+                filterName: 'kregle'
+              },
+              {
+                label: 'Ścianka wspinaczkowa',
+                filterName: 'scianka_wspinaczkowa'
+              },
+              {
+                label: 'Taniec towarzyski',
+                filterName: 'taniec_towarzyski'
+              },
+              {
+                label: 'Sauna',
+                filterName: 'sauna'
+              },
+              {
+                label: 'Siłownia',
+                filterName: 'silownia'
+              },
+              {
+                label: 'Crossfit',
+                filterName: 'crossfit'
+              },
 
-            const activities = uniqueActivities;
+            ]
 
-            return data === null ? <div/> : (
-                <div>
+            return (
+
                     <Navbar>
                         <Nav>
-                            {activities.map(
-                            activity =>
-                            <LinkContainer to={"/list-search/" + activity} key={activity}>
-                                <NavItem>{activity}</NavItem>
-                            </LinkContainer>)}
+                        {
+                          navItems.map(
+                            navItem => (
+                              <NavItem
+                                key={navItem.filterName}
+                                onClick={() => this.props.activateFilter(navItem.filterName)}
+                                active={this.props.activeFilterNames.includes(navItem.filterName)}
+                              > {navItem.label}
+                              </NavItem>
+                            )
+                          )
+
+                        }
                         </Nav>
                     </Navbar>
-                </div>
+
 
             )
         }
