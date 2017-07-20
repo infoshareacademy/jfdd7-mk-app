@@ -23,7 +23,7 @@ export default connect(
         }
 
         render(){
-            const { data, fetching, error } = this.props.places
+            // const { data, fetching, error } = this.props.places
             const navItems = [
               {
                 label: 'Fitness',

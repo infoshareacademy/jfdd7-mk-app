@@ -5,9 +5,9 @@ import SearchField from './SearchField'
 const MapSearch  = () => (
   <div>
     <SearchField/>
-    <div style={{ height: "800px"}}>
+    <div style={{ height: "83vh"}}>
       <div className="center-block"
-           style={{width: "80%", height: "100%"}}
+           style={{width: "100%", height: "100%"}}
       >
 
         <Map/>
