@@ -61,9 +61,11 @@
     vertical-align: center;
 }
 
-.distance span {
+.distance {
     padding-left: 20px;
     vertical-align: center;
+    font-size: 12px;
+
 }
 
 .website {
@@ -102,7 +104,7 @@
     text-shadow: 0 0 1px grey;
 }
 
-.img-responsive{
+.img {
     position: center;
     vertical-align: center;
     margin-left: 40%;
