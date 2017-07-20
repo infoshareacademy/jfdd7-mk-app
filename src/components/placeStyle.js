@@ -10,8 +10,8 @@ const placeStyle = {
   position: 'absolute',
   top: -35,
   left: -35 / 2
-
 }
+
 
 const nameDivStyle = {position:'absolute', top:35, color: 'black'}
 
