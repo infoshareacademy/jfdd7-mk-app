@@ -1,14 +1,11 @@
 .auto-complete {
     background-color: #b543a0;
     text-decoration: none;
-
-    width: 250px;
-
+    width: 553px;
     z-index: 9999;
-    margin-left: 5.5%;
+    margin-left: 3%;
     margin-right: auto;
     margin-top: 0px;
-
 }
 
 .auto-complete a {
@@ -39,10 +36,9 @@
 
 .overflow {
     margin-left: 70px;
-    width: 300px;
+    width: 585px;
     height: 300px;
     overflow-y: auto;
-
 }
 
 .headings {

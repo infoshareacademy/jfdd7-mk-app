@@ -24,6 +24,8 @@ export default connect(
 
     render() {
       const {data, fetching, error} = this.props.places
+      // const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase() || [])
+      // const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
 
@@ -51,7 +53,7 @@ export default connect(
             responsive>
             <tbody>
             {
-              data !== null && data.filter(
+              data !== null ? data.filter(
                 place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
               ).map(
                 place => (
@@ -63,7 +65,7 @@ export default connect(
                     </td>
                   </tr>
                 )
-              )
+              ) :[]
             }
             </tbody>
           </Table>
