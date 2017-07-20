@@ -42,30 +42,30 @@ export default connect(
           </div>
           { error === null ? null : <p>{error.message}</p> }
           { fetching === false ? null : <p>Fetching data...</p>}
-          {/*<Table*/}
-            {/*className="auto-complete"*/}
-            {/*bordered*/}
+          <Table
+            className="auto-complete"
+            bordered
 
-            {/*hover*/}
-            {/*responsive>*/}
-            {/*<tbody className="overflow">*/}
-            {/*{*/}
-              {/*data !== null && data.filter(*/}
-                {/*place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)*/}
-              {/*).map(*/}
-                {/*place => (*/}
-                  {/*<tr key={place.id}>*/}
-                    {/*<td>*/}
-                      {/*<Link to={'/details/' + place.id}>*/}
-                        {/*{place.name}*/}
-                      {/*</Link>*/}
-                    {/*</td>*/}
-                  {/*</tr>*/}
-                {/*)*/}
-              {/*)*/}
-            {/*}*/}
-            {/*</tbody>*/}
-          {/*</Table>*/}
+            hover
+            responsive>
+            <tbody className="overflow">
+            {
+              data !== null && data.filter(
+                place => this.props.searchPhrase === '' ? false : checkString(place.name) || checkArray(place.functions) || checkString(place.address)
+              ).map(
+                place => (
+                  <tr key={place.id}>
+                    <td>
+                      <Link to={'/details/' + place.id}>
+                        {place.name}
+                      </Link>
+                    </td>
+                  </tr>
+                )
+              )
+            }
+            </tbody>
+          </Table>
         </div>
 
       )

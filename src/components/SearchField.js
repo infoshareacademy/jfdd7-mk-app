@@ -3,20 +3,32 @@ import {connect} from 'react-redux'
 import {FormControl, Grid, Row, Col, FormGroup, Button } from 'react-bootstrap'
 import './SearchField.css'
 import {LinkContainer} from 'react-router-bootstrap'
+import Select from 'react-select';
+
+
+import 'react-select/dist/react-select.css';
 
 import {updateSearchPhrase} from '../state/searchField'
+
+var options = [
+  { value: 'one', label: 'One' },
+  { value: 'two', label: 'Two' }
+];
 
 const SearchField = props => (
   <Grid>
     <Row>
       <Col sm={6}>
-        <FormGroup controlId="formInlineEmail">
-          <FormControl
-            value={props.searchPhrase}
-            onChange={props.update}
+        <Select controlId="formInlineEmail">
+          <Select
+            name="form-field-name"
+            value="one"
+            option={options}
+            onChange=" "
             placeholder="Wyszukaj..."
+            multi={true}
           />
-        </FormGroup>
+        </Select>
       </Col>
       <Col sm={6}>
         <LinkContainer to="/list-search">
