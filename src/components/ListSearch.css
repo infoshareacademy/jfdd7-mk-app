@@ -4,7 +4,7 @@
 
 .info {
     margin-left: 15%;
-    width: 55%;
+    width: 80%;
 }
 
 .info:hover {
@@ -87,10 +87,10 @@
     text-align: left;
     font-size: 11px;
     display: block;
-    padding-top: 29px;
+    padding-top: 10px;
     padding-right: 0;
     padding-bottom:0;
-    padding-left: 25%;
+    padding-left: 0;
 }
 
 .contact a {
@@ -104,10 +104,7 @@
     text-shadow: 0 0 1px grey;
 }
 
-.img {
-    position: center;
-    vertical-align: center;
-    margin-left: 40%;
-    margin-top: 30%;
+.center-block {
+    margin-top: 20px;
 }
 
