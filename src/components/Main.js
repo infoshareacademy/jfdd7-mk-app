@@ -3,32 +3,38 @@ import './Main.css'
 import {connect} from 'react-redux'
 import SignInForm from './SignInForm'
 import SignUpForm from './SignUpForm'
-
-import {fetchPlaces} from '../state/places'
+import {Button} from 'react-bootstrap'
 
 export default connect(
   state => ({
-    places: state.places,
-    searchPhrase: state.searchField.searchPhrase,
     user: state.auth.user
-
-  }),
-  dispatch => ({
-    fetchPlaces: () => dispatch(fetchPlaces()),
   })
 )(
   class Main extends React.Component {
 
-    componentWillMount() {
-      this.props.fetchPlaces()
+    state = {
+      showSignIn: true,
+      showSignUp: false
     }
 
-    render() {
+    handleButtonClick = () =>
+      this.setState({
+        showSignIn: false,
+        showSignUp: true
+      })
 
+    render() {
+      const classSet = this.state.showSignIn ? 'accounHeader' : 'noAccounHeader'
       return (
         <div className="mainpage">
           {this.props.user === null ?
-            <SignInForm/> : null
+            <div>
+              {this.state.showSignIn ? <SignInForm/> : null}
+              <h3 className={classSet}>Nie masz jeszcze konta?</h3>
+              <Button className={classSet} onClick={this.handleButtonClick}>Kliknij!</Button>
+              {this.state.showSignUp ? <SignUpForm/> : null }
+            </div>
+            : null
           }
         </div>
 

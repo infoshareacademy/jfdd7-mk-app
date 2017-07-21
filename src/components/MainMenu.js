@@ -10,8 +10,9 @@ import {
   NavItem,
 } from 'react-bootstrap'
 import firebase from 'firebase'
+import {connect} from 'react-redux'
 
-const MainMenu = (props) => (
+const MainMenu = ({user}) => (
   <Navbar collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
@@ -32,13 +33,20 @@ const MainMenu = (props) => (
       </LinkContainer>
     </Nav>
     <Nav pullRight>
-      <NavItem className="signOutButton"
-        onClick={() => firebase.auth().signOut()}>
-        Wyloguj się
-      </NavItem>
+      {user === null ? null :
+        <NavItem className="signOutButton"
+                  onClick={() => firebase.auth().signOut()}>
+          Wyloguj się
+        </NavItem>
+
+      }
     </Nav>
     </Navbar.Collapse>
   </Navbar>
 )
 
-export default MainMenu
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(MainMenu)

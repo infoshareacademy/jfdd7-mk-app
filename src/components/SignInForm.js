@@ -27,7 +27,7 @@ class SignInForm extends React.Component {
       this.state.email,
       this.state.password
     ).then(
-      () => this.setState({message: 'User created!'})
+      () => this.setState({message: 'Logged In !'})
     ).catch(error => this.setState({message: error.message}))
   }
 
@@ -48,7 +48,6 @@ class SignInForm extends React.Component {
               />
             </Col>
           </FormGroup>
-
           <FormGroup controlId="formHorizontalPassword">
             <Col componentClass={ControlLabel} sm={2}>
               Hasło
@@ -62,13 +61,11 @@ class SignInForm extends React.Component {
               />
             </Col>
           </FormGroup>
-
           <FormGroup>
             <Col smOffset={2} sm={6}>
               <Checkbox>Pamiętaj mnie</Checkbox>
             </Col>
           </FormGroup>
-
           <FormGroup>
             <Col smOffset={2} sm={6}>
               <Button type="submit">

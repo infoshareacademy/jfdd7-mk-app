@@ -76,3 +76,6 @@
     margin-left: 84px;
     text-shadow: 2px 2px 1px darkgrey;
 }
+.noAccounHeader {
+    display: none;
+}
