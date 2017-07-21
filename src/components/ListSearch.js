@@ -118,7 +118,7 @@ export default connect(
                     </Row>
                   </Link>
                 )
-              ).sort()
+              )
           }
         </div>
       )
