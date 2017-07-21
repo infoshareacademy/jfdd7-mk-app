@@ -9,7 +9,9 @@ import {fetchPlaces} from '../state/places'
 export default connect(
   state => ({
     places: state.places,
-    searchPhrase: state.searchField.searchPhrase
+    searchPhrase: state.searchField.searchPhrase,
+    user: state.auth.user
+
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
@@ -24,23 +26,17 @@ export default connect(
     render() {
 
       return (
-
         <div className="mainpage">
-          {/*<div className="headings">*/}
-          {/*<p> Z nami znajdziesz swoje miejsce do treningów </p>*/}
-          {/*<small className="small-first"> Nie zwlekaj i zacznij swą przemianę już dziś!</small>*/}
-          {/*<br/>*/}
-          {/*<small className="small-second"> Skorzystaj z naszej wyszukiwarki...</small>*/}
-          {/*</div>*/}
-          {/*<SignUpForm/>*/}
-          <SignInForm/>
-
+          {this.props.user === null ?
+            <SignInForm/> : null
+          }
         </div>
 
       )
     }
   }
 )
+
 
 
 

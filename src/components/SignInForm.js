@@ -34,20 +34,6 @@ class SignInForm extends React.Component {
   render() {
     return (
       <div>
-        {/*<form onSubmit={this.handleSubmit}>*/}
-          {/*<p>{this.state.message}</p>*/}
-          {/*<input*/}
-            {/*type="text"*/}
-            {/*value={this.state.email}*/}
-            {/*onChange={this.handleEmailChange}*/}
-          {/*/>*/}
-          {/*<input type="password"*/}
-                 {/*value={this.state.password}*/}
-                 {/*onChange={this.handlePasswordChange}*/}
-          {/*/>*/}
-          {/*<button>Sign In</button>*/}
-        {/*</form>*/}
-
         <Form onSubmit={this.handleSubmit} horizontal>
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>

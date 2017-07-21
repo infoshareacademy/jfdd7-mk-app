@@ -1,5 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
+import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap'
 
 class SignUpForm extends React.Component {
   state = {
@@ -26,27 +27,68 @@ class SignUpForm extends React.Component {
       this.state.email,
       this.state.password
     ).then(
-      () => this.setState({ message: 'User created!' })
+      () => this.setState({message: 'User created!'})
     ).catch(
-      error => this.setState({ message: error.message })
+      error => this.setState({message: error.message})
     )
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <p>{this.state.message}</p>
-        <input
-          type="text"
-          value={this.state.email}
-          onChange={this.handleEmailChange}
-        />
-        <input type="password"
-          value={this.state.password}
-               onChange={this.handlePasswordChange}
-        />
-        <button>Sign Up</button>
-      </form>
+      <div>
+
+        <form onSubmit={this.handleSubmit}>
+          <p>{this.state.message}</p>
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.handleEmailChange}
+          />
+          <input type="password"
+                 value={this.state.password}
+                 onChange={this.handlePasswordChange}
+          />
+          <button>Sign Up</button>
+        </form>
+
+        <Form onSubmit={this.handleSubmit} horizontal>
+          <FormGroup controlId="formHorizontalEmail">
+            <Col componentClass={ControlLabel} sm={2}>
+              Twój Email
+            </Col>
+            <Col sm={6}>
+              <FormControl
+                type="text"
+                value={this.state.email}
+                onChange={this.handleEmailChange}
+                placeholder="Tutaj podaj swój email"
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup controlId="formHorizontalPassword">
+            <Col componentClass={ControlLabel} sm={2}>
+              Twoje Hasło
+            </Col>
+            <Col sm={6}>
+              <FormControl
+                type="password"
+                value={this.state.password}
+                onChange={this.handlePasswordChange}
+                placeholder="Tu wpisz hasło"
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col smOffset={2} sm={6}>
+              <Button type="submit">
+                Stwórz użytkownika
+              </Button>
+            </Col>
+          </FormGroup>
+        </Form>
+        <h1>{this.state.message}</h1>
+      </div>
     )
   }
 }
