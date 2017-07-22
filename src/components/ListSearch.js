@@ -11,6 +11,7 @@ import './ListSearch.css'
 import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
+import LocationFilter from './LocationFilter'
 
 export default connect(
   state => ({
@@ -88,6 +89,7 @@ export default connect(
           <MenuFilter function={this.props.match.params.function}/>
           <div className="center-block" style={{width: "70%"}}>
             <SearchField/>
+            <LocationFilter/>
           </div>
 
           { filteredPlaces.filter(
