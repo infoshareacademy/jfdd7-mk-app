@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import {connect} from 'react-redux'
 import {fetchPlaces} from '../state/places'
 import {Link} from 'react-router-dom'
-import {placeStyle} from './placeStyle'
+import './Map.css'
 
 export default connect(
   state => ({
@@ -59,10 +59,11 @@ export default connect(
                 to={'/details/' + place.id}
                 lat={parseFloat(place.latitude)}
                 lng={parseFloat(place.longitude)}
-                style={placeStyle}
+                // style={placeStyle}
+                className="placeStyle"
 
               >
-                <div style={{position: 'absolute', top: 35, color: 'black'}}>
+                <div className="placeNameStyle">
                   {place.name}
                 </div>
               </Link>

@@ -21,7 +21,7 @@
 .mainpage {
     background-image: url("../images/tlo2-min.jpg");
     width: 100%;
-    height: 800px;
+    height: 83vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -75,4 +75,7 @@
     margin-top: 300px;
     margin-left: 84px;
     text-shadow: 2px 2px 1px darkgrey;
+}
+.noAccounHeader {
+    display: none;
 }
