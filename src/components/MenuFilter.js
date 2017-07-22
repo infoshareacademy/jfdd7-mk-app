@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
+import LocationFilter from './LocationFilter'
 export default connect(
     state => ({
         places: state.places,
@@ -102,6 +103,7 @@ export default connect(
 
                         }
                         </Nav>
+                      <LocationFilter/>
                     </Navbar>
 
 
