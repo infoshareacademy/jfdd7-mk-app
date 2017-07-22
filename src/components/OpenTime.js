@@ -1,6 +1,7 @@
 import React from 'react'
 import Moment from 'moment';
 import { extendMoment } from 'moment-range'
+import './iconmonstr-iconic-font-1.2.0/iconmonstr-iconic-font-1.2.0/css/iconmonstr-iconic-font.min.css'
 
 const OpenTime = ({ place }) => {
   const moment = extendMoment(Moment)
@@ -11,9 +12,9 @@ const OpenTime = ({ place }) => {
   const isOpen = openingRange.contains(now)
 
   return(
-    <figure>
-      {isOpen ? <img src='../images'>}
-    </figure>
+    <span>
+      {isOpen ? <i className="im im-clock-o" style={{color:"green"}}/> : <i className="im im-clock-o" style={{color: "red"}}/>}
+    </span>
   )
 }
 export default OpenTime
