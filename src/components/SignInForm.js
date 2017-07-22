@@ -2,6 +2,13 @@ import React from 'react'
 import firebase from 'firebase'
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel, Checkbox} from 'react-bootstrap'
 
+const errorMessages = {
+  'auth/invalid-email' : 'Podano błędny adres email',
+  'auth/user-not-found' : 'Nie ma takiego użytkownika',
+  'auth/wrong-password' : 'Podano błędne hasło'
+}
+
+
 class SignInForm extends React.Component {
   state = {
     email: '',
@@ -21,6 +28,7 @@ class SignInForm extends React.Component {
     })
   }
 
+
   handleSubmit = event => {
     event.preventDefault()
     firebase.auth().signInWithEmailAndPassword(
@@ -28,7 +36,11 @@ class SignInForm extends React.Component {
       this.state.password
     ).then(
       () => this.setState({message: 'Logged In !'})
-    ).catch(error => this.setState({message: error.message}))
+    ).catch(error => {
+      this.setState({message: errorMessages[error.code] || error.message
+       })
+      console.log(error.code)
+    })
   }
 
   render() {
