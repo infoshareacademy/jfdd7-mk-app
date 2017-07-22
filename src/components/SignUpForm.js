@@ -4,7 +4,7 @@ import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-boo
 
 const errorMessages = {
   'auth/email-already-in-use' : 'Istnieje już konto użytkownika o takim adresie email.',
-  'auth/invalid-email' : 'Podany błędny adres email',
+  'auth/invalid-email' : 'Podano nieprawidłowy adres email',
   'auth/weak-password' : 'Podano zbyt krótkie hasło'
 }
 

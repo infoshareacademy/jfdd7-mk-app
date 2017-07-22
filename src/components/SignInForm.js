@@ -3,9 +3,9 @@ import firebase from 'firebase'
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel, Checkbox} from 'react-bootstrap'
 
 const errorMessages = {
-  'auth/invalid-email' : 'Podano błędny adres email',
-  'auth/user-not-found' : 'Nie ma takiego użytkownika',
-  'auth/wrong-password' : 'Podano błędne hasło'
+  'auth/invalid-email' : 'Podano błędny adres email lub hasło',
+  'auth/user-not-found' : 'Podano błędny adres email lub hasło',
+  'auth/wrong-password' : 'Podano błędny adres email lub hasło'
 }
 
 
