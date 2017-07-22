@@ -30,8 +30,10 @@ export default connect(
           {this.props.user === null ?
             <div>
               {this.state.showSignIn ? <SignInForm/> : null}
-              <h3 className={classSet}>Nie masz jeszcze konta?</h3>
-              <Button className={classSet} onClick={this.handleButtonClick}>Kliknij!</Button>
+              <div className="registrationRedirect">
+                <h3 className={classSet}>Nie masz jeszcze konta?</h3>
+                <Button className={classSet} onClick={this.handleButtonClick}>Kliknij!</Button>
+              </div>
               {this.state.showSignUp ? <SignUpForm/> : null }
             </div>
             : null
