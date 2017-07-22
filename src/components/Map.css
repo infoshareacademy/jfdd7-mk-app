@@ -17,11 +17,14 @@
 }
 
 .placeNameStyle {
-    width:50px;
+    width:100px;
     position: absolute;
     top: 45px;
+    left:-30px;
     color: black;
     font-family: Francois One, sans-serif;
+    text-align: center;
+    display: inline-block;
 
 }
 
