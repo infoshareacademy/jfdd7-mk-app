@@ -11,6 +11,7 @@ import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'
 import ActivitiesDetails from './ActivitiesDetails'
+import OpenTime from './OpenTime'
 import './Details.css'
 
 
@@ -55,6 +56,7 @@ export default connect(
                         <Col>
 
                             <ObjectName className ="Object__Name" name={place.name}/>
+                            <OpenTime place={place} />
 
                         </Col>
                     </Row>

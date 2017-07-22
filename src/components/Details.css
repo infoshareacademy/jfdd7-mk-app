@@ -26,6 +26,7 @@
     color: #b543a0;
 }
 .Object__Name {
+    display: inline-block;
     font-size: 3em;
     font-family: "Francois One", sans-serif;
     padding-left: 1em;
@@ -75,7 +76,7 @@ li.icon {
 li.fitness {
     background-image: url("../images/fitness.png");
 }
-li.zajecia-dla-dzieci {
+li.zajęcia-dla-dzieci {
     background-image: url("../images/zajecia-dla-dzieci.png");
 }
 li.solarium {

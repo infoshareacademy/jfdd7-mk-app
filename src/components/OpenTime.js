@@ -1,39 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { fetchPlaces } from '../state/places'
-import * as moment from 'moment'
+import Moment from 'moment';
+import { extendMoment } from 'moment-range'
 
-export default connect(
-  state => ({
-    places: state.places
-  }),
-  dispatch => ({
-    fetchPlaces: () => dispatch(fetchPlaces()),
-  })
-)(
-  class OpenTime extends React.Component {
+const OpenTime = ({ place }) => {
+  const moment = extendMoment(Moment)
+  const now = moment()
+  const start = moment().hours(place.start_h).minutes(place.start_m)
+  const end = moment().hours(place.end_h).minutes(place.end_m)
+  const openingRange = moment().range(start, end)
+  const isOpen = openingRange.contains(now)
 
-    componentWillMount() {
-      this.props.fetchPlaces()
-    }
-  }
-render()
-const {data} = this.props.places
-const start =
-  data => place.map(
-    place => place.start_h
+  return(
+    <figure>
+      {isOpen ? <img src='../images'>}
+    </figure>
   )
-const end =
-  data => place.map(
-    place => place.end_h
-  )
-const now = moment.toObject()
-
-)
-
-
-
-
-
-
+}
 export default OpenTime
