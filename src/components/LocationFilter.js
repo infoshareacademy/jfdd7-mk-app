@@ -4,6 +4,7 @@ import 'rc-slider/assets/index.css'
 import { Col } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { updateLocation } from '../state/searchFilter'
+import './LocationFilter.css'
 
 export default connect(
   state => ({
