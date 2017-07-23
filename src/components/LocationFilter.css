@@ -1,5 +1,6 @@
 .rc-slider-step {
     background:transparent;
+    height: 2px;
 }
 
 .rc-slider-handle {
@@ -14,15 +15,28 @@
     border: 2px solid #b543a0;
 }
 
+.rc-slider-track {
+    background: #EE1FC6;
+    border: black;
+}
+
 .div-location-filter {
     border: 1px solid darkslategrey;
     border-radius: 15px;
-    box-shadow: 4px 4px 4px 4px grey;
-    height: 100px;
+    box-shadow: 3px 2px 5px 1px grey;
+    height: 60%;
+    margin: 0;
+    display: block;
 }
 
 h6 {
     font-family: Francois One, sans-serif;
     font-size: 11px;
-    font-weight: bold;
+    /*font-weight: bold;*/
+}
+
+p {
+    font-family: Francois One, sans-serif;
+    font-size: 14px;
+    /*font-weight: bold;*/
 }

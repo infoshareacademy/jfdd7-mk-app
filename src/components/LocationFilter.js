@@ -18,9 +18,9 @@ export default connect(
     render() {
       return (
       <div>
-        <Col xs={12} sm={7} className="div-location-filter">
-          <h6> Wybierz odległość:</h6>
-          <p> {this.props.location} km</p>
+        <Col xs={12} sm={5} className="div-location-filter">
+          <h6> Wybierz odległość: <span> {this.props.location} km</span></h6>
+
           <Slider max={12} min={1} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>
       </div>
