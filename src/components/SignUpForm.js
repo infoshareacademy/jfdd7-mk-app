@@ -2,6 +2,12 @@ import React from 'react'
 import firebase from 'firebase'
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap'
 
+const errorMessages = {
+  'auth/email-already-in-use' : 'Istnieje już konto użytkownika o takim adresie email.',
+  'auth/invalid-email' : 'Podano nieprawidłowy adres email',
+  'auth/weak-password' : 'Podano zbyt krótkie hasło'
+}
+
 class SignUpForm extends React.Component {
   state = {
     email: '',
@@ -29,7 +35,7 @@ class SignUpForm extends React.Component {
     ).then(
       () => this.setState({message: 'User created!'})
     ).catch(
-      error => this.setState({message: error.message})
+      error => this.setState({message: errorMessages[error.code] || error.message})
     )
   }
 
