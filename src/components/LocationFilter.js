@@ -18,10 +18,10 @@ export default connect(
     render() {
       return (
       <div>
-        <Col xs={12} sm={6}>
-          <h4> Wybierz odległość: </h4>
-          <p>{this.props.location} km</p>
-          <Slider min={1} max={12} value={this.props.location} onChange={this.props.updateLocation}/>
+        <Col xs={12} sm={7} className="div-location-filter">
+          <h6> Wybierz odległość:</h6>
+          <p> {this.props.location} km</p>
+          <Slider max={12} min={1} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>
       </div>
       )

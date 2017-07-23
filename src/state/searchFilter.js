@@ -6,7 +6,7 @@ export const updateLocation = location => ({
 })
 
 const initialState = {
-  location: 1,
+  location: 12,
 }
 
 export default (state = initialState, action = {}) => {
