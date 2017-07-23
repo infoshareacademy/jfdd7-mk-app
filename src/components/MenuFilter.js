@@ -32,7 +32,7 @@ export default connect(
               },
               {
                 label: 'Zajęcia dla dzieci',
-                filterName: 'zajecia dla dzieci'
+                filterName: 'zajecia_dla_dzieci'
               },
               {
                 label: 'Solarium',
@@ -40,11 +40,11 @@ export default connect(
               },
               {
                 label: 'Sztuki walki',
-                filterName: 'sztuki walki'
+                filterName: 'sztuki_walki'
               },
               {
                 label: 'Masaż wody',
-                filterName: 'masaz wodny'
+                filterName: 'masaz_wodny'
               },
               {
                 label: 'Jacuzzi',
@@ -64,11 +64,11 @@ export default connect(
               },
               {
                 label: 'Ścianka wspinaczkowa',
-                filterName: 'scianka wspinaczkowa'
+                filterName: 'scianka_wspinaczkowa'
               },
               {
                 label: 'Taniec towarzyski',
-                filterName: 'taniec towarzyski'
+                filterName: 'taniec_towarzyski'
               },
               {
                 label: 'Sauna',
@@ -100,8 +100,8 @@ export default connect(
                               </NavItem>
                             )
                           )
-
                         }
+                        <LocationFilter/>
                         </Nav>
                     </Navbar>
 

@@ -11,6 +11,7 @@ import './ListSearch.css'
 import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
+import LocationFilter from './LocationFilter'
 
 export default connect(
   state => ({
