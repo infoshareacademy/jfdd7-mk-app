@@ -11,6 +11,7 @@ import MapSearch from './MapSearch'
 import ListSearch from './ListSearch'
 import Details from './Details'
 import MainMenu from './MainMenu'
+import LocationFilter from './LocationFilter'
 
 export default class App extends Component {
   render() {

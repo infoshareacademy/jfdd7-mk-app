@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
+import LocationFilter from './LocationFilter'
 export default connect(
     state => ({
         places: state.places,
@@ -23,66 +24,61 @@ export default connect(
         }
 
         render(){
-            // const { data, fetching, error } = this.props.places
-            const navItems = [
-              {
-                label: 'Fitness',
-                filterName: 'fitness'
-              },
-              {
-                label: 'Zajęcia dla dzieci',
-                filterName: 'zajecia_dla_dzieci'
-              },
-              {
-                label: 'Solarium',
-                filterName: 'solarium'
-              },
-              {
-                label: 'Sztuki walki',
-                filterName: 'sztuki_walki'
-              },
-              {
-                label: 'Masaż wody',
-                filterName: 'masaz_wodny'
-              },
-              {
-                label: 'Jacuzzi',
-                filterName: 'jacuzzi'
-              },
-              {
-                label: 'Basen',
-                filterName: 'basen'
-              },
-              {
-                label: 'Zumba',
-                filterName: 'zumba'
-              },
-              {
-                label: 'Kręgle',
-                filterName: 'kregle'
-              },
-              {
-                label: 'Ścianka wspinaczkowa',
-                filterName: 'scianka_wspinaczkowa'
-              },
-              {
-                label: 'Taniec towarzyski',
-                filterName: 'taniec_towarzyski'
-              },
-              {
-                label: 'Sauna',
-                filterName: 'sauna'
-              },
-              {
-                label: 'Siłownia',
-                filterName: 'silownia'
-              },
-              {
-                label: 'Crossfit',
-                filterName: 'crossfit'
-              },
-
-            ]
+          const { data, fetching, error } = this.props.places
+          const navItems = [
+            {
+              label: 'Siłownia',
+              filterName: 'silownia'
+            },
+            {
+              label: 'Crossfit',
+              filterName: 'crossfit'
+            },
+            {
+              label: 'Ścianka wspinaczkowa',
+              filterName: 'scianka wspinaczkowa'
+            },
+            {
+              label: 'Sztuki walki',
+              filterName: 'sztuki walki'
+            },
+            {
+              label: 'Fitness',
+              filterName: 'fitness'
+            },
+            {
+              label: 'Zumba',
+              filterName: 'zumba'
+            },
+            {
+              label: 'Taniec Towarzyski',
+              filterName: 'taniec towarzyski'
+            },
+            {
+              label: 'Basen',
+              filterName: 'basen'
+            },
+            {
+              label: 'Jacuzzi',
+              filterName: 'jacuzzi'
+            },
+            {
+              label: 'Sauna',
+              filterName: 'sauna'
+            },
+            {
+              label: 'Masaż wodny',
+              filterName: 'masaz wodny'
+            },
+            {
+              label: 'Solarium',
+              filterName: 'solarium'
+            },
+            {
+              label: 'Zajęcia dla dzieci',
+              filterName: 'zajecia dla dzieci'
+            },
+          ]
 
             return (
 
@@ -102,6 +98,7 @@ export default connect(
 
                         }
                         </Nav>
+                      <LocationFilter/>
                     </Navbar>
 
 

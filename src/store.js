@@ -6,12 +6,14 @@ import localstorage from 'redux-localstorage'
 import places from './state/places'
 import searchField from './state/searchField'
 import activitiesFilter from './state/activitiesFilter'
+import searchFilter from './state/searchFilter'
 import auth from './state/auth'
 
 const reducer = combineReducers({
   places,
   searchField,
   activitiesFilter,
+  searchFilter,
   auth
 })
 
