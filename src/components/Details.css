@@ -18,7 +18,7 @@
 .slick-prev {
     left: 4px;
 }
-.photo img {
+.photo {
     max-width: 98%;
     margin: 0 auto;
 }

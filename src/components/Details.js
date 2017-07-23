@@ -49,7 +49,7 @@ export default connect(
                 <Grid>
                     <Row>
                         <Col>
-                            <CarouselDetails/>
+                            <CarouselDetails place={place}/>
                         </Col>
                     </Row>
                     <Row>
