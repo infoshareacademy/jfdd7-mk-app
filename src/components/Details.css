@@ -18,7 +18,7 @@
 .slick-prev {
     left: 4px;
 }
-.photo img {
+.photo {
     max-width: 98%;
     margin: 0 auto;
 }
@@ -26,10 +26,11 @@
     color: #b543a0;
 }
 .Object__Name {
+    display: inline-block;
     font-size: 3em;
     font-family: "Francois One", sans-serif;
     padding-left: 1em;
-    margin: 1em 0;
+    margin: 1em;
 }
 section.Object__Details {
     padding-left: 40px;
@@ -75,7 +76,7 @@ li.icon {
 li.fitness {
     background-image: url("../images/fitness.png");
 }
-li.zajecia-dla-dzieci {
+li.zajęcia-dla-dzieci {
     background-image: url("../images/zajecia-dla-dzieci.png");
 }
 li.solarium {
