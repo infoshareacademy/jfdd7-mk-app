@@ -43,6 +43,9 @@
     color: #b543a0;
     margin: 20px 0;
     width: 350px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: grey;
 }
 
 .description a {
@@ -64,8 +67,9 @@
 .distance {
     padding-left: 20px;
     vertical-align: center;
-    font-size: 12px;
-
+    font-size: 11px;
+    color: grey;
+    font-weight: bold;
 }
 
 .website {
@@ -87,16 +91,17 @@
     text-align: left;
     font-size: 11px;
     display: block;
-    padding-top: 10px;
+    margin-top: 20px;
     padding-right: 0;
     padding-bottom:0;
     padding-left: 0;
 }
 
 .contact a {
-    color: darkblue;
+    color: blue;
     font-size: 11px;
     font-weight: bold;
+    padding-top: 20px;
 }
 
 .contact a:hover {
