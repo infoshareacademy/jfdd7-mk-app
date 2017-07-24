@@ -7,12 +7,14 @@ import places from './state/places'
 import searchField from './state/searchField'
 import activitiesFilter from './state/activitiesFilter'
 import auth from './state/auth'
+import favs from './state/favs'
 
 const reducer = combineReducers({
   places,
   searchField,
   activitiesFilter,
-  auth
+  auth,
+  favs
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

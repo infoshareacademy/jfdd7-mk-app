@@ -4,6 +4,7 @@ import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
 import { activateFilter } from '../state/activitiesFilter'
+import {favPlace, deleteFav} from '../state/favs'
 import IconCategory from './IconCategory'
 import Description from './Description'
 import ContactObject from './ContactObject'
@@ -16,11 +17,14 @@ export default connect(
   state => ({
     places: state.places,
     searchPhrase: state.searchField.searchPhrase,
-    activeFilterNames: state.activitiesFilter.activeFilterNames
+    activeFilterNames: state.activitiesFilter.activeFilterNames,
+    favedPlaceIds: state.favs.placeIds
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
-    activateFilter: filterName => dispatch(activateFilter(filterName))
+    activateFilter: filterName => dispatch(activateFilter(filterName)),
+    handleFavPlaceClick: event => dispatch(favPlace(event.target.dataset.uid)),
+    handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid))
   })
 )(
   class ListSearch extends React.Component {
@@ -114,7 +118,15 @@ export default connect(
 
                       <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
-                        <Button className="addToFav">+</Button>
+                        <Button
+                          data-uid={place.id}
+                          onClick={
+                            this.props.favedPlaceIds === place.id ?
+                              this.props.handleDeletePlaceClick :
+                              this.props.handleFavPlaceClick} className="addToFav"
+                        >
+                          +
+                        </Button>
                       </Col>
                     </Row>
                 )
