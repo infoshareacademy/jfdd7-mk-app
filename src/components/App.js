@@ -11,6 +11,7 @@ import MapSearch from './MapSearch'
 import ListSearch from './ListSearch'
 import Details from './Details'
 import MainMenu from './MainMenu'
+import Favorites from './Favorites'
 
 export default class App extends Component {
   render() {
@@ -24,6 +25,8 @@ export default class App extends Component {
             <Route exact path="/list-search" component={ListSearch}/>
             <Route path="/details/:placeId" component={Details}/>
             <Route path="/list-search/:function" component={ListSearch}/>
+            <Route path="/list-search/:function" component={ListSearch}/>
+            <Route path="/favorites" component={Favorites}/>
           </div>
         </div>
       </Router>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
 import { activateFilter } from '../state/activitiesFilter'
@@ -99,24 +99,24 @@ export default connect(
             })
           ).sort((a, b) => a.distance - b.distance).map(
             place => (
-                   <Link to={'/details/' + place.id} key={place.id}>
                     <Row className="info">
                       <Col xs={2} lg={2} className="pin">
                         <div>
                           <IconCategory/>
                         </div>
                       </Col>
-
+                      <Link to={'/details/' + place.id} key={place.id}>
                       <Col xs={7} lg={7} className="main-description">
                         <Description address={place.address} telephone={place.telephone} website={place.website}
                                      name={place.name} distance={place.distance} />
                       </Col>
+                      </Link>
 
                       <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
+                        <Button className="addToFav">+</Button>
                       </Col>
                     </Row>
-                  </Link>
                 )
               )
           }
