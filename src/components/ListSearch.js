@@ -94,7 +94,7 @@ export default connect(
           </div>
 
           { filteredPlaces.filter(
-            place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? isFunctionSet : checkString(place.name) || checkArray(place.functions)
+            place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? filteredPlaces : checkString(place.name) || checkArray(place.functions)
           ).map(
             place => ({
               ...place,
