@@ -5,7 +5,7 @@
 
 .rc-slider-handle {
     border: 2px solid #b543a0;
-    background: ghostwhite;
+    background: white;
 }
 
 .rc-slider-handle:hover {
@@ -16,7 +16,7 @@
 }
 
 .rc-slider-track {
-    background: #EE1FC6;
+    background-image: linear-gradient(90deg, #b543a0, #ff19d2);
     border: black;
 }
 
@@ -25,18 +25,18 @@
     border-radius: 10px;
     box-shadow: 3px 2px 5px 1px grey;
     height: 60%;
-    margin: 0;
+    margin-left: 2%;
     display: block;
 }
 
-h6 {
+.div-location-filter h6 {
     font-family: Francois One, sans-serif;
     font-size: 11px;
     /*font-weight: bold;*/
 }
 
-p {
+.div-location-filter span {
     font-family: Francois One, sans-serif;
-    font-size: 14px;
-    /*font-weight: bold;*/
+    font-size: 15px;
+    font-weight: bold;
 }
