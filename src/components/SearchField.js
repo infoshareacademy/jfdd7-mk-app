@@ -19,6 +19,7 @@ const SearchField = props => (
         </FormGroup>
       </Col>
       <Col sm={6}>
+
         <LinkContainer to="/list-search">
           <Button type="submit"
                   bsStyle="info"

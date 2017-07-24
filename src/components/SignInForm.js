@@ -48,11 +48,12 @@ class SignInForm extends React.Component {
       <div>
         <Form onSubmit={this.handleSubmit} horizontal>
           <FormGroup controlId="formHorizontalEmail">
-            <Col componentClass={ControlLabel} sm={2}>
+            <Col componentClass={ControlLabel} xs={1}  sm={1}>
               Email
             </Col>
-            <Col sm={6}>
+            <Col smOffset="1" smPull={1} xs={6} sm={6}>
               <FormControl
+                style={{maxWidth: 350, minWidth: 200}}
                 type="text"
                 value={this.state.email}
                 onChange={this.handleEmailChange}
@@ -61,11 +62,12 @@ class SignInForm extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup controlId="formHorizontalPassword">
-            <Col componentClass={ControlLabel} sm={2}>
+            <Col componentClass={ControlLabel} xs={1} sm={1}>
               Hasło
             </Col>
-            <Col sm={6}>
+            <Col smOffset="1" smPull={1} xs={6} sm={6}>
               <FormControl
+                style={{maxWidth: 200, minWidth: 150}}
                 type="password"
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
@@ -74,12 +76,12 @@ class SignInForm extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col smOffset={2} sm={6}>
+            <Col xsOffset={1} smOffset={1} xs={6} sm={6}>
               <Checkbox>Pamiętaj mnie</Checkbox>
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col smOffset={2} sm={6}>
+            <Col xsOffset={1} smOffset={1} xs={6} sm={6}>
               <Button type="submit">
                 Zaloguj się
               </Button>
