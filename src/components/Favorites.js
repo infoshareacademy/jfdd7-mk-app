@@ -6,26 +6,35 @@ import {Link} from 'react-router-dom'
 import Description from './Description'
 import ContactObject from './ContactObject'
 import {initFavsSync} from '../state/favs'
+import {fetchPlaces} from '../state/places'
 
 export default connect(
   state => ({
     places: state.places.data,
-    placeIds: state.placeIds
+    favedPlaceIds: state.placeIds
   }),
   dispatch => ({
-    initFavsSync: () => dispatch(initFavsSync())
+    initFavsSync: () => dispatch(initFavsSync()),
+    fetchPlaces: () => dispatch(fetchPlaces())
+
   })
 )(
   class Favorites extends React.Component {
 
-    componentWillMount(){
+    componentWillMount() {
       this.props.initFavsSync()
+      this.props.fetchPlaces()
+
     }
 
+
     render() {
+      const favoriteKeys = this.props.placeIds !== null ? Object.keys(this.props.placeIds) : null
+      console.log(this.props.places)
+      console.log(favoriteKeys)
       return (
         <div>
-          {this.props.places !== null ? this.props.places.filter(place => this.props.placeIds.includes(place.id)).map(
+          {this.props.places !== null ? this.props.places.filter(place => favoriteKeys.includes(place.id)).map(
             place => (
               <Row className="info">
                 <Col xs={2} lg={2} className="pin">
