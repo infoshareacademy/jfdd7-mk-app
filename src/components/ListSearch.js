@@ -112,7 +112,7 @@ export default connect(
                       </div>
                     </Col>
 
-                    <Col xs={7} lg={7} className="main-description">
+                    <Col xs={7} lg={6} className="main-description">
                       <Description address={place.address} telephone={place.telephone} website={place.website}
                                    name={place.name} distance={place.distance}/>
                     </Col>
