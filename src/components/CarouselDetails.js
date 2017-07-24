@@ -21,7 +21,7 @@ const CarouselDetails = ({ place }) => (
       accessibility={false}
       arrows={true}
     >
-      {place.photos.map(photo => <div className="photo" style={{backgroundImage: `url("/photos/${photo}.jpg")`, minHeight:'200px'}}></div>)}
+      {place.photos.map(photo => <div className="photo" style={{backgroundImage: `url("/photos/${photo}.jpg")`}}></div>)}
     </Slider>
     )
 

@@ -3,6 +3,7 @@ import Moment from 'moment';
 import { extendMoment } from 'moment-range'
 import './iconmonstr-iconic-font-1.2.0/iconmonstr-iconic-font-1.2.0/css/iconmonstr-iconic-font.min.css'
 
+
 const OpenTime = ({ place }) => {
   const moment = extendMoment(Moment)
   const now = moment()
@@ -13,7 +14,7 @@ const OpenTime = ({ place }) => {
 
   return(
     <span>
-      {isOpen ? <i className="im im-clock-o" style={{color:"green"}}/> : <i className="im im-clock-o" style={{color: "red"}}/>}
+      {isOpen ? <div className="Open__Time"><i className="im im-clock-o" style={{color:"green"}}/> otwarte</div> : <div><i className="im im-clock-o" style={{color: "red"}}/> zamknięte</div>}
     </span>
   )
 }
