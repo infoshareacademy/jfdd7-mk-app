@@ -1,6 +1,8 @@
 import React from 'react'
+import OpenTime from './OpenTime'
 
-const ObjectName = ({ name }) => (
-  <h2 className="Object__Name">{name}</h2>
+
+const ObjectName = ({ name, place }) => (
+  <h2 className="Object__Name">{name}<OpenTime place={place} /></h2>
 )
 export default ObjectName

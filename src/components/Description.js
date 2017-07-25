@@ -27,9 +27,9 @@ const Description = ({address, website, name, distance}) => (
   <section className="description">
     <h3>{name} <div className="distance"> ~ odległość: {distance.toFixed(2)} km </div></h3>
     <span>{address}</span>
-    <div className="website">
-      <a href={website}>{website}</a>
-    </div>
+    {/*<div className="website">*/}
+      {/*/!*<a href="{website}" target="_blank">{website} </a>*!/*/}
+    {/*</div>*/}
   </section>
 )
 export default Description

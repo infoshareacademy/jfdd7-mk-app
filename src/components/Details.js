@@ -11,6 +11,7 @@ import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'
 import ActivitiesDetails from './ActivitiesDetails'
+import OpenTime from './OpenTime'
 import './Details.css'
 
 
@@ -48,13 +49,12 @@ export default connect(
                 <Grid>
                     <Row>
                         <Col>
-                            <CarouselDetails/>
+                            <CarouselDetails place={place}/>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-
-                            <ObjectName className ="Object__Name" name={place.name}/>
+                            <ObjectName className ="Object__Name" name={place.name} place={place}/>
 
                         </Col>
                     </Row>
