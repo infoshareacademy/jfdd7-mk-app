@@ -1,10 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Row, Col} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import {fetchPlaces} from '../state/places'
-import {activateFilter} from '../state/activitiesFilter'
-import { connect } from 'react-redux'
 import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
@@ -17,14 +12,13 @@ import './ListSearch.css'
 import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
-import LocationFilter from './LocationFilter'
 
 export default connect(
   state => ({
     places: state.places,
     searchPhrase: state.searchField.searchPhrase,
     activeFilterNames: state.activitiesFilter.activeFilterNames,
-    location: state.searchFilter.location
+    location: state.searchFilter.location,
     favedPlaceIds: state.favs.placeIds,
     user: state.auth.user
 
@@ -66,7 +60,6 @@ export default connect(
         return d;
       }
 
-      const isFunctionSet = this.props.match.params.function !== undefined
       const {data} = this.props.places
 
       const places = data === null ? [] : data

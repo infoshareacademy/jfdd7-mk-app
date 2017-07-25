@@ -21,7 +21,7 @@ export default class App extends Component {
         <div>
           <MainMenu/>
           <div className="App">
-            <Route exact path="/"component={Main}/>
+            <Route exact path="/" component={Main}/>
             <Route path="/map-search" component={MapSearch}/>
             <Route exact path="/list-search" component={ListSearch}/>
             <Route path="/details/:placeId" component={Details}/>
