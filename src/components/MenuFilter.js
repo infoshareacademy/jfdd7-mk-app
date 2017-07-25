@@ -43,7 +43,7 @@ export default connect(
                 filterName: 'sztuki_walki'
               },
               {
-                label: 'Masaż wody',
+                label: 'Masaż wodny',
                 filterName: 'masaz_wodny'
               },
               {
