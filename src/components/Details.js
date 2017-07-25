@@ -30,7 +30,7 @@ export default connect(
 
         render() {
             const {data} = this.props.places
-            const placeId = parseInt(this.props.match.params.placeId, 10)
+            const placeId = this.props.match.params.placeId
             const place = data === null ? undefined : data.find(
                 place => place.id === placeId
             )

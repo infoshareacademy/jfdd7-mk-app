@@ -11,7 +11,7 @@ import {fetchPlaces} from '../state/places'
 export default connect(
   state => ({
     places: state.places.data,
-    favedPlaceIds: state.placeIds
+    favedPlaceIds: state.favs.placeIds
   }),
   dispatch => ({
     initFavsSync: () => dispatch(initFavsSync()),
@@ -29,7 +29,7 @@ export default connect(
 
 
     render() {
-      const favoriteKeys = this.props.placeIds !== null ? Object.keys(this.props.placeIds) : null
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : null
       console.log(this.props.places)
       console.log(favoriteKeys)
       return (
@@ -45,7 +45,7 @@ export default connect(
                 <Link to={'/details/' + place.id} key={place.id}>
                   <Col xs={7} lg={7} className="main-description">
                     <Description address={place.address} telephone={place.telephone} website={place.website}
-                                 name={place.name} distance={place.distance}/>
+                                 name={place.name} distance={2.32}/>
                   </Col>
                 </Link>
 
