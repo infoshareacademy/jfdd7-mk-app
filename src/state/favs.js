@@ -24,11 +24,11 @@ export const favPlace = uid => dispatch => {
   ref.set(true)
 }
 
-// export const deleteFav = uid => dispatch => {
-//   const userUid = firebase.auth().currentUser.uid
-//   const ref = firebase.database().ref('favs/' + userUid + '/placeIds/' + uid)
-//   ref.remove()
-// }
+export const deleteFav = uid => dispatch => {
+  const userUid = firebase.auth().currentUser.uid
+  const ref = firebase.database().ref('favs/' + userUid + '/placeIds/' + uid)
+  ref.remove()
+}
 
 const initialState = {
   placeIds: null

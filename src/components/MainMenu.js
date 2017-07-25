@@ -31,9 +31,11 @@ const MainMenu = ({user}) => (
         <LinkContainer to="/list-search">
           <NavItem className='Main__Menu'>LISTA</NavItem>
         </LinkContainer>
-        <LinkContainer to="/favorites">
-          <NavItem className='Main__Menu'>ULUBIONE</NavItem>
-        </LinkContainer>
+        {user === null ? null :
+          <LinkContainer to="/favorites">
+            <NavItem className='Main__Menu'>ULUBIONE</NavItem>
+          </LinkContainer>
+        }
       </Nav>
       <Nav pullRight>
         {user === null ? null :

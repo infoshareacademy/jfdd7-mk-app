@@ -5,7 +5,7 @@ import IconCategory from './IconCategory'
 import {Link} from 'react-router-dom'
 import Description from './Description'
 import ContactObject from './ContactObject'
-import {initFavsSync} from '../state/favs'
+import {initFavsSync, deleteFav, favPlace} from '../state/favs'
 import {fetchPlaces} from '../state/places'
 
 export default connect(
@@ -15,8 +15,9 @@ export default connect(
   }),
   dispatch => ({
     initFavsSync: () => dispatch(initFavsSync()),
-    fetchPlaces: () => dispatch(fetchPlaces())
-
+    fetchPlaces: () => dispatch(fetchPlaces()),
+    handleFavPlaceClick: event => dispatch(favPlace(event.target.dataset.uid)),
+    handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid))
   })
 )(
   class Favorites extends React.Component {
@@ -29,7 +30,7 @@ export default connect(
 
 
     render() {
-      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : null
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       console.log(this.props.places)
       console.log(favoriteKeys)
       return (
@@ -51,12 +52,14 @@ export default connect(
 
                 <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                   <ContactObject telephone={place.telephone}/>
-                  <Button data-uid={place.id} onClick={this.props.handleFavPlaceClick} className="addToFav">{
-                    this.props.favedPlaceIds === null ?
-                      '...' :
+                  <Button data-uid={place.id}
+                          onClick={this.props.favedPlaceIds[place.id] !== true ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
+                          className="addToFav"
+                  >
+                    {
                       this.props.favedPlaceIds[place.id] !== true ?
                         '+' : '-'
-                  }
+                    }
                   </Button>
                 </Col>
               </Row>

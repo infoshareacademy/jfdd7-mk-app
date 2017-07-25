@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { fetchPlaces } from '../state/places'
 import { activateFilter } from '../state/activitiesFilter'
-import {favPlace} from '../state/favs'
+import {favPlace, deleteFav, initFavsSync} from '../state/favs'
 import IconCategory from './IconCategory'
 import Description from './Description'
 import ContactObject from './ContactObject'
@@ -18,19 +18,24 @@ export default connect(
     places: state.places,
     searchPhrase: state.searchField.searchPhrase,
     activeFilterNames: state.activitiesFilter.activeFilterNames,
-    favedPlaceIds: state.favs.placeIds
+    favedPlaceIds: state.favs.placeIds,
+    user: state.auth.user
+
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
     activateFilter: filterName => dispatch(activateFilter(filterName)),
     handleFavPlaceClick: event => dispatch(favPlace(event.target.dataset.uid)),
-    // handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid))
+    handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid)),
+    initFavsSync: () => dispatch(initFavsSync()),
   })
 )(
   class ListSearch extends React.Component {
 
     componentWillMount() {
       this.props.fetchPlaces()
+      this.props.user === null ? null : this.props.initFavsSync()
+
     }
 
 
@@ -77,6 +82,7 @@ export default connect(
       }
 
 
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
       const filteredPlaces = places.filter(
@@ -118,12 +124,16 @@ export default connect(
 
                       <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                         <ContactObject telephone={place.telephone}/>
-                        <Button
-                          data-uid={place.id}
-                          onClick={this.props.handleFavPlaceClick} className="addToFav"
-                        >
-                          +
-                        </Button>
+                        {this.props.user === null ? null :
+                          <Button
+                            className="addToFav"
+                            data-uid={place.id}
+                            onClick={!favoriteKeys.includes(place.id) ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
+
+                          >
+                            {favoriteKeys.includes(place.id) ? '-' : '+'}
+                          </Button>
+                        }
                       </Col>
                     </Row>
                 )
