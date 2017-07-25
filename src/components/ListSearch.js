@@ -92,7 +92,7 @@ export default connect(
             .filter(place => place.distance <= this.props.location)
             .map(
               place => (
-                  <Row className="info">
+                  <Row key={place.id} className="info">
                     <Col xs={2} lg={2} className="pin">
                       <div>
                         <IconCategory/>

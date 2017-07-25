@@ -11,7 +11,6 @@ import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
 import MapDetails from './MapDetails'
 import ActivitiesDetails from './ActivitiesDetails'
-import OpenTime from './OpenTime'
 import './Details.css'
 
 

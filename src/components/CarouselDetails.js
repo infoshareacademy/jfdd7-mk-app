@@ -1,6 +1,5 @@
 import React from 'react'
 import Slider  from 'react-slick'
-import CalypsoPrzymorze from '../images/CalypsoPrzymorze.jpg'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
@@ -21,7 +20,7 @@ const CarouselDetails = ({ place }) => (
       accessibility={false}
       arrows={true}
     >
-      {place.photos.map(photo => <div className="photo" style={{backgroundImage: `url("/photos/${photo}.jpg")`}}></div>)}
+      {place.photos.map(photo => <div className="photo" key = {photo} style={{backgroundImage: `url("/photos/${photo}.jpg")`}}></div>)}
     </Slider>
     )
 
