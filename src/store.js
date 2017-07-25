@@ -8,13 +8,15 @@ import searchField from './state/searchField'
 import activitiesFilter from './state/activitiesFilter'
 import searchFilter from './state/searchFilter'
 import auth from './state/auth'
+import favs from './state/favs'
 
 const reducer = combineReducers({
   places,
   searchField,
   activitiesFilter,
   searchFilter,
-  auth
+  auth,
+  favs
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

@@ -12,6 +12,7 @@ import ListSearch from './ListSearch'
 import Details from './Details'
 import MainMenu from './MainMenu'
 import LocationFilter from './LocationFilter'
+import Favorites from './Favorites'
 
 export default class App extends Component {
   render() {
@@ -20,11 +21,12 @@ export default class App extends Component {
         <div>
           <MainMenu/>
           <div className="App">
-            <Route exact path="/"component={Main}/>
+            <Route exact path="/" component={Main}/>
             <Route path="/map-search" component={MapSearch}/>
             <Route exact path="/list-search" component={ListSearch}/>
             <Route path="/details/:placeId" component={Details}/>
             <Route path="/list-search/:function" component={ListSearch}/>
+            <Route path="/favorites" component={Favorites}/>
           </div>
         </div>
       </Router>

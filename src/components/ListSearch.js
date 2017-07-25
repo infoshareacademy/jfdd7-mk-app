@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Row, Col} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import {fetchPlaces} from '../state/places'
-import {activateFilter} from '../state/activitiesFilter'
+import { Row, Col, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { fetchPlaces } from '../state/places'
+import { activateFilter } from '../state/activitiesFilter'
+import {favPlace, deleteFav, initFavsSync} from '../state/favs'
 import IconCategory from './IconCategory'
 import Description from './Description'
 import ContactObject from './ContactObject'
@@ -11,24 +12,30 @@ import './ListSearch.css'
 import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
-import LocationFilter from './LocationFilter'
 
 export default connect(
   state => ({
     places: state.places,
     searchPhrase: state.searchField.searchPhrase,
     activeFilterNames: state.activitiesFilter.activeFilterNames,
-    location: state.searchFilter.location
+    location: state.searchFilter.location,
+    favedPlaceIds: state.favs.placeIds,
+    user: state.auth.user
+
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
-    activateFilter: filterName => dispatch(activateFilter(filterName))
+    activateFilter: filterName => dispatch(activateFilter(filterName)),
+    handleFavPlaceClick: event => dispatch(favPlace(event.target.dataset.uid)),
+    handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid)),
+    initFavsSync: () => dispatch(initFavsSync()),
   })
 )(
   class ListSearch extends React.Component {
 
     componentWillMount() {
       this.props.fetchPlaces()
+      this.props.user === null ? null : this.props.initFavsSync()
     }
 
 
@@ -53,7 +60,6 @@ export default connect(
         return d;
       }
 
-      const isFunctionSet = this.props.match.params.function !== undefined
       const {data} = this.props.places
 
       const places = data === null ? [] : data
@@ -76,6 +82,7 @@ export default connect(
       }
 
 
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
       const filteredPlaces = places.filter(
@@ -104,24 +111,32 @@ export default connect(
             .filter(place => place.distance <= this.props.location)
             .map(
               place => (
-                <Link to={'/details/' + place.id} key={place.id}>
                   <Row className="info">
                     <Col xs={2} lg={2} className="pin">
                       <div>
                         <IconCategory/>
                       </div>
                     </Col>
-
+                    <Link to={'/details/' + place.id} key={place.id}>
                     <Col xs={7} lg={6} className="main-description">
                       <Description address={place.address} telephone={place.telephone} website={place.website}
                                    name={place.name} distance={place.distance}/>
                     </Col>
-
+                    </Link>
                     <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
                       <ContactObject telephone={place.telephone}/>
+                      {this.props.user === null ? null :
+                        <Button
+                          className="addToFav"
+                          data-uid={place.id}
+                          onClick={!favoriteKeys.includes(place.id) ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
+
+                        >
+                          {favoriteKeys.includes(place.id) ? '-' : '+'}
+                        </Button>
+                      }
                     </Col>
                   </Row>
-                </Link>
               )
             )
           }

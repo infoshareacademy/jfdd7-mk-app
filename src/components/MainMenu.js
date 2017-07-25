@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {
   LinkContainer,
   IndexLinkContainer
@@ -21,26 +21,31 @@ const MainMenu = ({user}) => (
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-    <Nav>
-      <IndexLinkContainer to="/">
-        <NavItem className='Main__Menu'>HOME</NavItem>
-      </IndexLinkContainer>
-      <LinkContainer to="/map-search">
-        <NavItem className='Main__Menu'>MAPA</NavItem>
-      </LinkContainer>
-      <LinkContainer to="/list-search">
-        <NavItem className='Main__Menu'>LISTA</NavItem>
-      </LinkContainer>
-    </Nav>
-    <Nav pullRight>
-      {user === null ? null :
-        <NavItem className="signOutButton"
-                  onClick={() => firebase.auth().signOut()}>
-          Wyloguj się
-        </NavItem>
+      <Nav>
+        <IndexLinkContainer to="/">
+          <NavItem className='Main__Menu'>HOME</NavItem>
+        </IndexLinkContainer>
+        <LinkContainer to="/map-search">
+          <NavItem className='Main__Menu'>MAPA</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/list-search">
+          <NavItem className='Main__Menu'>LISTA</NavItem>
+        </LinkContainer>
+        {user === null ? null :
+          <LinkContainer to="/favorites">
+            <NavItem className='Main__Menu'>ULUBIONE</NavItem>
+          </LinkContainer>
+        }
+      </Nav>
+      <Nav pullRight>
+        {user === null ? null :
+          <NavItem className="signOutButton"
+                   onClick={() => firebase.auth().signOut()}>
+            Wyloguj się
+          </NavItem>
 
-      }
-    </Nav>
+        }
+      </Nav>
     </Navbar.Collapse>
   </Navbar>
 )
