@@ -32,12 +32,21 @@ export default connect(
   })
 )(
   class ListSearch extends React.Component {
+    state= {
+      isOpen: false
+    }
 
     componentWillMount() {
       this.props.fetchPlaces()
-      this.props.user === null ? null : this.props.initFavsSync()
+      if (this.props.user !== null) {
+        this.props.initFavsSync()
+      }
     }
-
+    handleMenuOpen = ()=> {
+      this.setState({
+      isOpen: true
+    })
+    }
 
     render() {
       function deg2rad(deg) {
@@ -98,6 +107,7 @@ export default connect(
           <MenuFilter function={this.props.match.params.function}/>
           <div className="center-block" style={{width: "70%"}}>
             <SearchField/>
+            <Button onClick={this.handleMenuOpen}/>
           </div>
 
           { filteredPlaces.filter(
@@ -111,7 +121,7 @@ export default connect(
             .filter(place => place.distance <= this.props.location)
             .map(
               place => (
-                  <Row className="info">
+                  <Row key={place.id} className="info">
                     <Col xs={2} lg={2} className="pin">
                       <div>
                         <IconCategory/>
