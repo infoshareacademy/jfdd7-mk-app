@@ -21,7 +21,11 @@
 .photo {
     max-width: 98%;
     margin: 0 auto;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
 }
+
 .slick-dots li.slick-active button:before {
     color: #b543a0;
 }
@@ -31,6 +35,11 @@
     font-family: "Francois One", sans-serif;
     padding-left: 1em;
     margin: 1em;
+}
+.Object__Name .Open__Time {
+    font-size: 0.4em;
+    font-family: "Francois One", sans-serif;
+    margin-top: 0.4em;
 }
 section.Object__Details {
     padding-left: 40px;
@@ -66,9 +75,8 @@ section.Object__Details {
 li.icon {
     padding-left: 25px;
     margin-top: 10px;
-
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 20px;
     text-align: left;
     list-style: none;
 }

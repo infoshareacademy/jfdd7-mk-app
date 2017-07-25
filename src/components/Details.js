@@ -54,8 +54,8 @@ export default connect(
                     </Row>
                     <Row>
                         <Col>
-                            <ObjectName className ="Object__Name" name={place.name}/>
-                            <OpenTime place={place} />
+                            <ObjectName className ="Object__Name" name={place.name} place={place}/>
+
                         </Col>
                     </Row>
                     <Row>
