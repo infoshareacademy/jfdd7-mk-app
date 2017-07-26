@@ -94,7 +94,8 @@ export default connect(
       ]
 
       return (
-        <Menu isOpen={this.props.isOpen}>
+        <div>
+        {/*<Menu isOpen={this.props.isOpen}>*/}
               {
                 buttons.map(
                   button => (
@@ -108,7 +109,8 @@ export default connect(
                 )
               }
               <LocationFilter/>
-        </Menu>
+         {/*</Menu>*/}
+        </div>
       )
     }
   }

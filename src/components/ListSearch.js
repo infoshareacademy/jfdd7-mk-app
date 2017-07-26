@@ -104,7 +104,7 @@ export default connect(
 
       return (
         <div className="all-description">
-          <MenuFilter function={this.props.match.params.function}/>
+          {/*<MenuFilter function={this.props.match.params.function}/>*/}
           <div className="center-block" style={{width: "70%"}}>
             <SearchField/>
             <Button onClick={this.handleMenuOpen}/>
