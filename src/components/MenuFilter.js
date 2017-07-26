@@ -1,14 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {
-  Button,
-  NavItem,
-  Navbar,
-  Nav
+  Button
 } from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
 import LocationFilter from './LocationFilter'
+import SearchField from './SearchField'
 import {slide as Menu} from 'react-burger-menu'
 import './MenuFilter.css'
 
@@ -96,6 +94,8 @@ export default connect(
       return (
         <div>
         {/*<Menu isOpen={this.props.isOpen}>*/}
+        <SearchField/>
+          <LocationFilter/>
               {
                 buttons.map(
                   button => (
@@ -108,7 +108,7 @@ export default connect(
                   )
                 )
               }
-              <LocationFilter/>
+
          {/*</Menu>*/}
         </div>
       )
