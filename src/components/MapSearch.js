@@ -4,7 +4,7 @@ import SearchField from './SearchField'
 
 const MapSearch  = () => (
   <div>
-    <SearchField/>
+    <SearchField mapButtonVisibility="none"/>
     <div style={{ height: "83vh"}}>
       <div className="center-block"
            style={{width: "100%", height: "100%"}}

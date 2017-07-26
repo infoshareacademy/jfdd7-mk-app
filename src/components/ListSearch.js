@@ -97,7 +97,7 @@ export default connect(
         <div className="all-description">
           <MenuFilter function={this.props.match.params.function}/>
           <div className="center-block" style={{width: "70%"}}>
-            <SearchField/>
+            <SearchField mapButtonVisibility="inline-block"/>
           </div>
 
           { filteredPlaces.filter(

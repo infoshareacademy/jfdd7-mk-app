@@ -27,7 +27,7 @@ const SearchField = props => (
             Wyszukaj
           </Button>
         </LinkContainer>
-        <LinkContainer to="/map-search">
+        <LinkContainer style={{display: props.mapButtonVisibility}} to="/map-search">
         <Button type="submit"
                 bsStyle="info"
                 bsSize="large"
