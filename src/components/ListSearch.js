@@ -12,6 +12,7 @@ import './ListSearch.css'
 import './SearchField.css'
 import SearchField from './SearchField'
 import MenuFilter from './MenuFilter'
+import distanceCalc from './distanceCalc'
 
 export default connect(
   state => ({
@@ -35,31 +36,11 @@ export default connect(
 
     componentWillMount() {
       this.props.fetchPlaces()
-      this.props.user === null ? null : this.props.initFavsSync()
+      if (this.props.user !== null){this.props.initFavsSync()}
     }
 
 
     render() {
-      function deg2rad(deg) {
-        return deg * (Math.PI / 180)
-      }
-
-      function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-        var latitude = Number(lat1);
-        var longitude = Number(lon1);
-        var R = 6371; // Radius of the earth in km
-        var dLat = deg2rad(lat2 - latitude);  // deg2rad below
-        var dLon = deg2rad(lon2 - longitude);
-        var a =
-          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-          Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-          Math.sin(dLon / 2) * Math.sin(dLon / 2)
-        ;
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var d = R * c; // Distance in km
-        return d;
-      }
-
       const {data} = this.props.places
 
       const places = data === null ? [] : data
@@ -97,7 +78,7 @@ export default connect(
         <div className="all-description">
           <MenuFilter function={this.props.match.params.function}/>
           <div className="center-block" style={{width: "70%"}}>
-            <SearchField/>
+            <SearchField mapButtonVisibility="inline-block"/>
           </div>
 
           { filteredPlaces.filter(
@@ -105,7 +86,7 @@ export default connect(
           ).map(
             place => ({
               ...place,
-              distance: getDistanceFromLatLonInKm(place.latitude, place.longitude, 54.403351, 18.569951)
+              distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
             }))
             .sort((a, b) => a.distance - b.distance)
             .filter(place => place.distance <= this.props.location)
