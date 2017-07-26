@@ -7,6 +7,7 @@ import Description from './Description'
 import ContactObject from './ContactObject'
 import {initFavsSync, deleteFav, favPlace} from '../state/favs'
 import {fetchPlaces} from '../state/places'
+import distanceCalc from './distanceCalc'
 
 export default connect(
   state => ({
@@ -36,6 +37,10 @@ export default connect(
       return (
         <div>
           {this.props.places !== null ? this.props.places.filter(place => favoriteKeys.includes(place.id)).map(
+            place => ({
+              ...place,
+              distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
+            })).map(
             place => (
               <Row className="info">
                 <Col xs={2} lg={2} className="pin">
@@ -46,7 +51,7 @@ export default connect(
                 <Link to={'/details/' + place.id} key={place.id}>
                   <Col xs={7} lg={7} className="main-description">
                     <Description address={place.address} telephone={place.telephone} website={place.website}
-                                 name={place.name} distance={2.32}/>
+                                 name={place.name} distance={place.distance}/>
                   </Col>
                 </Link>
 
