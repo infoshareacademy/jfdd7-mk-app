@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {FormControl, Grid, Row, Col, FormGroup, Button } from 'react-bootstrap'
+import {FormControl, Grid, Row, Col, FormGroup, Button} from 'react-bootstrap'
 import './SearchField.css'
 import {LinkContainer} from 'react-router-bootstrap'
 
