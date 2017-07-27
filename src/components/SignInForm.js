@@ -47,11 +47,11 @@ class SignInForm extends React.Component {
     return (
       <div>
         <Form onSubmit={this.handleSubmit} horizontal>
-          <FormGroup controlId="formHorizontalEmail">
-            <Col componentClass={ControlLabel} sm={2}>
+
+            <Col componentClass={ControlLabel} sm={1}>
               Email
             </Col>
-            <Col sm={6}>
+            <Col sm={1}>
               <FormControl
                 type="text"
                 value={this.state.email}
@@ -59,12 +59,12 @@ class SignInForm extends React.Component {
                 placeholder="Email..."
               />
             </Col>
-          </FormGroup>
-          <FormGroup controlId="formHorizontalPassword">
-            <Col componentClass={ControlLabel} sm={2}>
+
+
+            <Col componentClass={ControlLabel} sm={1}>
               Hasło
             </Col>
-            <Col sm={6}>
+            <Col sm={1}>
               <FormControl
                 type="password"
                 value={this.state.password}
@@ -72,19 +72,15 @@ class SignInForm extends React.Component {
                 placeholder="Hasło..."
               />
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col smOffset={2} sm={6}>
+            <Col sm={1}>
               <Checkbox>Pamiętaj mnie</Checkbox>
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col smOffset={2} sm={6}>
+            <Col sm={1}>
               <Button type="submit">
                 Zaloguj się
               </Button>
             </Col>
-          </FormGroup>
+
         </Form>
         <h1>{this.state.message}</h1>
       </div>

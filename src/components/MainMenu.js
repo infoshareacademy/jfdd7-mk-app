@@ -11,6 +11,7 @@ import {
 } from 'react-bootstrap'
 import firebase from 'firebase'
 import {connect} from 'react-redux'
+import SignInForm from './SignInForm'
 
 const MainMenu = ({user}) => (
   <Navbar collapseOnSelect>
@@ -37,6 +38,7 @@ const MainMenu = ({user}) => (
           </LinkContainer>
         }
       </Nav>
+      <SignInForm/>
       <Nav pullRight>
         {user === null ? null :
           <NavItem className="signOutButton"
