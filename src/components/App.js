@@ -24,10 +24,8 @@ export default class App extends Component {
               <MainMenu/>
               </Row>
               <Row>
-                <Col sm={4}>
-                  <MenuFilter/>
-                </Col>
-                <Col sm={8}>
+
+                <Col sm={12}>
                   <div className="App">
                     <Route exact path="/" component={Main}/>
                     <Route path="/map-search" component={MapSearch}/>
