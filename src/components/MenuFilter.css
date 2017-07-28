@@ -6,6 +6,9 @@
     padding: 0.5em 0;
     outline: none;
 }
+.filter-button:last-of-type {
+    border-bottom: none;
+}
 
 .filter-button:hover {
     color: #b543a0;
