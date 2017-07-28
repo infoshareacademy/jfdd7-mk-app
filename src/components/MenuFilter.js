@@ -99,12 +99,12 @@ export default connect(
               {
                 buttons.map(
                   button => (
-                    <Button className="filter-button"
+                    <button className="filter-button"
                       key={button.filterName}
                       onClick={() => this.props.activateFilter(button.filterName)}
-                      active={this.props.activeFilterNames.includes(button.filterName)}
+                      data-active={this.props.activeFilterNames.includes(button.filterName)}
                     > {button.label}
-                    </Button>
+                    </button>
                   )
                 )
               }

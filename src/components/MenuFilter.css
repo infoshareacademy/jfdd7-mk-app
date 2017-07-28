@@ -1,4 +1,19 @@
 .filter-button {
     width: 100%;
-
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #b543a0;
+    padding: 0.5em 0;
+    outline: none;
+}
+.filter-button:hover {
+    color: #b543a0;
+    outline: none;
+}
+.filter-button[data-active="true"] {
+    color: #b543a0;
+    outline: none;
+}
+.filter-button:visited {
+    outline: none;
 }
