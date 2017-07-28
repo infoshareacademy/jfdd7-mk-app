@@ -9,6 +9,7 @@ import LocationFilter from './LocationFilter'
 import SearchField from './SearchField'
 import {slide as Menu} from 'react-burger-menu'
 import './MenuFilter.css'
+import './iconmonstr-iconic-font-1.2.0/iconmonstr-iconic-font-1.2.0/css/iconmonstr-iconic-font.min.css'
 
 export default connect(
   state => ({
@@ -99,12 +100,12 @@ export default connect(
               {
                 buttons.map(
                   button => (
-                    <Button className="filter-button"
+                    <button className="filter-button"
                       key={button.filterName}
                       onClick={() => this.props.activateFilter(button.filterName)}
-                      active={this.props.activeFilterNames.includes(button.filterName)}
+                      data-active={this.props.activeFilterNames.includes(button.filterName)}
                     > {button.label}
-                    </Button>
+                    </button>
                   )
                 )
               }

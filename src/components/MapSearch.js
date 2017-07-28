@@ -8,8 +8,8 @@ const MapSearch  = () => (
       <MenuFilter/>
     </Col>
     <Col sm={8}>
-    <div style={{ height: "83vh"}}>
-      <div className="center-block"
+    <div style={{ height: "calc(100vh - 80px)"}}>
+      <div
            style={{width: "100%", height: "100%"}}
       >
 
