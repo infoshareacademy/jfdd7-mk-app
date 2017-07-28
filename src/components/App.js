@@ -31,7 +31,6 @@ export default class App extends Component {
                     <Route path="/map-search" component={MapSearch}/>
                     <Route exact path="/list-search" component={ListSearch}/>
                     <Route path="/details/:placeId" component={Details}/>
-                    <Route path="/list-search/:function" component={ListSearch}/>
                     <Route path="/favorites" component={Favorites}/>
                   </div>
                 </Col>

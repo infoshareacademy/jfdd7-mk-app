@@ -20,6 +20,7 @@
     border-color: black;
 }
 .search-controler button {
+    font-family: "Francois One", sans-serif;
     background-color: white;
     color: black;
     font-size: 1.3em;
