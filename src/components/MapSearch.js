@@ -1,10 +1,13 @@
 import React from 'react'
 import Map from './Map'
-import SearchField from './SearchField'
-
+import MenuFilter from './MenuFilter'
+import { Col, Row } from 'react-bootstrap'
 const MapSearch  = () => (
-  <div>
-    <SearchField mapButtonVisibility="none"/>
+  <Row>
+    <Col sm={4}>
+      <MenuFilter/>
+    </Col>
+    <Col sm={8}>
     <div style={{ height: "83vh"}}>
       <div className="center-block"
            style={{width: "100%", height: "100%"}}
@@ -14,7 +17,8 @@ const MapSearch  = () => (
 
       </div>
     </div>
+    </Col>
+  </Row>
 
-  </div>
 )
 export default MapSearch
