@@ -1,12 +1,13 @@
 import React from 'react'
 import firebase from 'firebase'
+import './Main.css'
 
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel, Checkbox} from 'react-bootstrap'
 
 const errorMessages = {
-  'auth/invalid-email' : 'Podano błędny adres email lub hasło',
-  'auth/user-not-found' : 'Podano błędny adres email lub hasło',
-  'auth/wrong-password' : 'Podano błędny adres email lub hasło'
+  'auth/invalid-email': 'Podano błędny adres email lub hasło',
+  'auth/user-not-found': 'Podano błędny adres email lub hasło',
+  'auth/wrong-password': 'Podano błędny adres email lub hasło'
 }
 
 
@@ -38,8 +39,9 @@ class SignInForm extends React.Component {
     ).then(
       () => this.setState({message: 'Logged In !'})
     ).catch(error => {
-      this.setState({message: errorMessages[error.code] || error.message
-       })
+      this.setState({
+        message: errorMessages[error.code] || error.message
+      })
       console.log(error.code)
     })
   }
@@ -48,40 +50,39 @@ class SignInForm extends React.Component {
     return (
       <div>
         <Form onSubmit={this.handleSubmit} horizontal>
+          <Col componentClass={ControlLabel} sm={1}>
+            Email
+          </Col>
 
-            <Col componentClass={ControlLabel} sm={1}>
-              Email
-            </Col>
-            <Col sm={2}>
-              <FormControl
-                type="text"
-                value={this.state.email}
-                onChange={this.handleEmailChange}
-                placeholder="Email..."
-              />
-            </Col>
+          <Col sm={2}>
+            <FormControl
+              type="text"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+              placeholder="Email..."
+              style={{height: 30}}
+            />
+          </Col>
 
 
-            <Col componentClass={ControlLabel} sm={1}>
-              Hasło
-            </Col>
-            <Col sm={1} >
-              <FormControl
+          <Col componentClass={ControlLabel} sm={1}>
+            Hasło
+          </Col>
+          <Col sm={2}>
+            <FormControl
+              type="password"
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
+              placeholder="Hasło..."
+              style={{height: 30}}
+            />
+          </Col>
 
-                type="password"
-                value={this.state.password}
-                onChange={this.handlePasswordChange}
-                placeholder="Hasło..."
-              />
-            </Col>
-            <Col sm={1}>
-              <Checkbox>Pamiętaj mnie</Checkbox>
-            </Col>
-            <Col sm={1}>
-              <Button type="submit">
-                Zaloguj się
-              </Button>
-            </Col>
+          <Col sm={1}>
+            <Button type="submit">
+              Zaloguj się
+            </Button>
+          </Col>
 
         </Form>
         <h1>{this.state.message}</h1>
