@@ -21,12 +21,11 @@
 }
 
 .div-location-filter {
-    border: 1px solid darkslategrey;
     border-radius: 10px;
-    box-shadow: 3px 2px 5px 1px grey;
     height: 60%;
-    margin-left: 2%;
     display: block;
+    padding: 1em;
+    width: 100%;
 }
 
 .div-location-filter h6 {

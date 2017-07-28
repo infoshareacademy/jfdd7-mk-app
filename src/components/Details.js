@@ -45,7 +45,7 @@ export default connect(
             }
 
             return (
-                <Grid>
+                <div>
                     <Row>
                         <Col>
                             <CarouselDetails place={place}/>
@@ -81,7 +81,7 @@ export default connect(
 
                     </Row>
 
-                </Grid>
+                </div>
             )
         }
     }

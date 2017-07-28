@@ -24,7 +24,7 @@ const SearchField = props => (
               bsStyle="info"
               bsSize="large"
       >
-        Wyszukaj
+        Lista
       </Button>
     </LinkContainer>
     <LinkContainer to="/map-search">
