@@ -1,43 +1,36 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {FormControl, Grid, Row, Col, FormGroup, Button } from 'react-bootstrap'
-import './SearchField.css'
+import {FormControl, FormGroup, Button} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
-
 import {updateSearchPhrase} from '../state/searchField'
+import './SearchField.css'
 
 const SearchField = props => (
-  <Grid>
-    <Row>
-      <Col sm={6}>
-        <FormGroup controlId="formInlineEmail">
-          <FormControl
-            value={props.searchPhrase}
-            onChange={props.update}
-            placeholder="Wyszukaj..."
-          />
-        </FormGroup>
-      </Col>
-      <Col sm={6}>
-        <LinkContainer to="/list-search">
-          <Button type="submit"
-                  bsStyle="info"
-                  bsSize="large"
-          >
-            Wyszukaj
-          </Button>
-        </LinkContainer>
-        <LinkContainer style={{display: props.mapButtonVisibility}} to="/map-search">
-        <Button type="submit"
-                bsStyle="info"
-                bsSize="large"
-        >
-          Mapa
-        </Button>
-        </LinkContainer>
-      </Col>
-    </Row>
-  </Grid>
+
+
+  <div className="search-controler">
+    <FormGroup controlId="formInlineEmail">
+      <FormControl
+        value={props.searchPhrase}
+        onChange={props.update}
+        placeholder="Wyszukaj..."
+      />
+    </FormGroup>
+
+
+    <LinkContainer to="/list-search">
+      <button className="switch-button" data-active={window.location.pathname.match(/list-search/) ? 'true' : 'false'}>
+        Lista
+      </button>
+    </LinkContainer>
+    <LinkContainer to="/map-search">
+      <button className="switch-button" data-active={window.location.pathname.match(/map-search/) ? 'true' : 'false'}>
+        Mapa
+      </button>
+    </LinkContainer>
+  </div>
+
+
 );
 
 export default connect(

@@ -13,10 +13,10 @@
     z-index: 10;
 }
 .slick-next {
-    right: 4px;
+    right: 0;
 }
 .slick-prev {
-    left: 4px;
+    left: 0;
 }
 .photo {
     max-width: 98%;
@@ -36,6 +36,10 @@
     padding-left: 1em;
     margin: 1em;
 }
+.Object__Name div {
+    font-size: 0.6em;
+    font-family: "Raleway";
+}
 .Object__Name .Open__Time {
     font-size: 0.4em;
     font-family: "Francois One", sans-serif;
@@ -54,11 +58,13 @@ section.Object__Details {
     border: 1px solid lightgrey;
     margin: 0 10px 10px 0;
 }
-.activities-details p, .contact-details p {
-    font-family: Releway, sans-serif;
+.list-activities li,
+.activities-details p, .contact-details p,
+.activities-details a, .contact-details a {
+    font-family: "Raleway", sans-serif;
 }
 .activities-details h4, .contact-details h4 {
-    font-family: Francois One, sans-serif;
+    font-family: "Francois One", sans-serif;
     font-size: 1.8em;
 }
 

@@ -1,0 +1,32 @@
+.filter-button {
+    width: 100%;
+    background-color: white;
+    border: none;
+    border-bottom: 0.1em solid #b543a0;
+    padding: 0.5em 0;
+    outline: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+}
+.filter-button:last-of-type {
+    border-bottom: none;
+}
+
+.filter-button:hover {
+    color: #b543a0;
+    outline: none;
+    background-color: #fafafa
+}
+
+.filter-button[data-active="true"] {
+    color: #b543a0;
+    outline: none;
+}
+.filter-button[data-active="true"]:before {
+    font: normal normal normal 1em 'iconmonstr-iconic-font';
+    content: '\e023';
+    margin-right: 5px;
+}
+.filter-button:visited {
+    outline: none;
+}
