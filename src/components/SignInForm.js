@@ -1,5 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
+
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel, Checkbox} from 'react-bootstrap'
 
 const errorMessages = {
@@ -51,7 +52,7 @@ class SignInForm extends React.Component {
             <Col componentClass={ControlLabel} sm={1}>
               Email
             </Col>
-            <Col sm={1}>
+            <Col sm={2}>
               <FormControl
                 type="text"
                 value={this.state.email}
@@ -64,8 +65,9 @@ class SignInForm extends React.Component {
             <Col componentClass={ControlLabel} sm={1}>
               Hasło
             </Col>
-            <Col sm={1}>
+            <Col sm={1} >
               <FormControl
+
                 type="password"
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
