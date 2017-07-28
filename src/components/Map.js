@@ -4,13 +4,15 @@ import {Link} from 'react-router-dom'
 import GoogleMapReact from 'google-map-react';
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
+import distanceCalc from './distanceCalc'
 import './Map.css'
 
 export default connect(
   state => ({
     places: state.places,
     searchPhrase: state.searchField.searchPhrase,
-    activeFilterNames: state.activitiesFilter.activeFilterNames
+    activeFilterNames: state.activitiesFilter.activeFilterNames,
+    location: state.searchFilter.location,
   }),
   dispatch => ({
     fetchPlaces: () => dispatch(fetchPlaces()),
@@ -55,7 +57,14 @@ export default connect(
         ).every(
           f => f(place) === true
         )
-      ).filter(place => this.props.searchPhrase === '' ? data : checkString(place.name) || checkArray(place.functions))
+      ).filter(place => this.props.searchPhrase === '' ? data : checkString(place.name) || checkArray(place.functions)
+      ).map(
+        place => ({
+          ...place,
+          distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
+        }))
+        .filter(place => place.distance <= this.props.location)
+
 
       const pointBetween = latOrLng => (Math.max.apply(null, filteredPlaces.map(place => parseFloat(place[latOrLng]))) + Math.min.apply(null, filteredPlaces.map(place => parseFloat(place[latOrLng])))) / 2
 
