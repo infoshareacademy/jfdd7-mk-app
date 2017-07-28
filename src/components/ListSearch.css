@@ -5,10 +5,10 @@
     margin: 0.5em 0;
     padding: 0 1em 1em 0;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 2px;
 }
 .info:hover {
-    background-color: whitesmoke;
+    background-color: #fafafa;
     border-color: #b543a0;
 }
 

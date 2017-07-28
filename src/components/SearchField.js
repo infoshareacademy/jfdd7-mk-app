@@ -1,15 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {FormControl, Grid, Row, Col, FormGroup, Button} from 'react-bootstrap'
-import './SearchField.css'
+import {FormControl, FormGroup, Button} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
-
 import {updateSearchPhrase} from '../state/searchField'
+import './SearchField.css'
 
 const SearchField = props => (
 
 
-  <div>
+  <div className="search-controler">
     <FormGroup controlId="formInlineEmail">
       <FormControl
         value={props.searchPhrase}
@@ -20,20 +19,14 @@ const SearchField = props => (
 
 
     <LinkContainer to="/list-search">
-      <Button type="submit"
-              bsStyle="info"
-              bsSize="large"
-      >
+      <button className="switch-button" data-active={window.location.pathname.match(/list-search/) ? 'true' : 'false'}>
         Lista
-      </Button>
+      </button>
     </LinkContainer>
     <LinkContainer to="/map-search">
-      <Button type="submit"
-              bsStyle="info"
-              bsSize="large"
-      >
+      <button className="switch-button" data-active={window.location.pathname.match(/map-search/) ? 'true' : 'false'}>
         Mapa
-      </Button>
+      </button>
     </LinkContainer>
   </div>
 

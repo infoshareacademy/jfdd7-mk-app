@@ -1,8 +1,8 @@
 .form-control {
     height: 45px;
-    border-radius: 10px;
+    border-radius: 5px;
     border-color: black;
-    box-shadow: 3px 3px 4px dimgrey;
+    box-shadow: 1px 1px 1px dimgrey;
 }
 
 .btn-info {
@@ -18,4 +18,19 @@
     background-image: linear-gradient(to bottom right, #b543a0 100%, black 100%);
     background-repeat: repeat-y;
     border-color: black;
+}
+.search-controler button {
+    background-color: white;
+    color: black;
+    font-size: 1.3em;
+    width: 48%;
+    border: 0.1em solid #b543a0;
+    border-radius: 2px;
+    padding: 0.9em;
+    margin: 1%;
+    outline: none;
+}
+.search-controler button:active, .search-controler button[data-active='true'] {
+    background-color: #b543a0;
+    color: white;
 }
