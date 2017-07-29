@@ -33,8 +33,12 @@
     display: inline-block;
     font-size: 3em;
     font-family: "Francois One", sans-serif;
-    padding-left: 1em;
     margin: 1em;
+}
+.Object__Name:before {
+    content: url("../images/marker.png");
+    margin-right: 10px;
+
 }
 .Object__Name div {
     font-size: 0.6em;
@@ -56,7 +60,7 @@ section.Object__Details {
 .activities-details, .contact-details {
     padding: 20px 40px;
     border: 1px solid lightgrey;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 10px 10px;
 }
 .list-activities li,
 .activities-details p, .contact-details p,
@@ -66,6 +70,7 @@ section.Object__Details {
 .activities-details h4, .contact-details h4 {
     font-family: "Francois One", sans-serif;
     font-size: 1.8em;
+    color: #b543a0;
 }
 
 .activities-details:hover, .contact-details:hover {
