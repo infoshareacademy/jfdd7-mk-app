@@ -1,13 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {
-  Button
-} from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
 import LocationFilter from './LocationFilter'
 import SearchField from './SearchField'
-import {slide as Menu} from 'react-burger-menu'
 import './MenuFilter.css'
 import './iconmonstr-iconic-font-1.2.0/iconmonstr-iconic-font-1.2.0/css/iconmonstr-iconic-font.min.css'
 
@@ -31,7 +27,6 @@ export default connect(
     }
 
     render() {
-      // const { data, fetching, error } = this.props.places
       const buttons = [
         {
           label: 'Fitness',
@@ -94,7 +89,6 @@ export default connect(
 
       return (
         <div>
-        {/*<Menu isOpen={this.props.isOpen}>*/}
         <SearchField/>
           <LocationFilter/>
               {
