@@ -8,14 +8,16 @@ const favsSync = favs => ({
 })
 
 export const initFavsSync = () => dispatch => {
-  const userUid = firebase.auth().currentUser.uid
-  firebase.database().ref('favs/' + userUid).on(
-    'value',
-    snapshot => {
-      const favs = snapshot.val() || {}
-      dispatch(favsSync(favs))
-    }
-  )
+  if (firebase.auth().currentUser) {
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('favs/' + userUid).on(
+      'value',
+      snapshot => {
+        const favs = snapshot.val() || {}
+        dispatch(favsSync(favs))
+      }
+    )
+  }
 }
 
 export const favPlace = uid => dispatch => {

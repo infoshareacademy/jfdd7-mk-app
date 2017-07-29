@@ -58,6 +58,7 @@ export default connect(
 
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
+
       const location = (this.props.isGeolocationAvailable && this.props.isGeolocationEnabled)
         ? this.props.coords
           ? {lat: this.props.coords.latitude, lng: this.props.coords.longitude}
@@ -66,13 +67,14 @@ export default connect(
       if (location === null) {
         return <div>Pobieram Twoją lokalizację</div>
       }
+
       const filteredPlaces = places.filter(
         place => this.props.activeFilterNames.map(
           filterName => filters[filterName] || (() => true)
         ).every(
           f => f(place) === true
         )
-      ).filter(place => this.props.searchPhrase === '' ? data : checkString(place.name) || checkArray(place.functions)
+      ).filter(place => this.props.searchPhrase === '' ? true : checkString(place.name) || checkArray(place.functions)
       ).map(
         place => ({
           ...place,
