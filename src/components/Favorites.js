@@ -24,9 +24,7 @@ export default connect(
   class Favorites extends React.Component {
 
     componentWillMount() {
-      this.props.initFavsSync()
       this.props.fetchPlaces()
-
     }
 
 

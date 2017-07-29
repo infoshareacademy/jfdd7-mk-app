@@ -55,10 +55,6 @@ export default connect(
         )
       )
 
-      if (this.props.user === null) {
-        return <p>Loading...</p>
-      }
-
       return (
         <Row>
           <Col sm={4}>
@@ -82,7 +78,7 @@ export default connect(
                     <Col xs={10} xsOffset={2} smOffset={0} sm={4} className="contact">
                       <ContactObject telephone={place.telephone}/>
                       {this.props.user === null ? null :
-                        <AddToFavButton favoriteKeys={favoriteKeys} data-uid={place.id} place={place} handleFavPlaceClick={this.props.handleFavPlaceClick} handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
+                        <AddToFavButton favoriteKeys={favoriteKeys} place={place} handleFavPlaceClick={this.props.handleFavPlaceClick} handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
                           {favoriteKeys.includes(place.id) ? '-' : '+'}
                         </AddToFavButton>
                       }

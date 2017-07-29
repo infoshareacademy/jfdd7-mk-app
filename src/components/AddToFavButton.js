@@ -5,6 +5,7 @@ const AddToFavButton = ({place, handleFavPlaceClick, handleDeletePlaceClick, fav
   <Button
     className="addToFav"
     onClick={!favoriteKeys.includes(place.id) ? handleFavPlaceClick : handleDeletePlaceClick}
+    data-uid={place.id}
   >
     {favoriteKeys.includes(place.id) ? '-' : '+'}
   </Button>
