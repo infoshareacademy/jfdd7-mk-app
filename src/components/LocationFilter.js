@@ -21,7 +21,7 @@ export default connect(
         <Col xs={12} sm={5} className="div-location-filter">
           <h6> Wybierz odległość: <span> {this.props.location} km</span></h6>
 
-          <Slider max={12} min={1} value={this.props.location} onChange={this.props.updateLocation}/>
+          <Slider max={30} min={1} value={this.props.location} onChange={this.props.updateLocation}/>
         </Col>
       </div>
       )
