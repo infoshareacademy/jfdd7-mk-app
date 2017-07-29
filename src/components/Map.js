@@ -4,6 +4,7 @@ import GoogleMapReact from 'google-map-react';
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
 import distanceCalc from './distanceCalc'
+import {geolocated} from 'react-geolocated';
 import './Map.css'
 import MapPin from './MapPin'
 
@@ -19,6 +20,13 @@ export default connect(
     activateFilter: filterName => dispatch(activateFilter(filterName))
   })
 )(
+  geolocated({
+    positionOptions: {
+      enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 100,
+  }
+  )(
   class Map extends Component {
 
     componentWillMount() {
@@ -50,7 +58,14 @@ export default connect(
 
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
-
+      const location = (this.props.isGeolocationAvailable && this.props.isGeolocationEnabled)
+        ? this.props.coords
+          ? {lat: this.props.coords.latitude, lng: this.props.coords.longitude}
+          : null
+        : {lat: 54.403351, lng: 18.569951}
+      if (location === null) {
+        return <div>Pobieram Twoją lokalizację</div>
+      }
       const filteredPlaces = places.filter(
         place => this.props.activeFilterNames.map(
           filterName => filters[filterName] || (() => true)
@@ -61,24 +76,24 @@ export default connect(
       ).map(
         place => ({
           ...place,
-          distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
+          distance: distanceCalc(place.latitude, place.longitude, location.lat, location.lng)
         }))
         .filter(place => place.distance <= this.props.location)
 
 
       const pointBetween = latOrLng => (Math.max.apply(null, filteredPlaces.map(place => parseFloat(place[latOrLng]))) + Math.min.apply(null, filteredPlaces.map(place => parseFloat(place[latOrLng])))) / 2
 
-      const searchCenterLat = pointBetween("latitude")
-      const searchCenterLng = pointBetween("longitude")
+      const searchCenterLat = pointBetween("latitude") || location.lat
+      const searchCenterLng = pointBetween("longitude") || location.lng
 
       const zoomLvl = Math.max.apply(null, filteredPlaces.map(place => parseFloat(place['latitude']))) - Math.min.apply(null, filteredPlaces.map(place => parseFloat(place['latitude'])))
       const defaultProps = {
-        center: this.props.searchPhrase.length < 1 ? {lat: 54.403334, lng: 18.569786} :
+        center: filteredPlaces.length === 0 ? location :
           {
             lat: searchCenterLat,
             lng: searchCenterLng
           },
-        zoom: this.props.searchPhrase.length < 1 ? 14 : zoomLvl > 0 ? 12 : 14
+        zoom: filteredPlaces.length === 0 ? 14 : zoomLvl > 0 ? 12 : 14
       }
 
       return (
@@ -87,6 +102,11 @@ export default connect(
           center={defaultProps.center}
           zoom={defaultProps.zoom}
         >
+          <div className="im im-home"
+          lat={location.lat}
+          lng={location.lng}
+          />
+
           {filteredPlaces.map(
             place => (
                 <MapPin
@@ -99,4 +119,4 @@ export default connect(
         </GoogleMapReact>
       );
     }
-  })
+  }))
