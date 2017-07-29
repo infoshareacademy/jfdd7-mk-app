@@ -91,6 +91,7 @@ export default connect(
         <div>
         <SearchField/>
           <LocationFilter/>
+
               {
                 buttons.map(
                   button => (
@@ -103,7 +104,6 @@ export default connect(
                   )
                 )
               }
-
          {/*</Menu>*/}
         </div>
       )

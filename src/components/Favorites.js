@@ -9,6 +9,7 @@ import {fetchPlaces} from '../state/places'
 import distanceCalc from './distanceCalc'
 import AddToFavButton from './AddToFavButton'
 import ReactLoading from 'react-loading'
+import './FavoritesButtons.css'
 
 export default connect(
   state => ({
@@ -58,6 +59,12 @@ export default connect(
                   >
                     {favoriteKeys.includes(place.id) ? '-' : '+'}
                   </AddToFavButton>
+
+                  {
+                    this.props.favedPlaceIds[place.id] !== true ?
+                      '+' : '-'
+                  }
+                </Button>
                 </Col>
               </Row>
             )
