@@ -59,12 +59,6 @@ export default connect(
                   >
                     {favoriteKeys.includes(place.id) ? '-' : '+'}
                   </AddToFavButton>
-
-                  {
-                    this.props.favedPlaceIds[place.id] !== true ?
-                      '+' : '-'
-                  }
-                </Button>
                 </Col>
               </Row>
             )
