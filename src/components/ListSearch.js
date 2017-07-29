@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Row, Col, Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Row, Col} from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
 import {favPlace, deleteFav, initFavsSync} from '../state/favs'

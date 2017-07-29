@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {
     Row,
     Col,
-    Grid,
 } from'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import CarouselDetails from './CarouselDetails'

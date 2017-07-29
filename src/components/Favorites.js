@@ -8,6 +8,7 @@ import {initFavsSync, deleteFav, favPlace} from '../state/favs'
 import {fetchPlaces} from '../state/places'
 import distanceCalc from './distanceCalc'
 import AddToFavButton from './AddToFavButton'
+import ReactLoading from 'react-loading'
 
 export default connect(
   state => ({
@@ -29,6 +30,9 @@ export default connect(
 
 
     render() {
+      if (this.props.favedPlaceIds === null) {
+        return <ReactLoading type="spin" color="#b543a0"/>
+      }
       const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       console.log(this.props.places)
       console.log(favoriteKeys)
@@ -41,7 +45,7 @@ export default connect(
               distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
             })).map(
             place => (
-              <Row className="info">
+              <Row key={place.id} className="info">
                 <IconCategory/>
                 <Description place={place}/>
                 <Col xs={10} xsOffset={2} smOffset={0} sm={3} className="contact">
@@ -50,13 +54,15 @@ export default connect(
                                   data-uid={place.id}
                                   place={place}
                                   handleFavPlaceClick={this.props.handleFavPlaceClick}
-                                  handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
+                                  handleDeletePlaceClick={this.props.handleDeletePlaceClick}
+                  >
                     {favoriteKeys.includes(place.id) ? '-' : '+'}
                   </AddToFavButton>
                 </Col>
               </Row>
             )
-          ) : null}
+          ) : null
+          }
         </div>
       )
     }
