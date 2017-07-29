@@ -2,11 +2,13 @@ import marker from '../images/marker.png'
 
 
 const placeStyle = {
-  width: 35,
-  height: 35,
+  width: 60,
+  height: 33,
   backgroundImage: `url(${marker})`,
-  backgroundSize: 'cover',
+  backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'top center',
+  textAlign: 'center',
   position: 'absolute',
   top: -35,
   left: -35 / 2

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 import GoogleMapReact from 'google-map-react';
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
 import distanceCalc from './distanceCalc'
 import './Map.css'
+import MapPin from './MapPin'
 import {filters} from './filters'
 
 export default connect(
@@ -79,26 +79,13 @@ export default connect(
           center={defaultProps.center}
           zoom={defaultProps.zoom}
         >
-          <div
-          lat={54.403351}
-          lng={18.569951}
-          >You are here</div>
-
           {filteredPlaces.map(
             place => (
-              <Link
-                key={place.id}
-                to={'/details/' + place.id}
-                lat={parseFloat(place.latitude)}
-                lng={parseFloat(place.longitude)}
-                // style={placeStyle}
-                className="placeStyle"
-
-              >
-                <div className="placeNameStyle">
-                  {place.name}
-                </div>
-              </Link>
+                <MapPin
+                  lat={parseFloat(place.latitude)}
+                  lng={parseFloat(place.longitude)}
+                  place={place}
+                />
             ))}
 
         </GoogleMapReact>

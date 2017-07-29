@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import {syncUser} from './state/auth'
+import {initFavsSync} from './state/favs'
 import store from './store'
 import firebase from 'firebase'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,7 +25,12 @@ firebase.initializeApp({
   messagingSenderId: "350051798306"
 })
 
-firebase.auth().onAuthStateChanged(user => store.dispatch(syncUser(user), ))
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    store.dispatch(initFavsSync())
+  }
+  store.dispatch(syncUser(user), )
+})
 
 ReactDOM.render(
   <Provider store={store}>

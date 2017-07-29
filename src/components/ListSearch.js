@@ -38,15 +38,11 @@ export default connect(
 
     componentWillMount() {
       this.props.fetchPlaces()
-      if (this.props.user !== null) {
-        this.props.initFavsSync()
-      }
     }
 
-
     render() {
-      const {data} = this.props.places
 
+      const {data} = this.props.places
       const places = data === null ? [] : data
       const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
@@ -58,6 +54,10 @@ export default connect(
           f => f(place) === true
         )
       )
+
+      if (this.props.user === null) {
+        return <p>Loading...</p>
+      }
 
       return (
         <Row>

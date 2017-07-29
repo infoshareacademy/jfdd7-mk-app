@@ -1,34 +1,36 @@
 .placeStyle {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 33px;
     background: url("../images/marker.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: top center;
     position: absolute;
-    top: -40px;
-    left: -20px;
+    top: -35px;
+    left: -17.5px;
 }
 
-.placeStyle:hover {
-    width: 50px;
-    height: 50px;
-    top:-50px;
-    left: -25px;
-}
-
+/*.placeStyle:hover {*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*top:-50px;*/
+    /*left: -25px;*/
+/*}*/
 .placeNameStyle {
     width:100px;
     position: absolute;
-    top: 45px;
-    left:-30px;
+    top: 35px;
+    left: -17.5px;
     color: black;
-    font-family: Francois One, sans-serif;
+    font-family: Raleway, sans-serif;
     text-align: center;
     display: inline-block;
-
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .placeStyle:hover .placeNameStyle {
-    top: 55px;
-    left: -25px;
+    /*top: 55px;*/
+    /*left: -25px;*/
+    text-decoration: underline;
 }
