@@ -13,6 +13,7 @@ import './SearchField.css'
 import MenuFilter from './MenuFilter'
 import distanceCalc from './distanceCalc'
 import {filters} from './filters'
+import AddToFavButton from './AddToFavButton'
 
 
 export default connect(
@@ -64,8 +65,6 @@ export default connect(
             <MenuFilter/>
           </Col>
           <Col sm={8}>
-
-
             {filteredPlaces.filter(
               place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? filteredPlaces : checkString(place.name) || checkArray(place.functions)
             ).map(
@@ -83,14 +82,9 @@ export default connect(
                     <Col xs={10} xsOffset={2} smOffset={0} sm={4} className="contact">
                       <ContactObject telephone={place.telephone}/>
                       {this.props.user === null ? null :
-                        <Button
-                          className="addToFav"
-                          data-uid={place.id}
-                          onClick={!favoriteKeys.includes(place.id) ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
-
-                        >
+                        <AddToFavButton favoriteKeys={favoriteKeys} data-uid={place.id} place={place} handleFavPlaceClick={this.props.handleFavPlaceClick} handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
                           {favoriteKeys.includes(place.id) ? '-' : '+'}
-                        </Button>
+                        </AddToFavButton>
                       }
                     </Col>
                   </Row>
