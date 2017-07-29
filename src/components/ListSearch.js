@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {geolocated} from 'react-geolocated';
 import {Row, Col} from 'react-bootstrap'
 import {fetchPlaces} from '../state/places'
 import {activateFilter} from '../state/activitiesFilter'
@@ -33,6 +34,13 @@ export default connect(
     initFavsSync: () => dispatch(initFavsSync()),
   })
 )(
+  geolocated ({
+    positionOptions: {
+      enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 100,
+  }
+  )(
   class ListSearch extends React.Component {
 
     componentWillMount() {
@@ -44,6 +52,7 @@ export default connect(
       const {data} = this.props.places
       const places = data === null ? [] : data
       const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
+
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       const checkArray = functions =>
         this.props.searchPhrase.toLowerCase()
@@ -53,13 +62,31 @@ export default connect(
               .toLowerCase()
               .includes(phrase))
 
+      const location = (this.props.isGeolocationAvailable && this.props.isGeolocationEnabled)
+        ? this.props.coords
+          ? {lat: this.props.coords.latitude, lng: this.props.coords.longitude}
+          : null
+        : {lat: 54.403351, lng: 18.569951}
+      if (location === null) {
+        return <div>Pobieram Twoją lokalizację</div>
+      }
+
+
       const filteredPlaces = places.filter(
         place => this.props.activeFilterNames.map(
           filterName => filters[filterName] || (() => true)
         ).every(
           f => f(place) === true
         )
-      )
+      ).filter(
+        place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? true : checkString(place.name) || checkArray(place.functions)
+      ).map(
+        place => ({
+          ...place,
+          distance: distanceCalc(place.latitude, place.longitude, location.lat, location.lng)
+        }))
+        .sort((a, b) => a.distance - b.distance)
+        .filter(place => place.distance <= this.props.location)
 
       return (
         <Row>
@@ -67,21 +94,8 @@ export default connect(
             <MenuFilter/>
           </Col>
           <Col sm={8}>
-            {filteredPlaces.filter(
-              place =>
-                this.props.searchPhrase === '' &&
-                this.props.activeFilterNames.length === 0 ?
-                  filteredPlaces :
-                  checkString(place.name) ||
-                  checkArray(place.functions)
-            ).map(
-              place => ({
-                ...place,
-                distance: distanceCalc(place.latitude, place.longitude, 54.403351, 18.569951)
-              }))
-              .sort((a, b) => a.distance - b.distance)
-              .filter(place => place.distance <= this.props.location)
-              .map(
+            {filteredPlaces.length === 0 ? 'Brak wyników dla wybranych kryteriów' :
+              filteredPlaces.map(
                 place => (
                   <Row key={place.id} className="info">
                     <IconCategory/>
@@ -111,3 +125,4 @@ export default connect(
       )
     }
   })
+)
