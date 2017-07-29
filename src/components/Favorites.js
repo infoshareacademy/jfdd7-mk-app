@@ -61,7 +61,13 @@ export default connect(
                   <Button data-uid={place.id}
                           onClick={this.props.favedPlaceIds[place.id] !== true ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
                           className="addToFav"
-                  />
+                  >
+
+                  {
+                    this.props.favedPlaceIds[place.id] !== true ?
+                      '+' : '-'
+                  }
+                </Button>
                 </Col>
               </Row>
             )
