@@ -8,6 +8,7 @@ import ContactObject from './ContactObject'
 import {initFavsSync, deleteFav, favPlace} from '../state/favs'
 import {fetchPlaces} from '../state/places'
 import distanceCalc from './distanceCalc'
+import './FavoritesButtons.css'
 
 export default connect(
   state => ({
@@ -60,12 +61,7 @@ export default connect(
                   <Button data-uid={place.id}
                           onClick={this.props.favedPlaceIds[place.id] !== true ? this.props.handleFavPlaceClick : this.props.handleDeletePlaceClick}
                           className="addToFav"
-                  >
-                    {
-                      this.props.favedPlaceIds[place.id] !== true ?
-                        '+' : '-'
-                    }
-                  </Button>
+                  />
                 </Col>
               </Row>
             )
