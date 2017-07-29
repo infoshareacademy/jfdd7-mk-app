@@ -2,10 +2,11 @@ import React from 'react'
 import {Image} from 'react-bootstrap'
 import GymIconNew from '../images/marker.png'
 import './ListSearch.css'
+import {Col} from 'react-bootstrap'
 
 const IconCategory = () => (
-<section>
-  <Image className="center-block" src={GymIconNew}/>
-</section>
+  <Col xs={2} className="pin">
+    <Image className="center-block" src={GymIconNew}/>
+  </Col>
 );
 export default IconCategory

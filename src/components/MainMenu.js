@@ -39,10 +39,12 @@ const MainMenu = ({user}) => (
       </Nav>
       <Nav pullRight>
         {user === null ? null :
-          <NavItem className="signOutButton"
-                   onClick={() => firebase.auth().signOut()}>
-            Wyloguj się
-          </NavItem>
+          <LinkContainer to="/list-search">
+            <NavItem className="signOutButton"
+                     onClick={() => firebase.auth().signOut()}>
+              Wyloguj się
+            </NavItem>
+          </LinkContainer>
 
         }
       </Nav>
