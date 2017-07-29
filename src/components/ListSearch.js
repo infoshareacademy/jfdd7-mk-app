@@ -46,7 +46,14 @@ export default connect(
       const places = data === null ? [] : data
       const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       const checkString = string => string.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
-      const checkArray = functions => this.props.searchPhrase.toLowerCase().split(' ').every(phrase => functions.join(' ').toLowerCase().includes(phrase))
+      const checkArray = functions =>
+        this.props.searchPhrase.toLowerCase()
+          .split(' ')
+          .every(phrase =>
+            functions.join(' ')
+              .toLowerCase()
+              .includes(phrase))
+
       const filteredPlaces = places.filter(
         place => this.props.activeFilterNames.map(
           filterName => filters[filterName] || (() => true)
@@ -62,7 +69,12 @@ export default connect(
           </Col>
           <Col sm={8}>
             {filteredPlaces.filter(
-              place => this.props.searchPhrase === '' && this.props.activeFilterNames.length === 0 ? filteredPlaces : checkString(place.name) || checkArray(place.functions)
+              place =>
+                this.props.searchPhrase === '' &&
+                this.props.activeFilterNames.length === 0 ?
+                  filteredPlaces :
+                  checkString(place.name) ||
+                  checkArray(place.functions)
             ).map(
               place => ({
                 ...place,
@@ -75,10 +87,18 @@ export default connect(
                   <Row key={place.id} className="info">
                     <IconCategory/>
                     <Description place={place}/>
-                    <Col xs={10} xsOffset={2} smOffset={0} sm={4} className="contact">
+                    <Col
+                      xs={10}
+                      xsOffset={2}
+                      smOffset={0}
+                      sm={4} className="contact">
                       <ContactObject telephone={place.telephone}/>
                       {this.props.user === null ? null :
-                        <AddToFavButton favoriteKeys={favoriteKeys} place={place} handleFavPlaceClick={this.props.handleFavPlaceClick} handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
+                        <AddToFavButton
+                          favoriteKeys={favoriteKeys}
+                          place={place}
+                          handleFavPlaceClick={this.props.handleFavPlaceClick}
+                          handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
                           {favoriteKeys.includes(place.id) ? '-' : '+'}
                         </AddToFavButton>
                       }
