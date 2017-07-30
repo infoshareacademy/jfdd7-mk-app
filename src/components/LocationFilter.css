@@ -1,3 +1,8 @@
+.rc-slider {
+    width: 90%;
+    display: inline-block;
+    margin: 0 2%;
+}
 .rc-slider-step {
     background:transparent;
     height: 2px;
@@ -38,4 +43,9 @@
     font-family: Francois One, sans-serif;
     font-size: 15px;
     font-weight: bold;
+}
+.location-check {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid grey !important;
 }
