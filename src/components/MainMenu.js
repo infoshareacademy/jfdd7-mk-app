@@ -11,6 +11,7 @@ import {
 } from 'react-bootstrap'
 import firebase from 'firebase'
 import {connect} from 'react-redux'
+import logo from '../images/logo-nowe.png'
 
 class MainMenu extends Component {
   render() {
@@ -19,7 +20,9 @@ class MainMenu extends Component {
       <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link className='Main__Menu' to="/">Gdzie poćwiczę?</Link>
+            <Link className='Main__Menu' to="/">
+              {/*<img src={logo} />*/}
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
