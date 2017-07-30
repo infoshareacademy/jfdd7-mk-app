@@ -72,13 +72,11 @@ export default connect(
 
             <Col sm={6}>
               <Row>
-                <Col xs={12}>
-                  <OpenHours className="Open__Hours" place={place}/>
-                </Col>
+                <OpenHours className="Open__Hours" place={place}/>
               </Row>
               <Row>
                 <Col xs={12}>
-                  <div style={{width: '100%', height: 250}}>
+                  <div style={{width: '100%', height: 250, border: '1px solid lightgrey'}}>
                     <MapDetails name={place.name} latitude={parseFloat(place.latitude)}
                                 longitude={parseFloat(place.longitude)}/>
                   </div>
