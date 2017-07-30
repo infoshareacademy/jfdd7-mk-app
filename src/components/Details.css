@@ -57,23 +57,24 @@ section.Object__Details {
     text-align: center;
     padding-left: 0;
 }
-.activities-details, .contact-details {
+.activities-details, .contact-details, .open-hours {
     padding: 20px 40px;
     border: 1px solid lightgrey;
     margin: 0 15px 10px;
 }
 .list-activities li,
 .activities-details p, .contact-details p,
-.activities-details a, .contact-details a {
+.activities-details a, .contact-details a,
+.open-hours p {
     font-family: "Raleway", sans-serif;
 }
-.activities-details h4, .contact-details h4 {
+.activities-details h4, .contact-details h4, .open-hours h4{
     font-family: "Francois One", sans-serif;
     font-size: 1.8em;
     color: #b543a0;
 }
 
-.activities-details:hover, .contact-details:hover {
+.activities-details:hover, .contact-details:hover, .open-hours:hover {
     border: 1px solid #b543a0;
 }
 .contact-details a {
