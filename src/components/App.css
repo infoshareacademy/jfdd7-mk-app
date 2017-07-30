@@ -5,8 +5,19 @@
   font-size: 2em;
   color: black;
 }
+.navbar-default .navbar-nav > li {
+  border-bottom: 2px solid white;
+}
+.navbar-default .navbar-nav > li.active {
+  border-bottom: 2px solid #b543a0;
+}
 .navbar-default .navbar-brand {
   color: black;
+  background-image: url("../images/logo-nowe.png");
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 165px;
 }
 .nav {
   font-family: Francois One;
@@ -16,11 +27,14 @@
 .navbar-collapse {
   outline-color: white;
 }
+.navbar-default .navbar-collapse {
+  margin-top: 10px;
+}
 .navbar-default .navbar-nav > li > a {
   background-color: white;
   color: black;
 }
-.nav > li > a:focus, .nav > li > a:active {
+.nav > li:hover {
   outline-color: white;
   border-bottom: 2px solid #b543a0;
 
@@ -34,8 +48,6 @@
   background-color: white;
   color: black;
 }
-.navbar-default .navbar-nav > .active > a{
-}
 .navbar-default {
   webkit-box-shadow: none;
   box-shadow: none;
@@ -44,4 +56,5 @@
   border: none;
   outline-color: white;
 }
+
 
