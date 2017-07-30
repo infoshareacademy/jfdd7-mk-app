@@ -31,7 +31,8 @@ export default connect(
 
               <Col sm={12}>
                 <div className="App">
-                  <Route exact path="/" component={Main}/>
+                  <Route exact path="/" component={MapSearch}/>
+                  <Route path="/main" component={Main}/>
                   <Route path="/map-search" component={MapSearch}/>
                   <Route exact path="/list-search" component={ListSearch}/>
                   <Route path="/details/:placeId" component={Details}/>

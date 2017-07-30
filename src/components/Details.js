@@ -71,10 +71,12 @@ export default connect(
                         <Col sm={6}>
 
                             <Row>
+                              <Col xs={12}>
                                 <div style={{width: '100%', height: 250}}>
                                     <MapDetails name={place.name} latitude={parseFloat(place.latitude)}
                                                 longitude={parseFloat(place.longitude)}/>
                                 </div>
+                              </Col>
                             </Row>
                         </Col>
 

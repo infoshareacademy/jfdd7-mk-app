@@ -24,7 +24,7 @@ const SearchField = props => (
       </button>
     </LinkContainer>
     <LinkContainer to="/map-search">
-      <button className="switch-button" data-active={window.location.pathname.match(/map-search/) ? 'true' : 'false'}>
+      <button className="switch-button" data-active={window.location.pathname.match(/map-search|(^\/$)/) ? 'true' : 'false'}>
         Mapa
       </button>
     </LinkContainer>

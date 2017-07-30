@@ -60,7 +60,7 @@ section.Object__Details {
 .activities-details, .contact-details {
     padding: 20px 40px;
     border: 1px solid lightgrey;
-    margin: 0 10px 10px 10px;
+    margin: 0 15px 10px;
 }
 .list-activities li,
 .activities-details p, .contact-details p,

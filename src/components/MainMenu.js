@@ -22,14 +22,14 @@ const MainMenu = ({user}) => (
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <IndexLinkContainer to="/">
-          <NavItem className='Main__Menu'>HOME</NavItem>
-        </IndexLinkContainer>
-        <LinkContainer to="/map-search">
+        <IndexLinkContainer to="/map-search">
           <NavItem className='Main__Menu'>MAPA</NavItem>
-        </LinkContainer>
+        </IndexLinkContainer>
         <LinkContainer to="/list-search">
           <NavItem className='Main__Menu'>LISTA</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/main">
+          <NavItem className='Main__Menu'>LOGOWANIE</NavItem>
         </LinkContainer>
         {user === null ? null :
           <LinkContainer to="/favorites">
