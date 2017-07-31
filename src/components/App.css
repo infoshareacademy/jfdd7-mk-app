@@ -56,5 +56,8 @@
   border: none;
   outline-color: white;
 }
+.navbar-default > div {
+  margin: 20px 0 0 0;
+}
 
 

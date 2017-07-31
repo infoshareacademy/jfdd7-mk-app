@@ -32,7 +32,7 @@ export default connect(
               {this.state.showSignIn ? <SignInForm/> : null}
               <div className="registrationRedirect">
                 <h3 className={classSet}>Nie masz jeszcze konta?</h3>
-                <Button className={classSet} onClick={this.handleButtonClick}>Kliknij!</Button>
+                <Button className={classSet} onClick={this.handleButtonClick}>Zarejestruj się!</Button>
               </div>
               {this.state.showSignUp ? <SignUpForm/> : null }
             </div>
