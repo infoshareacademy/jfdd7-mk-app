@@ -39,3 +39,11 @@
 .addToFav:hover {
     border-color: #b543a0;
 }
+
+
+.objectNameBlock  .addToFav {
+    display: inline-block;
+    font-size: 1em;
+    padding: 0 0 ;
+
+}
