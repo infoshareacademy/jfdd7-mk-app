@@ -41,6 +41,9 @@
 }
 
 
-.objectNameBlock > .addToFav {
+.objectNameBlock  .addToFav {
     display: inline-block;
+    font-size: 1em;
+    padding: 0 0 ;
+
 }

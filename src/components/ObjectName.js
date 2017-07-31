@@ -9,16 +9,16 @@ const ObjectName = ({name, place, favoriteKeys, handleFavPlaceClick, handleDelet
       {name}
 
       <OpenTime place={place}/>
+      <AddToFavButton favoriteKeys={favoriteKeys}
+                      data-uid={place.id}
+                      place={place}
+                      handleFavPlaceClick={handleFavPlaceClick}
+                      handleDeletePlaceClick={handleDeletePlaceClick}
+                      id="detailsFav"
+      >
+      </AddToFavButton>
     </h2>
-    <AddToFavButton favoriteKeys={favoriteKeys}
-                    data-uid={place.id}
-                    place={place}
-                    handleFavPlaceClick={handleFavPlaceClick}
-                    handleDeletePlaceClick={handleDeletePlaceClick}
-                    id="detailsFav"
-    >
-      {favoriteKeys.includes(place.id) ? '-' : '+'}
-    </AddToFavButton>
+
   </div>
 
 )
