@@ -31,11 +31,11 @@ export default connect(
 
 
     render() {
+
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
       if (this.props.favedPlaceIds === null) {
         return <ReactLoading className="loading-spin" type="spin" color="#b543a0"/>
       }
-      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
-
       return (
         <div>
           {this.props.places !== null ? this.props.places.filter(place => favoriteKeys.includes(place.id)).map(

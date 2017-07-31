@@ -111,7 +111,8 @@ export default connect(
                           favoriteKeys={favoriteKeys}
                           place={place}
                           handleFavPlaceClick={this.props.handleFavPlaceClick}
-                          handleDeletePlaceClick={this.props.handleDeletePlaceClick}>
+                          handleDeletePlaceClick={this.props.handleDeletePlaceClick}
+                        >
                           {favoriteKeys.includes(place.id) ? '-' : '+'}
                         </AddToFavButton>
                       }

@@ -5,6 +5,7 @@ import {
   Col,
 } from'react-bootstrap'
 import {fetchPlaces} from '../state/places'
+import {favPlace, deleteFav} from '../state/favs'
 import CarouselDetails from './CarouselDetails'
 import ObjectName from './ObjectName'
 import ObjectDetails from './ObjectDetails'
@@ -16,13 +17,17 @@ import './Details.css'
 
 export default connect(
   state => ({
-    places: state.places
+    places: state.places,
+    favedPlaceIds: state.favs.placeIds
   }),
   dispatch => ({
-    fetchPlaces: () => dispatch(fetchPlaces())
+    fetchPlaces: () => dispatch(fetchPlaces()),
+    handleFavPlaceClick: event => dispatch(favPlace(event.target.dataset.uid)),
+    handleDeletePlaceClick: event => dispatch(deleteFav(event.target.dataset.uid))
   })
 )(
   class Details extends React.Component {
+
     componentWillMount() {
       this.props.fetchPlaces()
     }
@@ -34,6 +39,7 @@ export default connect(
       const place = data === null ? undefined : data.find(
         place => place.id === placeId
       )
+      const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
 
 
       if (place === undefined) {
@@ -53,8 +59,13 @@ export default connect(
           </Row>
           <Row>
             <Col>
-              <ObjectName className="Object__Name" name={place.name} place={place}/>
-
+              <ObjectName
+                className="Object__Name"
+                name={place.name} place={place}
+                handleFavPlaceClick={this.props.handleFavPlaceClick}
+                handleDeletePlaceClick={this.props.handleDeletePlaceClick}
+                favoriteKeys={favoriteKeys}
+              />
             </Col>
           </Row>
           <Row>

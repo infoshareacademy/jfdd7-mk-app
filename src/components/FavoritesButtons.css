@@ -16,3 +16,7 @@
     position: relative;
     top: 30vh;
 }
+
+.objectNameBlock > .addToFav {
+    display: inline-block;
+}
