@@ -32,11 +32,9 @@ export default connect(
 
     render() {
       if (this.props.favedPlaceIds === null) {
-        return <ReactLoading type="spin" color="#b543a0"/>
+        return <ReactLoading className="loading-spin" type="spin" color="#b543a0"/>
       }
       const favoriteKeys = this.props.favedPlaceIds !== null ? Object.keys(this.props.favedPlaceIds) : []
-      console.log(this.props.places)
-      console.log(favoriteKeys)
 
       return (
         <div>

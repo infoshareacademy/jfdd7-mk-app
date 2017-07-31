@@ -11,3 +11,8 @@
     box-shadow: 2px 2px 2px 2px grey;
 }
 
+.loading-spin {
+    margin: auto auto;
+    position: relative;
+    top: 30vh;
+}
