@@ -10,6 +10,7 @@ import distanceCalc from './distanceCalc'
 import AddToFavButton from './AddToFavButton'
 import ReactLoading from 'react-loading'
 import './FavoritesButtons.css'
+import './iconmonstr-iconic-font-1.2.0/iconmonstr-iconic-font-1.2.0/css/iconmonstr-iconic-font.min.css'
 
 export default connect(
   state => ({
@@ -54,8 +55,11 @@ export default connect(
                                   place={place}
                                   handleFavPlaceClick={this.props.handleFavPlaceClick}
                                   handleDeletePlaceClick={this.props.handleDeletePlaceClick}
+                                  data-active={favoriteKeys.includes(place.id)}
+
                   >
-                    {favoriteKeys.includes(place.id) ? '-' : '+'}
+
+
                   </AddToFavButton>
                 </Col>
               </Row>
