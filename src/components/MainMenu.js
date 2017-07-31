@@ -11,7 +11,6 @@ import {
 } from 'react-bootstrap'
 import firebase from 'firebase'
 import {connect} from 'react-redux'
-import logo from '../images/logo-nowe.png'
 
 class MainMenu extends Component {
   render() {
