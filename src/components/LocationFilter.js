@@ -28,7 +28,7 @@ export default connect(
       }
       const handleCheckboxChange = (element) => {
         if (element.target.checked) {
-          this.props.updateLocation(12);
+          this.props.updateLocation(1);
           this.setState({sliderDisabled: false})
         } else {
           this.setState({sliderDisabled: true}, () => {
