@@ -16,3 +16,26 @@
     position: relative;
     top: 30vh;
 }
+.addToFav[data-active="true"]:before {
+    font: normal normal normal 1em 'iconmonstr-iconic-font';
+    content: '\e083';
+}
+.addToFav[data-active="false"]:before {
+    font: normal normal normal 1em 'iconmonstr-iconic-font';
+    content: '\e085';
+}
+.addToFav {
+    margin-top: 0.5em;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    font-size: 1.8em;
+    color: #b543a0;
+    border: 1px solid white;
+    border-radius: 2px;
+    outline: none;
+}
+.addToFav:hover {
+    border-color: #b543a0;
+}
