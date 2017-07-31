@@ -21,7 +21,6 @@ class MainMenu extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <Link className='Main__Menu' to="/">
-              {/*<img src={logo} />*/}
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle />
@@ -34,9 +33,11 @@ class MainMenu extends Component {
             <LinkContainer to="/list-search">
               <NavItem className='Main__Menu'>LISTA</NavItem>
             </LinkContainer>
-            <LinkContainer to="/logowanie">
-              <NavItem className='Main__Menu'>LOGOWANIE</NavItem>
-            </LinkContainer>
+            {user !== null ? null :
+              <LinkContainer to="/logowanie">
+                <NavItem className='Main__Menu'>LOGOWANIE</NavItem>
+              </LinkContainer>
+            }
             {user === null ? null :
               <LinkContainer to="/favorites">
                 <NavItem className='Main__Menu'>ULUBIONE</NavItem>
